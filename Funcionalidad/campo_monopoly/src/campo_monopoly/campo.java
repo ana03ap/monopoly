@@ -7,7 +7,7 @@ package campo_monopoly;
 
 /**
  *
- * @author Darwin
+ * @author Darwin hola
  */
 public class campo {
     class Nodo{
