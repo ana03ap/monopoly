@@ -34,6 +34,7 @@ public class campo {
           public void tarjetaRandom (){
         //por ahora nada
     }
+          // quitar c3,c4
         public Nodo(int d, String a,String color, String D, int val, int rent, int vCasa, int vHotel, int c1, int c2, int c3, int c4, int h, String hab){
             this.numCasilla = d;
             this.nombre = a;
