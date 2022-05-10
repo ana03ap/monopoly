@@ -7,17 +7,8 @@ package lab_final_edd1;
 
 /**
  *
- * @author Hp
+ * @author Emily Roldán
  */
-public class Lab_Final_EDD1 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Pp g = new Pp();
-        g.setVisible(true);
-
-    }
+public class Jugadores {
     
 }

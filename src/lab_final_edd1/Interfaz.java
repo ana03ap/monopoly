@@ -225,15 +225,15 @@ public class Interfaz extends javax.swing.JFrame {
         });
     }
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel amarilla;
     private javax.swing.JButton dadoBtn;
     private javax.swing.JLabel jLabel_wallpaper;
     private javax.swing.JLabel rojo;
     // End of variables declaration//GEN-END:variables
-    public void a (){
-        System.out.println("a");
-    }
+
+    // metodo para los dados 
     public void dados(int dado1, int dado2) {
         ImageIcon icono = null;
 
@@ -373,6 +373,7 @@ public class Interfaz extends javax.swing.JFrame {
         }
         JOptionPane.showMessageDialog(null, "", "DADOS", JOptionPane.PLAIN_MESSAGE, icono);
     }
+    // metodo para mover el jugador, error con player 
     public void mover (int dado){
            //MOVIMIENTO DE UNA FICHA
         if ((player + dado >= 11 && player < 19) && player <= 10) { //para cuando dé la primera vuelta
