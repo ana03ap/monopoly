@@ -17,6 +17,7 @@ public class Lab_Final_EDD1 {
     public static void main(String[] args) {
         Pp g = new Pp();
         g.setVisible(true);
+
     }
     
 }
