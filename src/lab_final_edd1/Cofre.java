@@ -13,7 +13,7 @@ import java.util.Random;
  *
  * @author Darwin
  */
-public class Cofre {
+public class Cofre { //Puebba de mi pushhhhhhhh
 
     class Carta {
 
