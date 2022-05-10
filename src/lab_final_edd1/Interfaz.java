@@ -1,4 +1,4 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -16,9 +16,10 @@ import javax.swing.JOptionPane;
  * @author Darwin
  */
 public class Interfaz extends javax.swing.JFrame {
+
     int cont = 0, player = 0; //player luego hay que hacerlo un objeto 
-    int x= 585, y=603;
-    
+    int x = 585, y = 603;
+
     /**
      * Creates new form Interfaz
      */
@@ -27,12 +28,12 @@ public class Interfaz extends javax.swing.JFrame {
         setSize(1366, 700);
         ImageIcon wallpaper = new ImageIcon("src/Data1/monopolio.png");
         Icon icono = new ImageIcon(wallpaper.getImage().getScaledInstance(jLabel_wallpaper.getWidth(), jLabel_wallpaper.getHeight(), Image.SCALE_DEFAULT));
-        jLabel_wallpaper.setIcon(icono); 
+        jLabel_wallpaper.setIcon(icono);
         this.repaint();
         transparenciaButton();
-        
-        
+
     }
+
     @SuppressWarnings("unchecked")
     public void transparenciaButton() {
         dadoBtn.setOpaque(false);
@@ -78,104 +79,240 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void dadoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoBtnActionPerformed
         // TODO add your handling code here:
-       
-        int dado1 = (int) ((Math.random()) * 60 / 10) + 1;
-        int dado2 =(int) ((Math.random()) * 60 / 10) + 1;
-        int dado = dado1 +dado2;
-        JOptionPane.showMessageDialog(null, dado1+" - "+dado2);
-        if((player + dado >=11 && player<19) && player <=10){ //para cuando dé la primera vuelta
-            if(player +dado != 11){
-                do{
-                player ++;
-                dado --;
-            }while(player != 11); 
+        ImageIcon icono = null;
+        int dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+        int dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+        int dado = dado1 + dado2;
+        switch (dado1) { // ver las combinaciones 
+            case 1:
+                switch (dado2) {
+                    case 1:
+                        icono = new ImageIcon(getClass().getResource("/dados/1,1.png"));
+                        break;
+                    case 2:
+                        icono = new ImageIcon(getClass().getResource("/dados/1,2.png"));
+                        break;
+                    case 3:
+                        icono = new ImageIcon(getClass().getResource("/dados/1,3.png"));
+                        break;
+                    case 4:
+                        icono = new ImageIcon(getClass().getResource("/dados/1,4.png"));
+                        break;
+                    case 5:
+                        icono = new ImageIcon(getClass().getResource("/dados/1,5.png"));
+                        break;
+                    case 6:
+                        icono = new ImageIcon(getClass().getResource("/dados/1,6.png"));
+                        break;
+                }
+                break;
+            case 2:
+                switch (dado2) {
+                    case 1:
+                        icono = new ImageIcon(getClass().getResource("/dados/2,1.png"));
+                        break;
+                    case 2:
+                        icono = new ImageIcon(getClass().getResource("/dados/2,2.png"));
+                        break;
+                    case 3:
+                        icono = new ImageIcon(getClass().getResource("/dados/2,3.png"));
+                        break;
+                    case 4:
+                        icono = new ImageIcon(getClass().getResource("/dados/2,4.png"));
+                        break;
+                    case 5:
+                        icono = new ImageIcon(getClass().getResource("/dados/2,5.png"));
+                        break;
+                    case 6:
+                        icono = new ImageIcon(getClass().getResource("/dados/2,6.png"));
+                        break;
+                }
+                break;
+            case 3:
+                switch (dado2) {
+                    case 1:
+                        icono = new ImageIcon(getClass().getResource("/dados/3,1.png"));
+                        break;
+                    case 2:
+                        icono = new ImageIcon(getClass().getResource("/dados/3,2.png"));
+                        break;
+                    case 3:
+                        icono = new ImageIcon(getClass().getResource("/dados/3,3.png"));
+                        break;
+                    case 4:
+                        icono = new ImageIcon(getClass().getResource("/dados/3,4.png"));
+                        break;
+                    case 5:
+                        icono = new ImageIcon(getClass().getResource("/dados/3,5.png"));
+                        break;
+                    case 6:
+                        icono = new ImageIcon(getClass().getResource("/dados/3,6.png"));
+                        break;
+                }
+                break;
+            case 4:
+                switch (dado2) {
+                    case 1:
+                        icono = new ImageIcon(getClass().getResource("/dados/4,1.png"));
+                        break;
+                    case 2:
+                        icono = new ImageIcon(getClass().getResource("/dados/4,2.png"));
+                        break;
+                    case 3:
+                        icono = new ImageIcon(getClass().getResource("/dados/4,3.png"));
+                        break;
+                    case 4:
+                        icono = new ImageIcon(getClass().getResource("/dados/4,4.png"));
+                        break;
+                    case 5:
+                        icono = new ImageIcon(getClass().getResource("/dados/4,5.png"));
+                        break;
+                    case 6:
+                        icono = new ImageIcon(getClass().getResource("/dados/4,6.png"));
+                        break;
+                }
+                break;
+            case 5:
+                switch (dado2) {
+                    case 1:
+                        icono = new ImageIcon(getClass().getResource("/dados/5,1.png"));
+                        break;
+                    case 2:
+                        icono = new ImageIcon(getClass().getResource("/dados/5,2.png"));
+                        break;
+                    case 3:
+                        icono = new ImageIcon(getClass().getResource("/dados/5,3.png"));
+                        break;
+                    case 4:
+                        icono = new ImageIcon(getClass().getResource("/dados/5,4.png"));
+                        break;
+                    case 5:
+                        icono = new ImageIcon(getClass().getResource("/dados/5,5.png"));
+                        break;
+                    case 6:
+                        icono = new ImageIcon(getClass().getResource("/dados/5,6.png"));
+                        break;
+                }
+                break;
+            case 6:
+                switch (dado2) {
+                    case 1:
+                        icono = new ImageIcon(getClass().getResource("/dados/6,1.png"));
+                        break;
+                    case 2:
+                        icono = new ImageIcon(getClass().getResource("/dados/6,2.png"));
+                        break;
+                    case 3:
+                        icono = new ImageIcon(getClass().getResource("/dados/6,3.png"));
+                        break;
+                    case 4:
+                        icono = new ImageIcon(getClass().getResource("/dados/6,4.png"));
+                        break;
+                    case 5:
+                        icono = new ImageIcon(getClass().getResource("/dados/6,5.png"));
+                        break;
+                    case 6:
+                        icono = new ImageIcon(getClass().getResource("/dados/6,6.png"));
+                        break;
+                }
+                break;
+        }
+        
+        JOptionPane.showMessageDialog(null, "", "DADOS", JOptionPane.PLAIN_MESSAGE, icono);
+          //MOVIMIENTO DE UNA FICHA
+        if ((player + dado >= 11 && player < 19) && player <= 10) { //para cuando dé la primera vuelta
+            if (player + dado != 11) {
+                do {
+                    player++;
+                    dado--;
+                } while (player != 11);
             }
             //Si casualmente cae en 11 ya se situe acá
-            x =35;
-            y= 540;
+            x = 35;
+            y = 540;
             rojo.setBounds(x, y, 35, 57);
         }
-        if((player +dado>=21 && player<29) && (player <=19 && player>10)){ //Para cuando de la primer vuelta
-            if(player+dado != 21){
-                do{
-                    player ++;
-                    dado --;
-                    
-                }while (player !=21);
+        if ((player + dado >= 21 && player < 29) && (player <= 19 && player > 10)) { //Para cuando de la primer vuelta
+            if (player + dado != 21) {
+                do {
+                    player++;
+                    dado--;
+
+                } while (player != 21);
             }
             //Si casualmente cae en 21 ya se situe acá
-            x= 90;
+            x = 90;
             y = 40;
             rojo.setBounds(x, y, 35, 57);
         }
-        if((player + dado>= 31 &&player<39) && (player <=29 && player>20)){
-            if(player +dado != 31){
-                do{
-                    player ++;
-                    dado --;
-                }while(player != 31);
+        if ((player + dado >= 31 && player < 39) && (player <= 29 && player > 20)) {
+            if (player + dado != 31) {
+                do {
+                    player++;
+                    dado--;
+                } while (player != 31);
             }
             x = 585;
             y = 95;
             rojo.setBounds(x, y, 35, 57);
         }
-        if((player+dado >= 41 ) && (player<=39 && player >30)){
-            if(player +dado != 41){
-                do{
-                    player ++;
+        if ((player + dado >= 41) && (player <= 39 && player > 30)) {
+            if (player + dado != 41) {
+                do {
+                    player++;
                     dado--;
-                }while (player != 41);
-                
+                } while (player != 41);
+
             }
             player = 1;
-            x= 585 - 55;
+            x = 585 - 55;
             y = 603;
             rojo.setBounds(x, y, 35, 57);
             JOptionPane.showMessageDialog(null, "Gana 200");
         }
-        
+
         player = player + dado; //Ya suma la pos del jugador con el dado
-        if(player>=0 && player<=9){ //Si cae entre la a la 9
-             x= x-(55*dado);//mover x 55 pixeles
+        if (player >= 0 && player <= 9) { //Si cae entre la a la 9
+            x = x - (55 * dado);//mover x 55 pixeles
             rojo.setBounds(x, y, 35, 57);
 
         }
-        if(player == 10){ // Si cae en la 10
-            x =35;
+        if (player == 10) { // Si cae en la 10
+            x = 35;
             rojo.setBounds(x, y, 35, 57);
 
         }
-        if(player >=12 && player <= 19){ //Si cae en la 12 a 19
-            y = y-(55*dado);
+        if (player >= 12 && player <= 19) { //Si cae en la 12 a 19
+            y = y - (55 * dado);
             rojo.setBounds(x, y, 35, 57);
         }
-        if(player == 20){ //Si cae en la 20
-            x=35;
-            y= 40;
-            rojo.setBounds(x, y, 35, 57);
-        }
-        if(player >=22 && player<=29){ //Si cane de la 22 a la 29
-            x=x+(55*dado);
-            rojo.setBounds(x, y, 35, 57);
-        }
-        if(player == 30){
-            x= 585;
+        if (player == 20) { //Si cae en la 20
+            x = 35;
             y = 40;
             rojo.setBounds(x, y, 35, 57);
         }
-        if(player >=32 && player<=39){ //Si cane de la 22 a la 29
-            y=y+(55*dado);
+        if (player >= 22 && player <= 29) { //Si cae de la 22 a la 29
+            x = x + (55 * dado);
             rojo.setBounds(x, y, 35, 57);
         }
-        if(player == 40){
+        if (player == 30) {
+            x = 585;
+            y = 40;
+            rojo.setBounds(x, y, 35, 57);
+        }
+        if (player >= 32 && player <= 39) { //Si cae de la 32 a la 39
+            y = y + (55 * dado);
+            rojo.setBounds(x, y, 35, 57);
+        }
+        if (player == 40) {
             player = 0;
             x = 585;
-            y=603;
+            y = 603;
             rojo.setBounds(x, y, 35, 57);
             JOptionPane.showMessageDialog(null, "Gana 200");
         }
-        
-        
+
+
     }//GEN-LAST:event_dadoBtnActionPerformed
 
     /**
@@ -226,4 +363,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_wallpaper;
     private javax.swing.JLabel rojo;
     // End of variables declaration//GEN-END:variables
+    public void a (){
+        System.out.println("a");
+    }
 }

@@ -17,6 +17,9 @@ public class Lab_Final_EDD1 {
     public static void main(String[] args) {
         Pp g = new Pp();
         g.setVisible(true);
+        //Ejemplo de como usar un metodo de una interfaz
+        Interfaz b = new Interfaz();
+        b.a();
     }
     
 }
