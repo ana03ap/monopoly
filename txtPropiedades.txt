@@ -16,7 +16,7 @@
 16,Ferrocarril pensylvania,nadie,nadie,200,0,0,0,0,0,0,0
 17,Plaza st james,Naranja,nadie,180,14,28,70,200,950,100,100
 18,Arca comunal,nadie,nadie,0,0,0,0,0,0,0,0
-19,Avenida tennesse,Naranja,nadie,180,14,28,70,200,950,100,100
+19,Avenida Tennesse,Naranja,nadie,180,14,28,70,200,950,100,100
 20,Avenida New York,Naranja,nadie,200,16,32,80,220,1000,100,100
 21,Paso,nadie,nadie,0,0,0,0,0,0,0,0
 22,Avenida Kentucky,Rojo,nadie,220,18,36,90,250,1050,150,150
@@ -24,7 +24,7 @@
 24,Avenida Indiana,Rojo,nadie,220,18,36,90,250,1050,150,150
 25,Avenida illinois,Rojo,nadie,240,20,40,100,300,1100,150,150
 26,Ferrocarril,nadie,nadie,200,0,0,0,0,0,0,0
-27,Avenida Atlántico,Amarillo,nadie,260,22,44,110,330,1150,150,150
+27,Avenida Atlantico,Amarillo,nadie,260,22,44,110,330,1150,150,150
 28,Avenida Ventnor,Amarillo,nadie,260,22,44,110,330,1150,150,150
 29,Campaña de agua,nadie,nadie,160,0,0,0,0,0,0,0
 30,Jardines Marvin,Amarillo,nadie,280,24,48,120,360,1200,150,150
