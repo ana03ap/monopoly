@@ -5,15 +5,70 @@
  */
 package campo_monopoly;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  *
  * @author Darwin
  */
 public class Campo_monopoly {
 
-    /**
-     * @param args the command line arguments
-     */
+    
+    public static void leertxt(String file_name, Cofre c) {
+        int numero;
+        String info;
+
+        // meter los registros en una lista y las listas en un arraylist 
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file_name + ".txt"));
+            String line = ""; //asi se leen los archivos         
+            while ((line = br.readLine()) != null) {
+                String temp[] = line.split(","); // se hace split con cada coma
+                numero =Integer.parseInt(temp[0]); // primera coma 
+                info = temp[1];
+                c.addCarta(numero,info);
+                //Añadimos las listas al array  
+            }
+            c.mostrarlista();
+            br.close();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+    
+     public static void leertxtSuerte(String file_name) {
+        int numero;
+        String info;
+
+        // meter los registros en una lista y las listas en un arraylist 
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file_name + ".txt"));
+            String line = ""; //asi se leen los archivos         
+            Cofre c= new Cofre();
+            while ((line = br.readLine()) != null) {
+                String temp[] = line.split(","); // se hace split con cada coma
+                numero =Integer.parseInt(temp[0]); // primera coma 
+                info = temp[1];
+                
+
+                
+                
+                c.addCarta(numero,info);
+                //Añadimos las listas al array  
+            }
+            c.mostrarlista();
+            br.close();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
     public static void main(String[] args) {
         // TODO code application logic here
         /*campo List = new campo();
@@ -28,7 +83,7 @@ public class Campo_monopoly {
         List.addNode(9,"Plaza sanCarlos");
         List.addNode(10,"Compañía de luz");
         List.addNode(11,"Avenida Estados");
-        List.display();*/
+        List.display();
         Suerte cartas = new Suerte();
         cartas.addCarta(1, "Avance a el muelle"); //el muelle es el que está antes de la salida       
         cartas.addCarta(2, "Viaje en el Ferrocarril READING, si pasa por “SALIDA” cobre $200.");
@@ -47,7 +102,20 @@ public class Campo_monopoly {
         cartas.addCarta(15, "AVANCE AL FERROCARRIL MÁS CERCANO. Si está a LA VENTA, puede comprársela al banco. Si es PROPIEDAD de alguien, pague el doble de la renta marcada.");
         cartas.addCarta(16, "AVANCE AL FERROCARRIL MÁS CERCANO. Si está a LA VENTA, puede comprársela al banco. Si es PROPIEDAD de alguien, pague el doble de la renta marcada.");
         //cartas.mostrarlista();
-        Cofre cartasC = new Cofre();
+*/
+        // abrir cartas cofre
+        Suerte cartas = new Suerte();
+        Cofre c = new Cofre();
+        campo ca = new campo();
+        //Suerte.leertxt("txtCartaSuerte",cartas);
+        //Cofre.leertxt("txtCartasCofre", c);
+       campo.leertxt("txtPropiedades",ca);
+        
+        
+         
+        
+        
+        /*
         cartasC.addCarta(1, "SALGA DE LA CÁRCEL GRATIS.");
         cartasC.addCarta(2, "Honorarios médicos, pague $50.");
         cartasC.addCarta(3, "Vencimiento de fondo vacacional, reciba $100.");
@@ -67,6 +135,7 @@ public class Campo_monopoly {
         cartas.cartaRandom();
         cartasC.cartaRandom();
         campo Campo = new campo();
+        /*
         Campo.addNode(1, "Salida",null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, null);
         Campo.addNode(2, "Avenida Mediterraneo","Magenta", null, 60, 2, 50, 50, 10, 30, 90, 160, 250, null);
         Campo.addNode(3, "Arca comunal",null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, null);
@@ -75,7 +144,7 @@ public class Campo_monopoly {
         Campo.addNode(6, "Ferrocarril Reading", null, null, 200, 25, 0, 0, 0, 0, 0, 0, 0, null);
         Campo.addNode(7, "Avenida Oriental", "Celeste", null, 100, 6, 50, 50, 30, 90, 270, 400, 550, null);
         Campo.addNode(8, "Fortuna",null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, null);
-       
+         */
     }
 
 }

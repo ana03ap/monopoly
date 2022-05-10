@@ -1,0 +1,16 @@
+1,Avance a el muelle     
+2,Viaje en el Ferrocarril READING, si pasa por “SALIDA” cobre $200
+3,Por cumplimiento en pago del préstamo de construcción cobre $150
+4,Avance a AVENIDA ILLINOIS. Si pasa por la salida cobre $200
+5,AVANCE AL SERVICIO MÁS CERCANO. Si está a LA VENTA, puede comprárselo al banco. Si es PROPIEDAD de alguien, tira los dados y pague 10 veces lo pagado
+6,Váyase a la CÁRCEL. No pase por la SALIDA, no cobra $200
+7,Avance a la SALIDA, cobre $200
+8,El banco le paga dividendos por $50
+9,Haga reparaciones en sus propiedades; por cada casa pague $25, por cada hotel pague $100
+10,SALGA DE LA CÁRCEL GRATIS
+11,Avance a PLAZA SAN CARLOS. Si pasa por la SALIDA cobre $200
+12,Ha sido elegido presidente del concejo de administración. Pague a cada jugador $50
+13,Retroceda 3 casillas
+14,Pague multa por exceso de velocidad $15
+15,AVANCE AL FERROCARRIL MÁS CERCANO. Si está a LA VENTA, puede comprársela al banco. Si es PROPIEDAD de alguien, pague el doble de la renta marcada
+16,AVANCE AL FERROCARRIL MÁS CERCANO. Si está a LA VENTA, puede comprársela al banco. Si es PROPIEDAD de alguien, pague el doble de la renta marcada

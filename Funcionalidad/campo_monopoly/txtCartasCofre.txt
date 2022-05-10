@@ -1,0 +1,16 @@
+1,SALGA DE LA CÁRCEL GRATIS
+2,Honorarios médicos, pague $50
+3,Vencimiento de fondo vacacional, reciba $100
+4,Vencimiento de seguro de vida. Cobre $100
+5,Pague colegiaturas por $50
+6,Devolución de impuestos. Cobre $20
+7,Pague cuenta de hospital por $100
+8,Váyase a la CÁRCEL. No pase por la SALIDA, no cobra $200
+9,Reciba $25 por consultoría
+10,Es su cumpleaños. Cobre $10 a cada jugador
+11, "Herede $100
+12, "Por venta de acciones reciba $50
+13,Ganó el segundo lugar en un concurso de belleza, cobre $10
+14,Por reparación vial le cobran: $40 por casa, $115 por hotel
+15,Avance a la SALIDA, cobre $200
+16,Error bancario a su favor. Cobre $200
