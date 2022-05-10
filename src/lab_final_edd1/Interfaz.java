@@ -79,10 +79,164 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void dadoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoBtnActionPerformed
         // TODO add your handling code here:
-        ImageIcon icono = null;
+        
         int dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
         int dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
         int dado = dado1 + dado2;
+        dados (dado1, dado2);
+        
+        mover(dado);
+        
+          //MOVIMIENTO DE UNA FICHA
+        /*if ((player + dado >= 11 && player < 19) && player <= 10) { //para cuando dé la primera vuelta
+            if (player + dado != 11) {
+                do {
+                    player++;
+                    dado--;
+                } while (player != 11);
+            }
+            //Si casualmente cae en 11 ya se situe acá
+            x = 35;
+            y = 540;
+            rojo.setBounds(x, y, 35, 57);
+        }
+        if ((player + dado >= 21 && player < 29) && (player <= 19 && player > 10)) { //Para cuando de la primer vuelta
+            if (player + dado != 21) {
+                do {
+                    player++;
+                    dado--;
+
+                } while (player != 21);
+            }
+            //Si casualmente cae en 21 ya se situe acá
+            x = 90;
+            y = 40;
+            rojo.setBounds(x, y, 35, 57);
+        }
+        if ((player + dado >= 31 && player < 39) && (player <= 29 && player > 20)) {
+            if (player + dado != 31) {
+                do {
+                    player++;
+                    dado--;
+                } while (player != 31);
+            }
+            x = 585;
+            y = 95;
+            rojo.setBounds(x, y, 35, 57);
+        }
+        if ((player + dado >= 41) && (player <= 39 && player > 30)) {
+            if (player + dado != 41) {
+                do {
+                    player++;
+                    dado--;
+                } while (player != 41);
+
+            }
+            player = 1;
+            x = 585 - 55;
+            y = 603;
+            rojo.setBounds(x, y, 35, 57);
+            JOptionPane.showMessageDialog(null, "Gana 200");
+        }
+
+        player = player + dado; //Ya suma la pos del jugador con el dado
+        if (player >= 0 && player <= 9) { //Si cae entre la a la 9
+            x = x - (55 * dado);//mover x 55 pixeles
+            rojo.setBounds(x, y, 35, 57);
+
+        }
+        if (player == 10) { // Si cae en la 10
+            x = 35;
+            rojo.setBounds(x, y, 35, 57);
+
+        }
+        if (player >= 12 && player <= 19) { //Si cae en la 12 a 19
+            y = y - (55 * dado);
+            rojo.setBounds(x, y, 35, 57);
+        }
+        if (player == 20) { //Si cae en la 20
+            x = 35;
+            y = 40;
+            rojo.setBounds(x, y, 35, 57);
+        }
+        if (player >= 22 && player <= 29) { //Si cae de la 22 a la 29
+            x = x + (55 * dado);
+            rojo.setBounds(x, y, 35, 57);
+        }
+        if (player == 30) {
+            x = 585;
+            y = 40;
+            rojo.setBounds(x, y, 35, 57);
+        }
+        if (player >= 32 && player <= 39) { //Si cae de la 32 a la 39
+            y = y + (55 * dado);
+            rojo.setBounds(x, y, 35, 57);
+        }
+        if (player == 40) {
+            player = 0;
+            x = 585;
+            y = 603;
+            rojo.setBounds(x, y, 35, 57);
+            JOptionPane.showMessageDialog(null, "Gana 200");
+        }*/
+
+
+    }//GEN-LAST:event_dadoBtnActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Interfaz().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel amarilla;
+    private javax.swing.JButton dadoBtn;
+    private javax.swing.JLabel jLabel_wallpaper;
+    private javax.swing.JLabel rojo;
+    // End of variables declaration//GEN-END:variables
+    public void a (){
+        System.out.println("a");
+    }
+    public void dados(int dado1, int dado2) {
+        ImageIcon icono = null;
+
         switch (dado1) { // ver las combinaciones 
             case 1:
                 switch (dado2) {
@@ -217,9 +371,10 @@ public class Interfaz extends javax.swing.JFrame {
                 }
                 break;
         }
-        
         JOptionPane.showMessageDialog(null, "", "DADOS", JOptionPane.PLAIN_MESSAGE, icono);
-          //MOVIMIENTO DE UNA FICHA
+    }
+    public void mover (int dado){
+           //MOVIMIENTO DE UNA FICHA
         if ((player + dado >= 11 && player < 19) && player <= 10) { //para cuando dé la primera vuelta
             if (player + dado != 11) {
                 do {
@@ -312,58 +467,5 @@ public class Interfaz extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gana 200");
         }
 
-
-    }//GEN-LAST:event_dadoBtnActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Interfaz().setVisible(true);
-            }
-        });
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel amarilla;
-    private javax.swing.JButton dadoBtn;
-    private javax.swing.JLabel jLabel_wallpaper;
-    private javax.swing.JLabel rojo;
-    // End of variables declaration//GEN-END:variables
-    public void a (){
-        System.out.println("a");
     }
 }
