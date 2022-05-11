@@ -14,9 +14,9 @@ import java.util.Random;
  * @author Darwin
  */
 public class Cofre {
-
+    
     class Carta {
-
+        
         int num;
         String info;
         Carta next;
