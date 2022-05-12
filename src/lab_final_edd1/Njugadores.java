@@ -111,9 +111,11 @@ public class Njugadores extends javax.swing.JFrame {
     }//GEN-LAST:event_homeActionPerformed
 
     private void dosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dosActionPerformed
+        Variables.njugadores = 2;
         DosJugadores d = new DosJugadores();
         d.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_dosActionPerformed
 
     private void dosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dosMouseClicked
@@ -121,12 +123,14 @@ public class Njugadores extends javax.swing.JFrame {
     }//GEN-LAST:event_dosMouseClicked
 
     private void tresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tresActionPerformed
+        Variables.njugadores = 3;
         TresJugadores m = new TresJugadores();
         m.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_tresActionPerformed
 
     private void cuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuatroActionPerformed
+        Variables.njugadores = 4;
         CuatroJugadores m = new CuatroJugadores();
         m.setVisible(true);
         this.setVisible(false);

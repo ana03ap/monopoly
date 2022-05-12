@@ -9,6 +9,7 @@ import java.awt.Image;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,13 +19,26 @@ import javax.swing.JOptionPane;
 public class Interfaz extends javax.swing.JFrame {
 
     int cont = 0, player = 0; //player luego hay que hacerlo un objeto 
-    int x = 585, y = 603;
+    
+    int turno = 1;
 
     /**
      * Creates new form Interfaz
      */
     public Interfaz() {
         initComponents();
+        Variables.njugadores = 2;
+        //Hacer fichas visibles dependiendo la cantidad de jugadores
+        switch (Variables.njugadores) {
+            case 2:
+                azul.setVisible(false);
+                verde.setVisible(false);
+                break;
+            case 3:
+                azul.setVisible(false);
+                break;
+
+        }
         setSize(1366, 700);
         ImageIcon wallpaper = new ImageIcon("src/Data1/monopolio.png");
         Icon icono = new ImageIcon(wallpaper.getImage().getScaledInstance(jLabel_wallpaper.getWidth(), jLabel_wallpaper.getHeight(), Image.SCALE_DEFAULT));
@@ -53,6 +67,8 @@ public class Interfaz extends javax.swing.JFrame {
         dadoBtn = new javax.swing.JButton();
         rojo = new javax.swing.JLabel();
         amarilla = new javax.swing.JLabel();
+        azul = new javax.swing.JLabel();
+        verde = new javax.swing.JLabel();
         jLabel_wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,6 +87,12 @@ public class Interfaz extends javax.swing.JFrame {
         amarilla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/amarillo.png"))); // NOI18N
         getContentPane().add(amarilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, 50, 80));
 
+        azul.setText("hola");
+        getContentPane().add(azul, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, -1, -1));
+
+        verde.setText("hola2");
+        getContentPane().add(verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 610, -1, -1));
+
         jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopolio.png"))); // NOI18N
         getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 680));
 
@@ -79,15 +101,45 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void dadoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoBtnActionPerformed
         // TODO add your handling code here:
+
+        int dado1;
+        int dado2;//dado2
+        int dado;
         
-        int dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-        int dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-        int dado = dado1 + dado2;
-        dados (dado1, dado2);
+        switch (turno) {
+            case 1:
+                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                dado = dado1 + dado2;
+                dados(dado1, dado2);
+                mover(dado1 +dado2, Variables.jugador1.posicion, rojo, Variables.jugador1.x, Variables.jugador1.y);
+                System.out.println("En x: "+Variables.jugador1.x);
+                System.out.println("En y: "+Variables.jugador1.y);
+                System.out.println(Variables.jugador1.posicion);
+                break;
+            case 2:
+
+                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                dado = dado1 + dado2;
+                dados(dado1, dado2);
+                mover(dado1+dado2, Variables.jugador2.posicion, amarilla,Variables.jugador2.x, Variables.jugador2.y);
+                System.out.println("En x: "+Variables.jugador2.x);
+                System.out.println("En y: "+Variables.jugador2.y);
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
+        turno++;
+        if (turno == Variables.njugadores + 1) {
+            turno = 1;
+        }
+
         
-        mover(dado);
         
-          //MOVIMIENTO DE UNA FICHA
+        //MOVIMIENTO DE UNA FICHA
         /*if ((player + dado >= 11 && player < 19) && player <= 10) { //para cuando dé la primera vuelta
             if (player + dado != 11) {
                 do {
@@ -180,7 +232,6 @@ public class Interfaz extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gana 200");
         }*/
 
-
     }//GEN-LAST:event_dadoBtnActionPerformed
 
     /**
@@ -225,12 +276,14 @@ public class Interfaz extends javax.swing.JFrame {
         });
     }
 
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel amarilla;
+    private javax.swing.JLabel azul;
     private javax.swing.JButton dadoBtn;
     private javax.swing.JLabel jLabel_wallpaper;
     private javax.swing.JLabel rojo;
+    private javax.swing.JLabel verde;
     // End of variables declaration//GEN-END:variables
 
     // metodo para los dados 
@@ -373,9 +426,10 @@ public class Interfaz extends javax.swing.JFrame {
         }
         JOptionPane.showMessageDialog(null, "", "DADOS", JOptionPane.PLAIN_MESSAGE, icono);
     }
+
     // metodo para mover el jugador, error con player 
-    public void mover (int dado){
-           //MOVIMIENTO DE UNA FICHA
+    public void mover(int dado, int player, JLabel rojo, int x, int y) {
+        //MOVIMIENTO DE UNA FICHA
         if ((player + dado >= 11 && player < 19) && player <= 10) { //para cuando dé la primera vuelta
             if (player + dado != 11) {
                 do {
@@ -468,5 +522,8 @@ public class Interfaz extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gana 200");
         }
 
+    }
+    public void prueba (Jugadores a){
+        a.dinero = 400;
     }
 }
