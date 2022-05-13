@@ -18,8 +18,8 @@ import javax.swing.JOptionPane;
  */
 public class Interfaz extends javax.swing.JFrame {
 
-    int cont = 0, player = 0; //player luego hay que hacerlo un objeto 
-    
+    int cont = 0;
+
     int turno = 1;
 
     /**
@@ -27,7 +27,6 @@ public class Interfaz extends javax.swing.JFrame {
      */
     public Interfaz() {
         initComponents();
-        Variables.njugadores = 2;
         //Hacer fichas visibles dependiendo la cantidad de jugadores
         switch (Variables.njugadores) {
             case 2:
@@ -87,10 +86,10 @@ public class Interfaz extends javax.swing.JFrame {
         amarilla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/amarillo.png"))); // NOI18N
         getContentPane().add(amarilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, 50, 80));
 
-        azul.setText("hola");
+        azul.setText("Azul");
         getContentPane().add(azul, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, -1, -1));
 
-        verde.setText("hola2");
+        verde.setText("Verde");
         getContentPane().add(verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 610, -1, -1));
 
         jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopolio.png"))); // NOI18N
@@ -100,138 +99,43 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void dadoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoBtnActionPerformed
-        // TODO add your handling code here:
-
         int dado1;
         int dado2;//dado2
         int dado;
-        
         switch (turno) {
             case 1:
                 dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
                 dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
                 dado = dado1 + dado2;
                 dados(dado1, dado2);
-                mover(dado1 +dado2, Variables.jugador1.posicion, rojo, Variables.jugador1.x, Variables.jugador1.y);
-                System.out.println("En x: "+Variables.jugador1.x);
-                System.out.println("En y: "+Variables.jugador1.y);
-                System.out.println(Variables.jugador1.posicion);
+                mover(dado, rojo, Variables.jugador1);
                 break;
             case 2:
-
                 dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
                 dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
                 dado = dado1 + dado2;
                 dados(dado1, dado2);
-                mover(dado1+dado2, Variables.jugador2.posicion, amarilla,Variables.jugador2.x, Variables.jugador2.y);
-                System.out.println("En x: "+Variables.jugador2.x);
-                System.out.println("En y: "+Variables.jugador2.y);
+                mover(dado, amarilla, Variables.jugador2);
                 break;
             case 3:
+                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                dado = dado1 + dado2;
+                dados(dado1, dado2);
+                mover(dado, verde, Variables.jugador3);
                 break;
             case 4:
+                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                dado = dado1 + dado2;
+                dados(dado1, dado2);
+                mover(dado, azul, Variables.jugador4);
                 break;
         }
         turno++;
         if (turno == Variables.njugadores + 1) {
             turno = 1;
         }
-
-        
-        
-        //MOVIMIENTO DE UNA FICHA
-        /*if ((player + dado >= 11 && player < 19) && player <= 10) { //para cuando dé la primera vuelta
-            if (player + dado != 11) {
-                do {
-                    player++;
-                    dado--;
-                } while (player != 11);
-            }
-            //Si casualmente cae en 11 ya se situe acá
-            x = 35;
-            y = 540;
-            rojo.setBounds(x, y, 35, 57);
-        }
-        if ((player + dado >= 21 && player < 29) && (player <= 19 && player > 10)) { //Para cuando de la primer vuelta
-            if (player + dado != 21) {
-                do {
-                    player++;
-                    dado--;
-
-                } while (player != 21);
-            }
-            //Si casualmente cae en 21 ya se situe acá
-            x = 90;
-            y = 40;
-            rojo.setBounds(x, y, 35, 57);
-        }
-        if ((player + dado >= 31 && player < 39) && (player <= 29 && player > 20)) {
-            if (player + dado != 31) {
-                do {
-                    player++;
-                    dado--;
-                } while (player != 31);
-            }
-            x = 585;
-            y = 95;
-            rojo.setBounds(x, y, 35, 57);
-        }
-        if ((player + dado >= 41) && (player <= 39 && player > 30)) {
-            if (player + dado != 41) {
-                do {
-                    player++;
-                    dado--;
-                } while (player != 41);
-
-            }
-            player = 1;
-            x = 585 - 55;
-            y = 603;
-            rojo.setBounds(x, y, 35, 57);
-            JOptionPane.showMessageDialog(null, "Gana 200");
-        }
-
-        player = player + dado; //Ya suma la pos del jugador con el dado
-        if (player >= 0 && player <= 9) { //Si cae entre la a la 9
-            x = x - (55 * dado);//mover x 55 pixeles
-            rojo.setBounds(x, y, 35, 57);
-
-        }
-        if (player == 10) { // Si cae en la 10
-            x = 35;
-            rojo.setBounds(x, y, 35, 57);
-
-        }
-        if (player >= 12 && player <= 19) { //Si cae en la 12 a 19
-            y = y - (55 * dado);
-            rojo.setBounds(x, y, 35, 57);
-        }
-        if (player == 20) { //Si cae en la 20
-            x = 35;
-            y = 40;
-            rojo.setBounds(x, y, 35, 57);
-        }
-        if (player >= 22 && player <= 29) { //Si cae de la 22 a la 29
-            x = x + (55 * dado);
-            rojo.setBounds(x, y, 35, 57);
-        }
-        if (player == 30) {
-            x = 585;
-            y = 40;
-            rojo.setBounds(x, y, 35, 57);
-        }
-        if (player >= 32 && player <= 39) { //Si cae de la 32 a la 39
-            y = y + (55 * dado);
-            rojo.setBounds(x, y, 35, 57);
-        }
-        if (player == 40) {
-            player = 0;
-            x = 585;
-            y = 603;
-            rojo.setBounds(x, y, 35, 57);
-            JOptionPane.showMessageDialog(null, "Gana 200");
-        }*/
-
     }//GEN-LAST:event_dadoBtnActionPerformed
 
     /**
@@ -428,102 +332,100 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // metodo para mover el jugador, error con player 
-    public void mover(int dado, int player, JLabel rojo, int x, int y) {
+    public void mover(int dado, JLabel rojo, Jugadores a) {
         //MOVIMIENTO DE UNA FICHA
-        if ((player + dado >= 11 && player < 19) && player <= 10) { //para cuando dé la primera vuelta
-            if (player + dado != 11) {
+        if ((a.posicion + dado >= 11 && a.posicion < 19) && a.posicion <= 10) { //para cuando dé la primera vuelta
+            if (a.posicion + dado != 11) {
                 do {
-                    player++;
+                    a.posicion++;
                     dado--;
-                } while (player != 11);
+                } while (a.posicion != 11);
             }
             //Si casualmente cae en 11 ya se situe acá
-            x = 35;
-            y = 540;
-            rojo.setBounds(x, y, 35, 57);
+            a.x = 35;
+            a.y = 540;
+            rojo.setBounds(a.x, a.y, 35, 57);
         }
-        if ((player + dado >= 21 && player < 29) && (player <= 19 && player > 10)) { //Para cuando de la primer vuelta
-            if (player + dado != 21) {
+        if ((a.posicion + dado >= 21 && a.posicion < 29) && (a.posicion <= 19 && a.posicion > 10)) { //Para cuando de la primer vuelta
+            if (a.posicion + dado != 21) {
                 do {
-                    player++;
+                    a.posicion++;
                     dado--;
 
-                } while (player != 21);
+                } while (a.posicion != 21);
             }
             //Si casualmente cae en 21 ya se situe acá
-            x = 90;
-            y = 40;
-            rojo.setBounds(x, y, 35, 57);
+            a.x = 90;
+            a.y = 40;
+            rojo.setBounds(a.x, a.y, 35, 57);
         }
-        if ((player + dado >= 31 && player < 39) && (player <= 29 && player > 20)) {
-            if (player + dado != 31) {
+        if ((a.posicion + dado >= 31 && a.posicion < 39) && (a.posicion <= 29 && a.posicion > 20)) {
+            if (a.posicion + dado != 31) {
                 do {
-                    player++;
+                    a.posicion++;
                     dado--;
-                } while (player != 31);
+                } while (a.posicion != 31);
             }
-            x = 585;
-            y = 95;
-            rojo.setBounds(x, y, 35, 57);
+            a.x = 585;
+            a.y = 95;
+            rojo.setBounds(a.x, a.y, 35, 57);
         }
-        if ((player + dado >= 41) && (player <= 39 && player > 30)) {
-            if (player + dado != 41) {
+        if ((a.posicion + dado >= 41) && (a.posicion <= 39 && a.posicion > 30)) {
+            if (a.posicion + dado != 41) {
                 do {
-                    player++;
+                    a.posicion++;
                     dado--;
-                } while (player != 41);
+                } while (a.posicion != 41);
 
             }
-            player = 1;
-            x = 585 - 55;
-            y = 603;
-            rojo.setBounds(x, y, 35, 57);
+            a.posicion = 1;
+            a.x = 585 - 55;
+            a.y = 603;
+            rojo.setBounds(a.x, a.y, 35, 57);
             JOptionPane.showMessageDialog(null, "Gana 200");
         }
 
-        player = player + dado; //Ya suma la pos del jugador con el dado
-        if (player >= 0 && player <= 9) { //Si cae entre la a la 9
-            x = x - (55 * dado);//mover x 55 pixeles
-            rojo.setBounds(x, y, 35, 57);
+        a.posicion = a.posicion + dado; //Ya suma la pos del jugador con el dado
+        if (a.posicion >= 0 && a.posicion <= 9) { //Si cae entre la a la 9
+            a.x = a.x - (55 * dado);//mover x 55 pixeles
+            rojo.setBounds(a.x, a.y, 35, 57);
 
         }
-        if (player == 10) { // Si cae en la 10
-            x = 35;
-            rojo.setBounds(x, y, 35, 57);
+        if (a.posicion == 10) { // Si cae en la 10
+            a.x = 35;
+            rojo.setBounds(a.x, a.y, 35, 57);
 
         }
-        if (player >= 12 && player <= 19) { //Si cae en la 12 a 19
-            y = y - (55 * dado);
-            rojo.setBounds(x, y, 35, 57);
+        if (a.posicion >= 12 && a.posicion <= 19) { //Si cae en la 12 a 19
+            a.y = a.y - (55 * dado);
+            rojo.setBounds(a.x, a.y, 35, 57);
         }
-        if (player == 20) { //Si cae en la 20
-            x = 35;
-            y = 40;
-            rojo.setBounds(x, y, 35, 57);
+        if (a.posicion == 20) { //Si cae en la 20
+            a.x = 35;
+            a.y = 40;
+            rojo.setBounds(a.x, a.y, 35, 57);
         }
-        if (player >= 22 && player <= 29) { //Si cae de la 22 a la 29
-            x = x + (55 * dado);
-            rojo.setBounds(x, y, 35, 57);
+        if (a.posicion >= 22 && a.posicion <= 29) { //Si cae de la 22 a la 29
+            a.x = a.x + (55 * dado);
+            rojo.setBounds(a.x, a.y, 35, 57);
         }
-        if (player == 30) {
-            x = 585;
-            y = 40;
-            rojo.setBounds(x, y, 35, 57);
+        if (a.posicion == 30) {
+            a.x = 585;
+            a.y = 40;
+            rojo.setBounds(a.x, a.y, 35, 57);
         }
-        if (player >= 32 && player <= 39) { //Si cae de la 32 a la 39
-            y = y + (55 * dado);
-            rojo.setBounds(x, y, 35, 57);
+        if (a.posicion >= 32 && a.posicion <= 39) { //Si cae de la 32 a la 39
+            a.y = a.y + (55 * dado);
+            rojo.setBounds(a.x, a.y, 35, 57);
         }
-        if (player == 40) {
-            player = 0;
-            x = 585;
-            y = 603;
-            rojo.setBounds(x, y, 35, 57);
+        if (a.posicion == 40) {
+            a.posicion = 0;
+            a.x = 585;
+            a.y = 603;
+            rojo.setBounds(a.x, a.y, 35, 57);
             JOptionPane.showMessageDialog(null, "Gana 200");
         }
 
     }
-    public void prueba (Jugadores a){
-        a.dinero = 400;
-    }
+
 }

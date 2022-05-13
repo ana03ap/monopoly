@@ -76,7 +76,10 @@ public class DosJugadores extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void playMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playMouseClicked
-
+        //new JugarMayor().setVisible(true); habilitar despues
+        //Cambiar lo sig por habilitar despues
+        new Interfaz().setVisible(true);
+        this.dispose();
         /*Interfaz c = new Interfaz();
         c.setVisible(true);
         this.setVisible(false); 

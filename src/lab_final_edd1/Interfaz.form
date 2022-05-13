@@ -61,7 +61,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="azul">
       <Properties>
-        <Property name="text" type="java.lang.String" value="hola"/>
+        <Property name="text" type="java.lang.String" value="Azul"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -71,7 +71,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="verde">
       <Properties>
-        <Property name="text" type="java.lang.String" value="hola2"/>
+        <Property name="text" type="java.lang.String" value="Verde"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
