@@ -5,53 +5,23 @@
  */
 package lab_final_edd1;
 
-import java.awt.Image;
-
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Darwin
  */
-public class Interfaz extends javax.swing.JFrame {
-
-    int cont = 0;
+public class JugarMayor extends javax.swing.JFrame {
 
     int turno = 1;
 
     /**
-     * Creates new form Interfaz
+     * Creates new form JugarMayor
      */
-    public Interfaz() {
+    public JugarMayor() {
         initComponents();
-        //Hacer fichas visibles dependiendo la cantidad de jugadores
-        switch (Variables.njugadores) {
-            case 2:
-                azul.setVisible(false);
-                verde.setVisible(false);
-                break;
-            case 3:
-                azul.setVisible(false);
-                break;
-
-        }
-        setSize(1366, 700);
-        ImageIcon wallpaper = new ImageIcon("src/Data1/monopolio.png");
-        Icon icono = new ImageIcon(wallpaper.getImage().getScaledInstance(jLabel_wallpaper.getWidth(), jLabel_wallpaper.getHeight(), Image.SCALE_DEFAULT));
-        jLabel_wallpaper.setIcon(icono);
-        this.repaint();
-        transparenciaButton();
-
-    }
-
-    @SuppressWarnings("unchecked")
-    public void transparenciaButton() {
-        dadoBtn.setOpaque(false);
-        dadoBtn.setContentAreaFilled(false);
-        dadoBtn.setBorderPainted(false);
+        jLabel1.setVisible(false);
     }
 
     /**
@@ -63,80 +33,101 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dadoBtn = new javax.swing.JButton();
-        rojo = new javax.swing.JLabel();
-        amarilla = new javax.swing.JLabel();
-        azul = new javax.swing.JLabel();
-        verde = new javax.swing.JLabel();
-        jLabel_wallpaper = new javax.swing.JLabel();
+        Titulo = new javax.swing.JLabel();
+        dadosbtn = new javax.swing.JButton();
+        LabelJ1 = new javax.swing.JLabel();
+        LabelJ2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        dadoBtn.addActionListener(new java.awt.event.ActionListener() {
+        Titulo.setText("Turno del jugador 1");
+
+        dadosbtn.setText("Tirar dados");
+        dadosbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dadoBtnActionPerformed(evt);
+                dadosbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(dadoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 310, 70));
 
-        rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/rojo.png"))); // NOI18N
-        getContentPane().add(rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 580, 60, 80));
+        LabelJ1.setText("Jugador 1: 0");
 
-        amarilla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/amarillo.png"))); // NOI18N
-        getContentPane().add(amarilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, 50, 80));
+        LabelJ2.setText("Jugador 2: 0");
 
-        azul.setText("Azul");
-        getContentPane().add(azul, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, -1, -1));
+        jLabel1.setText("jLabel1");
 
-        verde.setText("Verde");
-        getContentPane().add(verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 610, -1, -1));
-
-        jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopolio.png"))); // NOI18N
-        getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 680));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelJ2)
+                            .addComponent(LabelJ1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(dadosbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LabelJ1)
+                .addGap(18, 18, 18)
+                .addComponent(LabelJ2)
+                .addGap(52, 52, 52)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(dadosbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void dadoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoBtnActionPerformed
-        int dado1;
-        int dado2;//dado2
-        int dado;
+    private void dadosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadosbtnActionPerformed
+        // TODO add your handling code here:
+        jLabel1.setVisible(true);
+        int dadoJ1=0, dadoJ2=0;
+        int dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+        int dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+        int dado = dado1 + dado2;
+        dados(dado1, dado2);
         switch (turno) {
             case 1:
-                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-                dado = dado1 + dado2;
-                dados(dado1, dado2);
-                mover(dado, rojo, Variables.jugador1);
+                dadoJ1 = dado;
+                LabelJ1.setText("Jugador 1: "+dado);
+                Titulo.setText("Turno del jugador 2");
                 break;
             case 2:
-                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-                dado = dado1 + dado2;
-                dados(dado1, dado2);
-                mover(dado, amarilla, Variables.jugador2);
+                dadoJ2 = dado;
+                LabelJ2.setText("Jugador 2: "+dado);
                 break;
-            case 3:
-                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-                dado = dado1 + dado2;
-                dados(dado1, dado2);
-                mover(dado, verde, Variables.jugador3);
-                break;
-            case 4:
-                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-                dado = dado1 + dado2;
-                dados(dado1, dado2);
-                mover(dado, azul, Variables.jugador4);
-                break;
+                
         }
-        turno++;
-        if (turno == Variables.njugadores + 1) {
-            turno = 1;
+        turno ++;
+        //Hacer validación si son iguales
+        if(turno == 3){
+            if(dadoJ1>dadoJ2){
+                Variables.jugador1.turno = 1;
+            }else{
+                Variables.jugador2.turno = 2;
+            }
+            this.dispose();
         }
-    }//GEN-LAST:event_dadoBtnActionPerformed
+
+    }//GEN-LAST:event_dadosbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,42 +146,31 @@ public class Interfaz extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JugarMayor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JugarMayor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JugarMayor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JugarMayor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Interfaz().setVisible(true);
+                new JugarMayor().setVisible(true);
             }
         });
     }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel amarilla;
-    private javax.swing.JLabel azul;
-    private javax.swing.JButton dadoBtn;
-    private javax.swing.JLabel jLabel_wallpaper;
-    private javax.swing.JLabel rojo;
-    private javax.swing.JLabel verde;
+    private javax.swing.JLabel LabelJ1;
+    private javax.swing.JLabel LabelJ2;
+    private javax.swing.JLabel Titulo;
+    private javax.swing.JButton dadosbtn;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-
-    // metodo para los dados 
     public void dados(int dado1, int dado2) {
         ImageIcon icono = null;
 
@@ -330,102 +310,5 @@ public class Interfaz extends javax.swing.JFrame {
         }
         JOptionPane.showMessageDialog(null, "", "DADOS", JOptionPane.PLAIN_MESSAGE, icono);
     }
-
-    // metodo para mover el jugador, error con player 
-    public void mover(int dado, JLabel rojo, Jugadores a) {
-        //MOVIMIENTO DE UNA FICHA
-        if ((a.posicion + dado >= 11 && a.posicion < 19) && a.posicion <= 10) { //para cuando dé la primera vuelta
-            if (a.posicion + dado != 11) {
-                do {
-                    a.posicion++;
-                    dado--;
-                } while (a.posicion != 11);
-            }
-            //Si casualmente cae en 11 ya se situe acá
-            a.x = 35;
-            a.y = 540;
-            rojo.setBounds(a.x, a.y, 35, 57);
-        }
-        if ((a.posicion + dado >= 21 && a.posicion < 29) && (a.posicion <= 19 && a.posicion > 10)) { //Para cuando de la primer vuelta
-            if (a.posicion + dado != 21) {
-                do {
-                    a.posicion++;
-                    dado--;
-
-                } while (a.posicion != 21);
-            }
-            //Si casualmente cae en 21 ya se situe acá
-            a.x = 90;
-            a.y = 40;
-            rojo.setBounds(a.x, a.y, 35, 57);
-        }
-        if ((a.posicion + dado >= 31 && a.posicion < 39) && (a.posicion <= 29 && a.posicion > 20)) {
-            if (a.posicion + dado != 31) {
-                do {
-                    a.posicion++;
-                    dado--;
-                } while (a.posicion != 31);
-            }
-            a.x = 585;
-            a.y = 95;
-            rojo.setBounds(a.x, a.y, 35, 57);
-        }
-        if ((a.posicion + dado >= 41) && (a.posicion <= 39 && a.posicion > 30)) {
-            if (a.posicion + dado != 41) {
-                do {
-                    a.posicion++;
-                    dado--;
-                } while (a.posicion != 41);
-
-            }
-            a.posicion = 1;
-            a.x = 585 - 55;
-            a.y = 603;
-            rojo.setBounds(a.x, a.y, 35, 57);
-            JOptionPane.showMessageDialog(null, "Gana 200");
-        }
-
-        a.posicion = a.posicion + dado; //Ya suma la pos del jugador con el dado
-        if (a.posicion >= 0 && a.posicion <= 9) { //Si cae entre la a la 9
-            a.x = a.x - (55 * dado);//mover x 55 pixeles
-            rojo.setBounds(a.x, a.y, 35, 57);
-
-        }
-        if (a.posicion == 10) { // Si cae en la 10
-            a.x = 35;
-            rojo.setBounds(a.x, a.y, 35, 57);
-
-        }
-        if (a.posicion >= 12 && a.posicion <= 19) { //Si cae en la 12 a 19
-            a.y = a.y - (55 * dado);
-            rojo.setBounds(a.x, a.y, 35, 57);
-        }
-        if (a.posicion == 20) { //Si cae en la 20
-            a.x = 35;
-            a.y = 40;
-            rojo.setBounds(a.x, a.y, 35, 57);
-        }
-        if (a.posicion >= 22 && a.posicion <= 29) { //Si cae de la 22 a la 29
-            a.x = a.x + (55 * dado);
-            rojo.setBounds(a.x, a.y, 35, 57);
-        }
-        if (a.posicion == 30) {
-            a.x = 585;
-            a.y = 40;
-            rojo.setBounds(a.x, a.y, 35, 57);
-        }
-        if (a.posicion >= 32 && a.posicion <= 39) { //Si cae de la 32 a la 39
-            a.y = a.y + (55 * dado);
-            rojo.setBounds(a.x, a.y, 35, 57);
-        }
-        if (a.posicion == 40) {
-            a.posicion = 0;
-            a.x = 585;
-            a.y = 603;
-            rojo.setBounds(a.x, a.y, 35, 57);
-            JOptionPane.showMessageDialog(null, "Gana 200");
-        }
-
-    }
-
+    
 }

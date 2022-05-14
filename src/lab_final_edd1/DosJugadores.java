@@ -76,10 +76,13 @@ public class DosJugadores extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void playMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playMouseClicked
-
+        //new JugarMayor().setVisible(true); habilitar despues
+        //Cambiar lo sig por habilitar despues
+        new Interfaz().setVisible(true);
+        this.dispose();
         /*Interfaz c = new Interfaz();
         c.setVisible(true);
-        this.setVisible(false); */
+        this.setVisible(false); 
         int ventana = JOptionPane.showOptionDialog(null, "Tira los dados", "Dados", JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Tira los dados"}, "opcion 1");
         if (ventana == 0) {
@@ -92,13 +95,13 @@ public class DosJugadores extends javax.swing.JFrame {
             dados[5] = "/Dados/6.png";
 
             int valorEntero = (int) ((Math.random()) * 60 / 10) + 1;
-            // int valorEntero2 = (int) Math.floor(Math.random() * (6 - 1 + 1) + 1);
-            // Icon icono = new ImageIcon(getClass().getResource(dados[valorEntero-1]));
+             int valorEntero2 = (int) Math.floor(Math.random() * (6 - 1 + 1) + 1);
+             Icon icono = new ImageIcon(getClass().getResource(dados[valorEntero-1]));
 
-            //  Icon icono2 = new ImageIcon(getClass().getResource(dados [valorEntero2]));
-            //JOptionPane.showMessageDialog(rootPane,"", "!!!", JOptionPane.PLAIN_MESSAGE, icono);
+              Icon icono2 = new ImageIcon(getClass().getResource(dados [valorEntero2]));
+            JOptionPane.showMessageDialog(rootPane,"", "!!!", JOptionPane.PLAIN_MESSAGE, icono);*/
             
-        }
+        //}
 
 
     }//GEN-LAST:event_playMouseClicked
