@@ -104,13 +104,13 @@ public class Interfaz extends javax.swing.JFrame {
         int dado;
         switch (turno) {
             case 1:
-<<<<<<< HEAD
+
                 dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
                 dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2 
                 dado = dado1 + dado2;
                 dados(dado1, dado2);
                 mover(dado, rojo, Variables.jugador1);
-=======
+
                 if (Variables.jugador1.turno == 1) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
                     dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
@@ -140,7 +140,6 @@ public class Interfaz extends javax.swing.JFrame {
                     mover(dado, azul, Variables.jugador4);
                 }
 
->>>>>>> 0d5b0e506d72fb2446a75453ec31edaa98eb4c83
                 break;
             case 2:
                 if (Variables.jugador1.turno == 2) {
