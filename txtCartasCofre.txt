@@ -1,16 +1,15 @@
 1,SALGA DE LA CÁRCEL GRATIS
-2,Váyase a la CÁRCEL. No pase por la SALIDA, no cobra $200
-3,Avance a la SALIDA, cobre $200
-4,Error bancario a su favor. Cobre $200
-5,Honorarios médicos, pague $50
-6,Vencimiento de fondo vacacional, reciba $100
-7,Vencimiento de seguro de vida. Cobre $100
-8,Pague colegiaturas por $50
-9,Devolución de impuestos. Cobre $20
-10,Reciba $25 por consultoría
-11,Pague cuenta de hospital por $100
-12,Es su cumpleaños. Cobre $10 a cada jugador
-13,Herede $100
-14,Por venta de acciones reciba $50
-15,Ganó el segundo lugar en un concurso de belleza, cobre $10
-16,Por reparación vial le cobran: $40 por casa, $115 por hotel
+2,Váyase pa’ la cárcel por mamerto. No pase por la SALIDA;, no cobra $200,200
+3,Amiga, avance a la salida; cobre $200,200
+4,Abudinee un poquito de plata. Cobre $200,200
+5,Te dejamos morir pero te toca pagar; pague $50,50
+6,Reforma tributaria? ¡eso si, jámaasss!; reciba $100,100
+7,Fuiste elegidx para ser un falso positivo. Cobre $100,100
+8,Paga el icetex por $50,50
+9,Evadiste a la DIAN. Cobre $20,20
+10,Te ganaste el baloto. SIN PALABRAS…; reciba 25,25
+11,Te toca poner pa’ la botella $100,100
+12,Dio(s)medes te felicita por tu cumpleaños,10
+13,Recibiste coimas de Sarmiento Ángulo,100
+14,Por la venta de votos reciba $50 y una hallaca,50
+15,Si vio mor? Mero lindo,10
