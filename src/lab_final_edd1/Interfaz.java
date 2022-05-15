@@ -38,7 +38,7 @@ public class Interfaz extends javax.swing.JFrame {
                 break;
 
         }
-        setSize(1366, 700);
+        setSize(1366, 720);
         ImageIcon wallpaper = new ImageIcon("src/Data1/monopolio.png");
         Icon icono = new ImageIcon(wallpaper.getImage().getScaledInstance(jLabel_wallpaper.getWidth(), jLabel_wallpaper.getHeight(), Image.SCALE_DEFAULT));
         jLabel_wallpaper.setIcon(icono);
@@ -78,7 +78,7 @@ public class Interfaz extends javax.swing.JFrame {
                 dadoBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(dadoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 310, 70));
+        getContentPane().add(dadoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 50, 310, 70));
 
         rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/rojo.png"))); // NOI18N
         getContentPane().add(rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 580, 60, 80));
@@ -93,7 +93,7 @@ public class Interfaz extends javax.swing.JFrame {
         getContentPane().add(verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 610, -1, -1));
 
         jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopolio.png"))); // NOI18N
-        getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 680));
+        getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1366, 680));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -104,32 +104,125 @@ public class Interfaz extends javax.swing.JFrame {
         int dado;
         switch (turno) {
             case 1:
-                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-                dado = dado1 + dado2;
-                dados(dado1, dado2);
-                mover(dado, rojo, Variables.jugador1);
+                if (Variables.jugador1.turno == 1) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, rojo, Variables.jugador1);
+                }
+                if (Variables.jugador2.turno == 1) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, amarilla, Variables.jugador2);
+                }
+                if (Variables.jugador3.turno == 1) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, verde, Variables.jugador3);
+                }
+                if (Variables.jugador4.turno == 1) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, azul, Variables.jugador4);
+                }
+
                 break;
             case 2:
-                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-                dado = dado1 + dado2;
-                dados(dado1, dado2);
-                mover(dado, amarilla, Variables.jugador2);
+                if (Variables.jugador1.turno == 2) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, rojo, Variables.jugador1);
+                }
+                if (Variables.jugador2.turno == 2) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, amarilla, Variables.jugador2);
+                }
+                if (Variables.jugador3.turno == 2) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, verde, Variables.jugador3);
+                }
+                if (Variables.jugador4.turno == 2) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, azul, Variables.jugador4);
+                }
                 break;
             case 3:
-                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-                dado = dado1 + dado2;
-                dados(dado1, dado2);
-                mover(dado, verde, Variables.jugador3);
+                if (Variables.jugador1.turno == 3) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, rojo, Variables.jugador1);
+                }
+                if (Variables.jugador2.turno == 3) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, amarilla, Variables.jugador2);
+                }
+                if (Variables.jugador3.turno == 3) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, verde, Variables.jugador3);
+                }
+                if (Variables.jugador4.turno == 3) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, azul, Variables.jugador4);
+                }
                 break;
             case 4:
-                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-                dado = dado1 + dado2;
-                dados(dado1, dado2);
-                mover(dado, azul, Variables.jugador4);
+                if (Variables.jugador1.turno == 4) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, rojo, Variables.jugador1);
+                }
+                if (Variables.jugador2.turno == 4) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, amarilla, Variables.jugador2);
+                }
+                if (Variables.jugador3.turno == 4) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, verde, Variables.jugador3);
+                }
+                if (Variables.jugador4.turno == 4) {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, azul, Variables.jugador4);
+                }
                 break;
         }
         turno++;
