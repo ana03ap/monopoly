@@ -5,6 +5,10 @@
  */
 package lab_final_edd1;
 
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -13,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author Darwin
  */
 public class JugarMayor extends javax.swing.JFrame {
-
+   
     int turno = 1;
 
     /**
@@ -21,7 +25,16 @@ public class JugarMayor extends javax.swing.JFrame {
      */
     public JugarMayor() {
         initComponents();
-        jLabel1.setVisible(false);
+        Variables.njugadores = 3;
+        switch (Variables.njugadores) {
+            case 2:
+                jLabelJ3.setVisible(false);
+                jLabelJ4.setVisible(false);
+                break;
+            case 3:
+                jLabelJ4.setVisible(false);
+                break;
+        }
     }
 
     /**
@@ -37,11 +50,12 @@ public class JugarMayor extends javax.swing.JFrame {
         dadosbtn = new javax.swing.JButton();
         LabelJ1 = new javax.swing.JLabel();
         LabelJ2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelJ3 = new javax.swing.JLabel();
+        jLabelJ4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Titulo.setText("Turno del jugador 1");
+        Titulo.setText("Turno del jugador Rojo");
 
         dadosbtn.setText("Tirar dados");
         dadosbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -50,11 +64,14 @@ public class JugarMayor extends javax.swing.JFrame {
             }
         });
 
-        LabelJ1.setText("Jugador 1: 0");
+        LabelJ1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        LabelJ1.setText("Jugador Rojo: 0");
 
-        LabelJ2.setText("Jugador 2: 0");
+        LabelJ2.setText("Jugador Amarillo: 0");
 
-        jLabel1.setText("jLabel1");
+        jLabelJ3.setText("Jugador Verde: 0");
+
+        jLabelJ4.setText("Jugador Azul: 0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,12 +86,12 @@ public class JugarMayor extends javax.swing.JFrame {
                         .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LabelJ2)
-                            .addComponent(LabelJ1)))
+                            .addComponent(LabelJ1)
+                            .addComponent(jLabelJ3)
+                            .addComponent(jLabelJ4)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(103, 103, 103)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(dadosbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(dadosbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -86,9 +103,11 @@ public class JugarMayor extends javax.swing.JFrame {
                 .addComponent(LabelJ1)
                 .addGap(18, 18, 18)
                 .addComponent(LabelJ2)
-                .addGap(52, 52, 52)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelJ3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelJ4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addComponent(dadosbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
@@ -98,8 +117,8 @@ public class JugarMayor extends javax.swing.JFrame {
 
     private void dadosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadosbtnActionPerformed
         // TODO add your handling code here:
-        jLabel1.setVisible(true);
-        int dadoJ1=0, dadoJ2=0;
+        jLabelJ3.setVisible(true);
+        int dadoJ1 = 0, dadoJ2 = 0, dadoJ3 = 0, dadoJ4 = 0;
         int dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
         int dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
         int dado = dado1 + dado2;
@@ -107,24 +126,101 @@ public class JugarMayor extends javax.swing.JFrame {
         switch (turno) {
             case 1:
                 dadoJ1 = dado;
-                LabelJ1.setText("Jugador 1: "+dado);
-                Titulo.setText("Turno del jugador 2");
-                break;
-            case 2:
-                dadoJ2 = dado;
-                LabelJ2.setText("Jugador 2: "+dado);
+                LabelJ1.setText("Jugador Rojo: " + dado);
+                Titulo.setText("Turno del jugador Amarillo");
                 break;
                 
+            case 2:
+                dadoJ2 = dado;
+                LabelJ2.setText("Jugador Amarillo: " + dado);
+                Titulo.setText("Turno del jugador Verde");
+                break;
+            case 3:
+                dadoJ3 = dado;
+                jLabelJ3.setText("Jugador Verde: " + dado);
+                Titulo.setText("Turno del jugador Azul");
+                break;
+            case 4:
+                dadoJ4 = dado;
+                jLabelJ4.setText("Jugador Azul: " + dado);
+                break;
         }
-        turno ++;
+        turno++;
+
         //Hacer validación si son iguales
-        if(turno == 3){
-            if(dadoJ1>dadoJ2){
-                Variables.jugador1.turno = 1;
-            }else{
-                Variables.jugador2.turno = 2;
+        if (turno > Variables.njugadores) {
+            JOptionPane.showMessageDialog(null, "Hola", "DADOS", JOptionPane.PLAIN_MESSAGE);
+            switch (Variables.njugadores) {
+                case 2:
+                    if (dadoJ1 > dadoJ2) {
+                        Variables.jugador1.turno = 1;
+                    } else {
+                        Variables.jugador2.turno = 2;
+                    }
+                    this.dispose();
+                    break;
+                case 3:
+                    /*//List<Integer> posiciones = Arrays.asPosiciones(dadoJ1,dadoJ2,dadoJ3);
+                    ArrayList<Integer> posiciones1 = new ArrayList<Integer>();
+                    posiciones1.add(dadoJ1);
+                    System.out.println("dado1: "+ dadoJ1);
+                    posiciones1.add(dadoJ2);
+                    System.out.println(dadoJ2);
+                    posiciones1.add(dadoJ3);
+                    System.out.println(dadoJ3);
+                    Collections.sort(posiciones1);
+                    
+                    for(Integer numero : posiciones1){
+                        System.out.println(numero);
+                    }*/
+                    if(dadoJ1> dadoJ2 && dado1>dadoJ3){
+                        Variables.jugador1.turno = 1;
+                        if(dadoJ2> dadoJ3){
+                            Variables.jugador2.turno = 2;
+                            Variables.jugador3.turno = 3;
+                        }else{
+                            Variables.jugador2.turno = 3;
+                            Variables.jugador3.turno = 2;
+                        }
+                    }
+                    if(dadoJ2>dadoJ1 && dadoJ2>dadoJ3){
+                        Variables.jugador2.turno = 1;
+                        if(dadoJ1>dadoJ3){
+                            Variables.jugador1.turno = 2;
+                            Variables.jugador3.turno = 3;
+                        }else{
+                            Variables.jugador1.turno = 3;
+                            Variables.jugador3.turno = 2;
+                        }
+                    }
+                    if(dadoJ3>dadoJ1 && dadoJ3>dadoJ2){
+                        Variables.jugador3.turno = 1;
+                        if(dadoJ1>dadoJ2){
+                            Variables.jugador1.turno = 2;
+                            Variables.jugador2.turno = 3;
+                        }else{
+                            Variables.jugador1.turno = 3;
+                            Variables.jugador2.turno = 2;
+                        }
+                    }
+                    System.out.println("J1 "+Variables.jugador1.turno);
+                    System.out.println("J2 "+Variables.jugador2.turno);
+                    System.out.println("J3 "+Variables.jugador3.turno);
+                    break;
+                case 4:
+                     ArrayList<Integer> posiciones2 = new ArrayList<Integer>();
+                    posiciones2.add(dadoJ1);
+                    posiciones2.add(dadoJ2);
+                    posiciones2.add(dadoJ3);
+                    posiciones2.add(dadoJ4);
+                    
+                    Collections.sort(posiciones2);
+                    for(Integer numero : posiciones2){
+                        System.out.println(numero);
+                    }
+                    break;
             }
-            this.dispose();
+
         }
 
     }//GEN-LAST:event_dadosbtnActionPerformed
@@ -169,7 +265,8 @@ public class JugarMayor extends javax.swing.JFrame {
     private javax.swing.JLabel LabelJ2;
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton dadosbtn;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelJ3;
+    private javax.swing.JLabel jLabelJ4;
     // End of variables declaration//GEN-END:variables
     public void dados(int dado1, int dado2) {
         ImageIcon icono = null;
@@ -310,5 +407,5 @@ public class JugarMayor extends javax.swing.JFrame {
         }
         JOptionPane.showMessageDialog(null, "", "DADOS", JOptionPane.PLAIN_MESSAGE, icono);
     }
-    
+
 }
