@@ -1,16 +1,15 @@
-1,Avance a Hacienda Nápoles. Si pasa por la salida cobre $200
-2,Pa vivir sabroso avance a la SALIDA. Cobre $200
-3,Avance a Hidrohituango. Si pasa por la salida cobre $200
-4,Avance a Plaza de Toros. Si pasa por la SALIDA cobre $200
-5,Viaje en el transmetro, si pasa por “SALIDA” cobre $200
-6,AVANCE AL bus. Si está a LA VENTA, puede comprársela al banco. Si es PROPIEDAD de alguien, pague el doble de la renta marcada
-7,AVANCE AL Toyota. Si está a LA VENTA, puede comprársela al banco. Si es PROPIEDAD de alguien, pague el doble de la renta marcada
-8, Compre un voto por  $150. 
-9,Te van a expropiar; por cada casa pague $25. por cada hotel pague $100
-10,te salieron más hijos, págale $50 a cada jugador
-11,Te encontraste una caleta, cobra tus $50
-12,SALGA DE LA CÁRCEL GRATIS
-13,Retrocede 3 casillas por falsos positivos 
-14,Tira la liga por exceso de velocidad, paga $15
-15,AVANCE AL SERVICIO MÁS CERCANO. Si está a LA VENTA, puede comprárselo al banco.Si es PROPIEDAD de alguien, tira los dados y pague 10 veces lo pagado
-16,Váyase a la CÁRCEL. No pase por la SALIDA, no cobra $200
+1,Avance a Hacienda Nápoles. Si pasa por la salida cobre $,200
+2,Pa vivir sabroso avance a la SALIDA. Cobre $,200
+3,Avance a Hidrohituango. Si pasa por la salida cobre $,200
+4,Avance a Plaza de Toros. Si pasa por la SALIDA cobre $,200
+5,Viaje en el transmetro, si pasa por “SALIDA” cobre $,200
+6,AVANCE AL bus. Si está a LA VENTA, puede comprársela al banco. Si es PROPIEDAD de alguien, pague el doble de la renta marcada,0
+7,AVANCE AL Toyota. Si está a LA VENTA, puede comprársela al banco. Si es PROPIEDAD de alguien, pague el doble de la renta marcada,0
+8, Compre un voto por  $,150. ,150
+9,te salieron más hijos, págale $50 a cada jugador,50
+10,Te encontraste una caleta, cobra tus ,$50
+11,SALGA DE LA CÁRCEL GRATIS,0
+12,Retrocede 3 casillas por falsos positivos,0
+13,Tira la liga por exceso de velocidad, paga $15,-15
+14,AVANCE AL SERVICIO MÁS CERCANO. Si está a LA VENTA, puede comprárselo al banco.Si es PROPIEDAD de alguien, tira los dados y pague 10 veces lo pagado
+15,Váyase a la CÁRCEL. No pase por la SALIDA, no cobra $200,0
