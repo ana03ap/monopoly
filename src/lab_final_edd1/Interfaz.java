@@ -81,15 +81,15 @@ public class Interfaz extends javax.swing.JFrame {
         getContentPane().add(dadoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 50, 310, 70));
 
         rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/rojo.png"))); // NOI18N
-        getContentPane().add(rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 580, 60, 80));
+        getContentPane().add(rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 600, 40, 70));
 
         amarilla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/amarillo.png"))); // NOI18N
-        getContentPane().add(amarilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, 50, 80));
+        getContentPane().add(amarilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 600, 40, 80));
 
-        azul.setText("Azul");
-        getContentPane().add(azul, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, -1, -1));
+        azul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/azul.png"))); // NOI18N
+        getContentPane().add(azul, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 600, -1, -1));
 
-        verde.setText("Verde");
+        verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/verde.png"))); // NOI18N
         getContentPane().add(verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 610, -1, -1));
 
         jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopolio.png"))); // NOI18N
