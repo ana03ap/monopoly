@@ -1,40 +1,40 @@
-1,Salida,nadie,nadie,0,0
-2,Metrocentro,Magenta,nadie,60,2
-3,Arca comunal,nadie,nadie,0,0
-4,San Victorino,Magenta,nadie,60,4
-5,Ingresos de lujo,nadie,nadie,0,0
-6,Sobusa,nadie,nadie,0,0
-7,El mercado de Bazurto,Celeste,nadie,100,8
-8,Fortuna,nadie,nadie,0,0
-9,Las pacas de la 30,Celeste,nadie,100,8
-10,Cerro de Monserrate,Celeste,nadie,120,8
-11,Carcel,nadie,nadie,0,0
-12,Plaza De Toros,Rosado,nadie,140,10
-13,Compañía de luz,nadie,nadie,150,0
-14,Estadio El Campin,Rosado,nadie,160,10
-15,Estadio Metropolitano,Rosado,nadie,160,12
-16,Bus de puerto,nadie,nadie,200,0
-17,Siglo XXI,Naranja,nadie,180,14
-18,Arca comunal,nadie,nadie,0,0
-19,El Faraón,Naranja,nadie,180,14
-20,Carpe Diem,Naranja,nadie,200,16
-21,Paso,nadie,nadie,0,0
-22,Avenida Septima ,Rojo,nadie,220,18
-23,Fortuna,nadie,nadie,0,0
-24,Parque el Virrey,Rojo,nadie,220,18
-25,Hidro Hituango,Rojo,nadie,240,20
-26,Transmetro,nadie,nadie,200,0
-27,Paramo de Santurban,Amarillo,nadie,260,22
-28,Cholón,Amarillo,nadie,260,22
-29,Campaña de agua,nadie,nadie,160,0
-30,Minca,Amarillo,nadie,280,24
-31,Vaya pa la carcel,nadie,nadie,0,0
-32,Olimpica,Verde,nadie,300,26
-33,Ara,Verde,nadie,300,26
-34,Arca comunal,nadie,nadie,0,0
-35,D1,Verde,nadie,320,28
-36,Toyota,nadie,nadie,2000,0
-37,Fortuna,nadie,nadie,0,0
-38,El Poblado,Azul,nadie,350,35
-39,Impuesto de lujo,nadie,nadie,0,0
-40,Hacienda Napoles,Azul,nadie,400,50
+0,Salida,nadie,nadie,0,0,0,null
+1,Metrocentro,Magenta,nadie,60,2,4,/ImgPropiedades/1.png
+2,Arca comunal,nadie,nadie,0,0,0,null
+3,San Victorino,Magenta,nadie,60,4,8,/ImgPropiedades/3.png
+4,Ingresos de lujo,nadie,nadie,0,0,0,null
+5,Sobusa,nadie,nadie,0,0,0,null
+6,El mercado de Bazurto,Celeste,nadie,100,8,12,/ImgPropiedades/6.png
+7,Fortuna,nadie,nadie,0,0,0,null
+8,Las pacas de la 30,Celeste,nadie,100,8,16,/ImgPropiedades/8.png
+9,Cerro de Monserrate,Celeste,nadie,120,8,16,/ImgPropiedades/9.png
+10,Carcel,nadie,nadie,0,0,0,null
+11,Plaza De Toros,Rosado,nadie,140,10,20,/ImgPropiedades/11.png
+12,Compañía de luz,nadie,nadie,150,0,0,/ImgPropiedades/12.png
+13,Estadio El Campin,Rosado,nadie,160,10,20,/ImgPropiedades/13.png
+14,Estadio Metropolitano,Rosado,nadie,160,12,24,/ImgPropiedades/14.png
+15,Bus de puerto,nadie,nadie,200,0,0,0,null
+16,Siglo XXI,Naranja,nadie,180,14,28,/ImgPropiedades/16.png
+17,Arca comunal,nadie,nadie,0,0,0,null
+18,El Faraón,Naranja,nadie,180,14,28,/ImgPropiedades/18.png
+19,Carpe Diem,Naranja,nadie,200,16,32,/ImgPropiedades/19.png
+20,Paso,nadie,nadie,0,0,0,null
+21,Avenida Septima ,Rojo,nadie,220,18,36,/ImgPropiedades/21.png
+22,Fortuna,nadie,nadie,0,0,0,null
+23,Parque el Virrey,Rojo,nadie,220,18,36,/ImgPropiedades/23.png
+24,Hidroituango,Rojo,nadie,240,20,40,/ImgPropiedades/24.png
+25,Transmetro,nadie,nadie,200,0,0,0,null
+26,Paramo de Santurban,Amarillo,nadie,260,22,44,/ImgPropiedades/26.png
+27,Cholón,Amarillo,nadie,260,22,44,/ImgPropiedades/27.png
+28,Campaña de agua,nadie,nadie,160,0,0,/ImgPropiedades/28.png
+29,Minca,Amarillo,nadie,280,24,48,/ImgPropiedades/29.png
+30,Vaya pa la carcel,nadie,nadie,0,0,0,/ImgPropiedades/30.png
+31,Olimpica,Verde,nadie,300,26,52,/ImgPropiedades/31.png
+32,Ara,Verde,nadie,300,26,52,/ImgPropiedades/32.png
+33,Arca comunal,nadie,nadie,0,0,0,null
+34,D1,Verde,nadie,320,28,56,/ImgPropiedades/34.png
+35,Toyota,nadie,nadie,200,0,0,null
+36,Fortuna,nadie,nadie,0,0,0,null
+37,El Poblado,Azul,nadie,350,35,70,/ImgPropiedades/37.png
+38,Impuesto de lujo,nadie,nadie,0,0,0,null
+39,Hacienda Napoles,Azul,nadie,400,50,100,/ImgPropiedades/39.png
