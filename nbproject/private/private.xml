@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         <group>
             <file>file:/C:/Users/Hp/Documents/GitHub/monopoly/src/lab_final_edd1/Interfaz.java</file>
@@ -14,6 +15,8 @@
 <<<<<<< Updated upstream
         <group/>
 =======
+=======
+>>>>>>> Stashed changes
         <group>
             <file>file:/C:/Users/Darwin/Documents/GitHub/monopoly/src/lab_final_edd1/Interfaz.java</file>
             <file>file:/C:/Users/Darwin/Documents/GitHub/monopoly/src/lab_final_edd1/DosJugadores.java</file>
@@ -24,7 +27,10 @@
             <file>file:/C:/Users/Darwin/Documents/GitHub/monopoly/src/lab_final_edd1/CuatroJugadores.java</file>
             <file>file:/C:/Users/Darwin/Documents/GitHub/monopoly/src/lab_final_edd1/TresJugadores.java</file>
         </group>
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 >>>>>>> 0d5b0e506d72fb2446a75453ec31edaa98eb4c83
+=======
+>>>>>>> Stashed changes
     </open-files>
 </project-private>

@@ -70,7 +70,7 @@ public class TresJugadores extends javax.swing.JFrame {
 
     private void playMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playMouseClicked
         //new JugarMayor().setVisible(true); habilitar despues
-        new Interfaz().setVisible(true);
+        new JugarMayor().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_playMouseClicked
 

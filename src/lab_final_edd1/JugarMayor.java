@@ -17,15 +17,16 @@ import javax.swing.JOptionPane;
  * @author Darwin
  */
 public class JugarMayor extends javax.swing.JFrame {
-   
+
     int turno = 1;
+    int dadoJ1 = 0, dadoJ2 = 0, dadoJ3 = 0, dadoJ4 = 0;
 
     /**
      * Creates new form JugarMayor
      */
     public JugarMayor() {
         initComponents();
-        Variables.njugadores = 3;
+        setLocationRelativeTo(null);
         switch (Variables.njugadores) {
             case 2:
                 jLabelJ3.setVisible(false);
@@ -117,30 +118,57 @@ public class JugarMayor extends javax.swing.JFrame {
 
     private void dadosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadosbtnActionPerformed
         // TODO add your handling code here:
-        jLabelJ3.setVisible(true);
-        int dadoJ1 = 0, dadoJ2 = 0, dadoJ3 = 0, dadoJ4 = 0;
-        int dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-        int dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-        int dado = dado1 + dado2;
-        dados(dado1, dado2);
+
+        int dado1;//dado 1
+        int dado2;//dado2
+        int dado;
+
         switch (turno) {
             case 1:
+                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                dado = dado1 + dado2;
+                dados(dado1, dado2);
                 dadoJ1 = dado;
                 LabelJ1.setText("Jugador Rojo: " + dado);
                 Titulo.setText("Turno del jugador Amarillo");
                 break;
-                
+
             case 2:
+
+                do {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                } while (dadoJ1 == dado);
+
+                dados(dado1, dado2);
                 dadoJ2 = dado;
                 LabelJ2.setText("Jugador Amarillo: " + dado);
                 Titulo.setText("Turno del jugador Verde");
                 break;
             case 3:
+
+                do {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                } while (dadoJ1 == dado || dadoJ2 == dado);
+
+                dados(dado1, dado2);
                 dadoJ3 = dado;
                 jLabelJ3.setText("Jugador Verde: " + dado);
                 Titulo.setText("Turno del jugador Azul");
                 break;
             case 4:
+
+                do {
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                } while (dadoJ1 == dado || dadoJ2 == dado || dadoJ3 == dado);
+
+                dados(dado1, dado2);
                 dadoJ4 = dado;
                 jLabelJ4.setText("Jugador Azul: " + dado);
                 break;
@@ -149,75 +177,202 @@ public class JugarMayor extends javax.swing.JFrame {
 
         //Hacer validación si son iguales
         if (turno > Variables.njugadores) {
-            JOptionPane.showMessageDialog(null, "Hola", "DADOS", JOptionPane.PLAIN_MESSAGE);
+
             switch (Variables.njugadores) {
                 case 2:
                     if (dadoJ1 > dadoJ2) {
                         Variables.jugador1.turno = 1;
-                    } else {
                         Variables.jugador2.turno = 2;
+                    } else {
+                        Variables.jugador1.turno = 2;
+                        Variables.jugador2.turno = 1;
                     }
+                    JOptionPane.showMessageDialog(null, "Jugador Rojo empieza de: " + Variables.jugador1.turno + "\n"
+                            + "Jugador Amarillo empieza de: " + Variables.jugador2.turno,
+                            "Resultados", JOptionPane.PLAIN_MESSAGE);
+                    new Interfaz().setVisible(true);
                     this.dispose();
                     break;
                 case 3:
-                    /*//List<Integer> posiciones = Arrays.asPosiciones(dadoJ1,dadoJ2,dadoJ3);
-                    ArrayList<Integer> posiciones1 = new ArrayList<Integer>();
-                    posiciones1.add(dadoJ1);
-                    System.out.println("dado1: "+ dadoJ1);
-                    posiciones1.add(dadoJ2);
-                    System.out.println(dadoJ2);
-                    posiciones1.add(dadoJ3);
-                    System.out.println(dadoJ3);
-                    Collections.sort(posiciones1);
                     
-                    for(Integer numero : posiciones1){
-                        System.out.println(numero);
-                    }*/
-                    if(dadoJ1> dadoJ2 && dado1>dadoJ3){
+                    if (dadoJ1 > dadoJ2 && dadoJ1 > dadoJ3) {
                         Variables.jugador1.turno = 1;
-                        if(dadoJ2> dadoJ3){
+                        if (dadoJ2 > dadoJ3) {
                             Variables.jugador2.turno = 2;
                             Variables.jugador3.turno = 3;
-                        }else{
+                        } else {
                             Variables.jugador2.turno = 3;
                             Variables.jugador3.turno = 2;
                         }
                     }
-                    if(dadoJ2>dadoJ1 && dadoJ2>dadoJ3){
+                    if (dadoJ2 > dadoJ1 && dadoJ2 > dadoJ3) {
                         Variables.jugador2.turno = 1;
-                        if(dadoJ1>dadoJ3){
+                        if (dadoJ1 > dadoJ3) {
                             Variables.jugador1.turno = 2;
                             Variables.jugador3.turno = 3;
-                        }else{
+                        } else {
                             Variables.jugador1.turno = 3;
                             Variables.jugador3.turno = 2;
                         }
                     }
-                    if(dadoJ3>dadoJ1 && dadoJ3>dadoJ2){
+                    if (dadoJ3 > dadoJ1 && dadoJ3 > dadoJ2) {
                         Variables.jugador3.turno = 1;
-                        if(dadoJ1>dadoJ2){
+                        if (dadoJ1 > dadoJ2) {
                             Variables.jugador1.turno = 2;
                             Variables.jugador2.turno = 3;
-                        }else{
+                        } else {
                             Variables.jugador1.turno = 3;
                             Variables.jugador2.turno = 2;
                         }
                     }
-                    System.out.println("J1 "+Variables.jugador1.turno);
-                    System.out.println("J2 "+Variables.jugador2.turno);
-                    System.out.println("J3 "+Variables.jugador3.turno);
+                    JOptionPane.showMessageDialog(null, "Jugador Rojo empieza de: " + Variables.jugador1.turno + "\n"
+                            + "Jugador Amarillo empieza de: " + Variables.jugador2.turno + "\n"
+                            + "Jugador Verde empieza de: " + Variables.jugador3.turno,
+                            "Resultados", JOptionPane.PLAIN_MESSAGE);
+                    new Interfaz().setVisible(true);
+                    this.dispose();
                     break;
                 case 4:
-                     ArrayList<Integer> posiciones2 = new ArrayList<Integer>();
-                    posiciones2.add(dadoJ1);
-                    posiciones2.add(dadoJ2);
-                    posiciones2.add(dadoJ3);
-                    posiciones2.add(dadoJ4);
                     
-                    Collections.sort(posiciones2);
-                    for(Integer numero : posiciones2){
-                        System.out.println(numero);
+                    if (dadoJ1 > dadoJ2 && dadoJ1 > dadoJ3 && dadoJ1 > dadoJ4) { //uno primer jugador
+                        Variables.jugador1.turno = 1;
+                        if (dadoJ2 > dadoJ3 && dadoJ2 > dadoJ4) {//dos segundo jugador
+                            Variables.jugador2.turno = 2;
+                            if (dadoJ3 > dadoJ4) {//tres y 4
+                                Variables.jugador3.turno = 3;
+                                Variables.jugador4.turno = 4;
+                            } else {
+                                Variables.jugador3.turno = 4;
+                                Variables.jugador4.turno = 3;
+                            }
+                        }
+                        if (dadoJ3 > dadoJ2 && dadoJ3 > dadoJ4) {//tres segundo jugador
+                            Variables.jugador3.turno = 2;
+                            if (dadoJ2 > dadoJ4) { //dos y cuatro
+                                Variables.jugador2.turno = 3;
+                                Variables.jugador4.turno = 4;
+                            } else {
+                                Variables.jugador2.turno = 4;
+                                Variables.jugador4.turno = 3;
+                            }
+                        }
+                        if (dadoJ4 > dadoJ2 && dadoJ4 > dadoJ3) {//Cuatro segundo jugador
+                            Variables.jugador4.turno = 2;
+                            if (dadoJ2 > dadoJ3) { //dos y tres
+                                Variables.jugador2.turno = 3;
+                                Variables.jugador3.turno = 4;
+                            } else {
+                                Variables.jugador2.turno = 4;
+                                Variables.jugador3.turno = 3;
+                            }
+                        }
                     }
+                    if (dadoJ2 > dadoJ1 && dadoJ2 > dadoJ3 && dadoJ2 > dadoJ4) { //Dos primer jugador
+                        Variables.jugador2.turno = 1;
+                        if (dadoJ1 > dadoJ3 && dadoJ1 > dadoJ4) { //Uno segundo jugador
+                            Variables.jugador1.turno = 2;
+                            if (dadoJ3 > dadoJ4) { //tres y cuatro
+                                Variables.jugador3.turno = 3;
+                                Variables.jugador4.turno = 4;
+                            } else {
+                                Variables.jugador3.turno = 4;
+                                Variables.jugador4.turno = 3;
+                            }
+                        }
+                        if (dadoJ3 > dadoJ1 && dadoJ3 > dadoJ4) { //tres segundo jugador
+                            Variables.jugador3.turno = 2;
+                            if (dadoJ1 > dadoJ4) { //uno y cuatro
+                                Variables.jugador1.turno = 3;
+                                Variables.jugador4.turno = 4;
+                            } else {
+                                Variables.jugador1.turno = 4;
+                                Variables.jugador4.turno = 3;
+                            }
+                        }
+                        if (dadoJ4 > dadoJ1 && dadoJ4 > dadoJ3) { //cuatro segundo jugador
+                            Variables.jugador4.turno = 2;
+                            if (dadoJ1 > dadoJ3) { //uno y tres
+                                Variables.jugador1.turno = 3;
+                                Variables.jugador3.turno = 4;
+                            } else {
+                                Variables.jugador1.turno = 4;
+                                Variables.jugador3.turno = 3;
+                            }
+                        }
+                    }
+                    if (dadoJ3 > dadoJ1 && dadoJ3 > dadoJ2 && dadoJ3 > dadoJ4) { //tres primer jugador
+                        Variables.jugador3.turno = 1;
+                        if (dadoJ1 > dadoJ2 && dadoJ1 > dadoJ4) {//uno segundo jugador
+                            Variables.jugador1.turno = 2;
+                            if (dadoJ2 > dadoJ4) { //dos y cuatro
+                                Variables.jugador2.turno = 3;
+                                Variables.jugador4.turno = 4;
+                            } else {
+                                Variables.jugador2.turno = 4;
+                                Variables.jugador4.turno = 3;
+                            }
+                        }
+                        if (dadoJ2 > dadoJ1 && dadoJ2 > dadoJ4) { //dos segundo jugador
+                            Variables.jugador2.turno = 2;
+                            if (dadoJ1 > dadoJ4) { //uno y cuatro
+                                Variables.jugador1.turno = 3;
+                                Variables.jugador4.turno = 4;
+                            } else {
+                                Variables.jugador1.turno = 4;
+                                Variables.jugador4.turno = 3;
+                            }
+                        }
+                        if (dadoJ4 > dadoJ1 && dadoJ4 > dadoJ2) { //cuatro segundo jugador
+                            Variables.jugador4.turno = 2;
+                            if (dadoJ1 > dadoJ2) {//uno y dos
+                                Variables.jugador1.turno = 3;
+                                Variables.jugador2.turno = 4;
+                            } else {
+                                Variables.jugador1.turno = 4;
+                                Variables.jugador2.turno = 3;
+                            }
+                        }
+                    }
+                    if (dadoJ4 > dadoJ1 && dadoJ4 > dadoJ2 && dadoJ4 > dadoJ3) { //cuatro primer jugador
+                        Variables.jugador4.turno = 1;
+                        if (dadoJ1 > dadoJ2 && dadoJ1 > dadoJ3) { //uno segundo jugador
+                            Variables.jugador1.turno = 2;
+                            if (dadoJ2 > dadoJ3) { //dos y tres
+                                Variables.jugador2.turno = 3;
+                                Variables.jugador3.turno = 4;
+                            } else {
+                                Variables.jugador2.turno = 4;
+                                Variables.jugador3.turno = 3;
+                            }
+                        }
+                        if (dadoJ2 > dadoJ1 && dadoJ2 > dadoJ3) { //dos segundo jugador
+                            Variables.jugador2.turno = 2;
+                            if (dadoJ1 > dadoJ3) { //uno y tres
+                                Variables.jugador1.turno = 3;
+                                Variables.jugador3.turno = 4;
+                            } else {
+                                Variables.jugador1.turno = 4;
+                                Variables.jugador3.turno = 3;
+                            }
+                        }
+                        if (dadoJ3 > dadoJ1 && dadoJ3 > dadoJ2) { //tres segundo jugador
+                            Variables.jugador3.turno = 2;
+                            if (dadoJ1 > dadoJ2) {//uno y dos
+                                Variables.jugador1.turno = 3;
+                                Variables.jugador2.turno = 4;
+                            } else {
+                                Variables.jugador1.turno = 4;
+                                Variables.jugador2.turno = 3;
+                            }
+                        }
+                    }
+                    JOptionPane.showMessageDialog(null, "Jugador Rojo empieza de: " + Variables.jugador1.turno + "\n"
+                            + "Jugador Amarillo empieza de: " + Variables.jugador2.turno + "\n"
+                            + "Jugador Verde empieza de: " + Variables.jugador3.turno + "\n"
+                            + "Jugador Azul empieza de: " + Variables.jugador4.turno,
+                            "Resultados", JOptionPane.PLAIN_MESSAGE);
+                    new Interfaz().setVisible(true);
+                    this.dispose();
                     break;
             }
 
