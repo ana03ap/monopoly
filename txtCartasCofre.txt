@@ -7,7 +7,7 @@
 7,Fuiste elegidx para ser un falso positivo. Cobre $100,100
 8,Paga el icetex por $50,50
 9,Evadiste a la DIAN. Cobre $20,20
-10,Te ganaste el baloto. SIN PALABRAS…; reciba 25,25
+10,Te ganaste el baloto. SIN PALABRAS…; reciba $25,25
 11,Te toca poner pa’ la botella $100,100
 12,Dio(s)medes te felicita por tu cumpleaños,10
 13,Recibiste coimas de Sarmiento Ángulo,100
