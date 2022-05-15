@@ -48,6 +48,7 @@ public class Njugadores extends javax.swing.JFrame {
         dos = new javax.swing.JButton();
         tres = new javax.swing.JButton();
         cuatro = new javax.swing.JButton();
+        indi = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,7 +60,7 @@ public class Njugadores extends javax.swing.JFrame {
                 homeActionPerformed(evt);
             }
         });
-        jPanel1.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 80, 90));
+        jPanel1.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 70, 70));
 
         dos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -86,6 +87,13 @@ public class Njugadores extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, 160, 70));
+
+        indi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                indiMouseClicked(evt);
+            }
+        });
+        jPanel1.add(indi, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 60, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/njugadores.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 520));
@@ -136,6 +144,12 @@ public class Njugadores extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_cuatroActionPerformed
 
+    private void indiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_indiMouseClicked
+        Indicaciones1 m = new Indicaciones1();
+        m.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_indiMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -176,6 +190,7 @@ public class Njugadores extends javax.swing.JFrame {
     private javax.swing.JButton cuatro;
     private javax.swing.JButton dos;
     private javax.swing.JButton home;
+    private javax.swing.JLabel indi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton tres;

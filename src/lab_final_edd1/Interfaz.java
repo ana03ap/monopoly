@@ -104,6 +104,13 @@ public class Interfaz extends javax.swing.JFrame {
         int dado;
         switch (turno) {
             case 1:
+
+                dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2 
+                dado = dado1 + dado2;
+                dados(dado1, dado2);
+                mover(dado, rojo, Variables.jugador1);
+
                 if (Variables.jugador1.turno == 1) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
                     dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
