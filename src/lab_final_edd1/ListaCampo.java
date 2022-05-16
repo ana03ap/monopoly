@@ -49,7 +49,7 @@ public class ListaCampo {
         System.out.println("The nodes of the singly linked list are: ");
 
         do {
-            System.out.println(current.rentaMonopoly + "-->");
+            System.out.println(current.Ruta + "-->");
 
             current = current.next;
         } while (current != head);

@@ -41,7 +41,6 @@ public class Interfaz extends javax.swing.JFrame {
         }
         
         leertxt("txtPropiedades", tablero);
-        
         setSize(1366, 720);
         ImageIcon wallpaper = new ImageIcon("src/Data1/monopolio.png");
         Icon icono = new ImageIcon(wallpaper.getImage().getScaledInstance(jLabel_wallpaper.getWidth(), jLabel_wallpaper.getHeight(), Image.SCALE_DEFAULT));
