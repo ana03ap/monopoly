@@ -51,7 +51,7 @@ public class CuatroJugadores extends javax.swing.JFrame {
         });
         jPanel1.add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 60, 50));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/4 jugadores.jpg"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/cuatroJugadores.png"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 520));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

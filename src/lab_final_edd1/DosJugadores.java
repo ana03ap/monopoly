@@ -58,7 +58,7 @@ public class DosJugadores extends javax.swing.JFrame {
         });
         jPanel2.add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 50, 50));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/2 jugadores.jpg"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/dosJugadores.png"))); // NOI18N
         jPanel2.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

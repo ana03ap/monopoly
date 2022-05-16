@@ -43,8 +43,8 @@ public class Pp extends javax.swing.JFrame {
         });
         jPanel1.add(play, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, 100, 40));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/pp.jpg"))); // NOI18N
-        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 500));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/pp.png"))); // NOI18N
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -54,7 +54,7 @@ public class Pp extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
