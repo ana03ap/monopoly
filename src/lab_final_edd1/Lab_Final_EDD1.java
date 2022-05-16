@@ -22,8 +22,7 @@ public class Lab_Final_EDD1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ListaCampo tablero = new ListaCampo();
-        leertxt("txtPropiedades", tablero);
+        
         //Variables.jugador1.posicion = 37;
         //tablero.buscarn(Variables.jugador1);
         Pp g = new Pp();
