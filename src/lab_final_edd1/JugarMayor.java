@@ -36,8 +36,14 @@ public class JugarMayor extends javax.swing.JFrame {
                 jLabelJ4.setVisible(false);
                 break;
         }
+        transparenciaButton();
     }
-
+    @SuppressWarnings("unchecked")
+    public void transparenciaButton() {
+        dadosbtn.setOpaque(false);
+        dadosbtn.setContentAreaFilled(false);
+        dadosbtn.setBorderPainted(false);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,65 +59,43 @@ public class JugarMayor extends javax.swing.JFrame {
         LabelJ2 = new javax.swing.JLabel();
         jLabelJ3 = new javax.swing.JLabel();
         jLabelJ4 = new javax.swing.JLabel();
+        jLabel_wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Titulo.setText("Turno del jugador Rojo");
+        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 160, 30));
 
-        dadosbtn.setText("Tirar dados");
         dadosbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dadosbtnActionPerformed(evt);
             }
         });
+        getContentPane().add(dadosbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 285, 102, 40));
 
-        LabelJ1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        LabelJ1.setText("Jugador Rojo: 0");
+        LabelJ1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
+        LabelJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/rojoo-removebg-preview.png"))); // NOI18N
+        LabelJ1.setText("0");
+        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 240, 20));
 
-        LabelJ2.setText("Jugador Amarillo: 0");
+        LabelJ2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
+        LabelJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/amarillo-removebg-preview.png"))); // NOI18N
+        LabelJ2.setText("0");
+        getContentPane().add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 240, 20));
 
-        jLabelJ3.setText("Jugador Verde: 0");
+        jLabelJ3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
+        jLabelJ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/verde-removebg-preview.png"))); // NOI18N
+        jLabelJ3.setText("0");
+        getContentPane().add(jLabelJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 240, -1));
 
-        jLabelJ4.setText("Jugador Azul: 0");
+        jLabelJ4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
+        jLabelJ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/azul-removebg-preview.png"))); // NOI18N
+        jLabelJ4.setText("0");
+        getContentPane().add(jLabelJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 240, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelJ2)
-                            .addComponent(LabelJ1)
-                            .addComponent(jLabelJ3)
-                            .addComponent(jLabelJ4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(dadosbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(LabelJ1)
-                .addGap(18, 18, 18)
-                .addComponent(LabelJ2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelJ3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelJ4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                .addComponent(dadosbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
-        );
+        jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/interfaz jugador mayor.png"))); // NOI18N
+        getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -130,7 +114,7 @@ public class JugarMayor extends javax.swing.JFrame {
                 dado = dado1 + dado2;
                 dados(dado1, dado2);
                 dadoJ1 = dado;
-                LabelJ1.setText("Jugador Rojo: " + dado);
+                LabelJ1.setText(""+dado);
                 Titulo.setText("Turno del jugador Amarillo");
                 break;
 
@@ -144,7 +128,7 @@ public class JugarMayor extends javax.swing.JFrame {
 
                 dados(dado1, dado2);
                 dadoJ2 = dado;
-                LabelJ2.setText("Jugador Amarillo: " + dado);
+                LabelJ2.setText("" + dado);
                 Titulo.setText("Turno del jugador Verde");
                 break;
             case 3:
@@ -157,7 +141,7 @@ public class JugarMayor extends javax.swing.JFrame {
 
                 dados(dado1, dado2);
                 dadoJ3 = dado;
-                jLabelJ3.setText("Jugador Verde: " + dado);
+                jLabelJ3.setText("" + dado);
                 Titulo.setText("Turno del jugador Azul");
                 break;
             case 4:
@@ -170,7 +154,7 @@ public class JugarMayor extends javax.swing.JFrame {
 
                 dados(dado1, dado2);
                 dadoJ4 = dado;
-                jLabelJ4.setText("Jugador Azul: " + dado);
+                jLabelJ4.setText("" + dado);
                 break;
         }
         turno++;
@@ -422,6 +406,7 @@ public class JugarMayor extends javax.swing.JFrame {
     private javax.swing.JButton dadosbtn;
     private javax.swing.JLabel jLabelJ3;
     private javax.swing.JLabel jLabelJ4;
+    private javax.swing.JLabel jLabel_wallpaper;
     // End of variables declaration//GEN-END:variables
     public void dados(int dado1, int dado2) {
         ImageIcon icono = null;

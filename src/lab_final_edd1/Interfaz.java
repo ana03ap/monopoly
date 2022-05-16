@@ -37,7 +37,6 @@ public class Interfaz extends javax.swing.JFrame {
             case 3:
                 azul.setVisible(false);
                 break;
-
         }
         
         leertxt("txtPropiedades", tablero);
