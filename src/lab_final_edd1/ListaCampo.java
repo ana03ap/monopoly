@@ -17,12 +17,14 @@ import javax.swing.JOptionPane;
  * @author DELL
  */
 public class ListaCampo {
-     protected Nodo head, tail;
+
+    protected Nodo head, tail;
 
     public ListaCampo() {
         Nodo head = null;
         Nodo tail = null;
     }
+
     public void addNode(int data, String name, String Color, String D, int val, int rent, int rentM, String Ruta) {
         Nodo P = new Nodo(data, name, Color, D, val, rent, rentM, Ruta);
         if (head == null) {
@@ -36,6 +38,7 @@ public class ListaCampo {
             tail = P;
         }
     }
+
     public void display() {
         Nodo current = head;
 
@@ -44,12 +47,12 @@ public class ListaCampo {
             return;
         }
         System.out.println("The nodes of the singly linked list are: ");
-       
-        do{ 
-            System.out.println(current.rentaMonopoly+"-->");
-            
+
+        do {
+            System.out.println(current.Ruta + "-->");
+
             current = current.next;
-        }while(current != head);
+        } while (current != head);
         /*while (current != null) {
             if (current.next != null) {
                 System.out.print(current.numCasilla + "." + current.nombre + " <-> ");
@@ -62,17 +65,21 @@ public class ListaCampo {
             System.out.print("null\n");
         }*/
     }
-    public void buscarn (Jugadores n){
+
+    public void buscarn(Jugadores n) {
         Nodo P = head;
-        do{
-            if(P.numCasilla == n.posicion){
+        do {
+            if (P.numCasilla == n.posicion) {
                 System.out.println("se encontró");
-                Icon icono = new ImageIcon(getClass().getResource(P.Ruta));
-                JOptionPane.showMessageDialog(null, "", "!!!", JOptionPane.PLAIN_MESSAGE, icono);
-            } 
+                if (P.Ruta != null) {
+                    Icon icono = new ImageIcon(getClass().getResource(P.Ruta));
+                    JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, icono);
+                }
+
+            }
             P = P.next;
-       
-        }while(P != head);
+
+        } while (P != head);
     }
-    
+
 }

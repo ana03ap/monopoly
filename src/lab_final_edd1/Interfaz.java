@@ -11,6 +11,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import static lab_final_edd1.Lab_Final_EDD1.leertxt;
 
 /**
  *
@@ -19,8 +20,8 @@ import javax.swing.JOptionPane;
 public class Interfaz extends javax.swing.JFrame {
 
     int cont = 0;
-
     int turno = 1;
+    ListaCampo tablero = new ListaCampo();
 
     /**
      * Creates new form Interfaz
@@ -38,6 +39,8 @@ public class Interfaz extends javax.swing.JFrame {
                 break;
 
         }
+        
+        leertxt("txtPropiedades", tablero);
         setSize(1366, 720);
         ImageIcon wallpaper = new ImageIcon("src/Data1/monopolio.png");
         Icon icono = new ImageIcon(wallpaper.getImage().getScaledInstance(jLabel_wallpaper.getWidth(), jLabel_wallpaper.getHeight(), Image.SCALE_DEFAULT));
@@ -113,6 +116,8 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, rojo, Variables.jugador1);
+                    tablero.buscarn(Variables.jugador1);
+                    
                 }
                 if (Variables.jugador2.turno == 1) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -120,6 +125,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, amarilla, Variables.jugador2);
+                    tablero.buscarn(Variables.jugador2);
                 }
                 if (Variables.jugador3.turno == 1) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -127,6 +133,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, verde, Variables.jugador3);
+                    tablero.buscarn(Variables.jugador3);
                 }
                 if (Variables.jugador4.turno == 1) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -134,6 +141,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, azul, Variables.jugador4);
+                    tablero.buscarn(Variables.jugador4);
                 }
 
                 break;
@@ -144,6 +152,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, rojo, Variables.jugador1);
+                    tablero.buscarn(Variables.jugador1);
                 }
                 if (Variables.jugador2.turno == 2) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -151,6 +160,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, amarilla, Variables.jugador2);
+                    tablero.buscarn(Variables.jugador2);
                 }
                 if (Variables.jugador3.turno == 2) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -158,6 +168,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, verde, Variables.jugador3);
+                    tablero.buscarn(Variables.jugador3);
                 }
                 if (Variables.jugador4.turno == 2) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -165,6 +176,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, azul, Variables.jugador4);
+                    tablero.buscarn(Variables.jugador4);
                 }
                 break;
             case 3:
@@ -174,6 +186,8 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, rojo, Variables.jugador1);
+                    tablero.buscarn(Variables.jugador1);
+                    
                 }
                 if (Variables.jugador2.turno == 3) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -181,6 +195,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, amarilla, Variables.jugador2);
+                    tablero.buscarn(Variables.jugador2);
                 }
                 if (Variables.jugador3.turno == 3) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -188,6 +203,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, verde, Variables.jugador3);
+                    tablero.buscarn(Variables.jugador3);
                 }
                 if (Variables.jugador4.turno == 3) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -195,6 +211,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, azul, Variables.jugador4);
+                    tablero.buscarn(Variables.jugador4);
                 }
                 break;
             case 4:
@@ -204,6 +221,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, rojo, Variables.jugador1);
+                    tablero.buscarn(Variables.jugador1);
                 }
                 if (Variables.jugador2.turno == 4) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -211,6 +229,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, amarilla, Variables.jugador2);
+                    tablero.buscarn(Variables.jugador2);
                 }
                 if (Variables.jugador3.turno == 4) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -218,6 +237,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, verde, Variables.jugador3);
+                    tablero.buscarn(Variables.jugador3);
                 }
                 if (Variables.jugador4.turno == 4) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -225,6 +245,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, azul, Variables.jugador4);
+                    tablero.buscarn(Variables.jugador4);
                 }
                 break;
         }

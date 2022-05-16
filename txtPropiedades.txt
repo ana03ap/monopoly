@@ -23,7 +23,7 @@
 22,Fortuna,nadie,nadie,0,0,0,null
 23,Parque el Virrey,Rojo,nadie,220,18,36,/ImgPropiedades/23.png
 24,Hidroituango,Rojo,nadie,240,20,40,/ImgPropiedades/24.png
-25,Transmetro,nadie,nadie,200,0,0,0,/ImgPropiedades/25.png
+25,Transmetro,nadie,nadie,200,0,0,/ImgPropiedades/25.png
 26,Paramo de Santurban,Amarillo,nadie,260,22,44,/ImgPropiedades/26.png
 27,Cholon,Amarillo,nadie,260,22,44,/ImgPropiedades/27.png
 28,Bonos de Agua,nadie,nadie,160,0,0,/ImgPropiedades/28.png

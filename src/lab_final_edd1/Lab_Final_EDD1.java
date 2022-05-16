@@ -22,10 +22,16 @@ public class Lab_Final_EDD1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ListaCampo tablero = new ListaCampo();
-        leertxt("txtPropiedades", tablero);
+<<<<<<< Updated upstream
+        
         //Variables.jugador1.posicion = 37;
         //tablero.buscarn(Variables.jugador1);
+=======
+        ListaCampo tablero = new ListaCampo();
+        leertxt("txtPropiedades", tablero);
+        Variables.jugador1.posicion = 39;
+        tablero.buscarn(Variables.jugador1);
+>>>>>>> Stashed changes
         Pp g = new Pp();
         g.setVisible(true);
         

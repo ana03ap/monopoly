@@ -16,6 +16,7 @@ public class Variables {
     public static Jugadores jugador2 = new Jugadores(0,0,1500, 585, 603);
     public static Jugadores jugador3 = new Jugadores(0,0,1500, 585, 603);
     public static Jugadores jugador4 = new Jugadores(0,0,1500, 585, 603);
+    
    
    
 }
