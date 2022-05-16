@@ -95,7 +95,7 @@ public class Njugadores extends javax.swing.JFrame {
         });
         jPanel1.add(indi, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 60, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/njugadores.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/njugadores.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 520));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
