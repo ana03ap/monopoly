@@ -23,14 +23,20 @@ public class Lab_Final_EDD1 {
      */
     public static void main(String[] args) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         
         //Variables.jugador1.posicion = 37;
         //tablero.buscarn(Variables.jugador1);
 =======
+=======
+>>>>>>> Stashed changes
         ListaCampo tablero = new ListaCampo();
         leertxt("txtPropiedades", tablero);
         Variables.jugador1.posicion = 39;
         tablero.buscarn(Variables.jugador1);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         Pp g = new Pp();
         g.setVisible(true);
