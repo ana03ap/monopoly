@@ -71,9 +71,14 @@ public class ListaCampo {
         do {
             if (P.numCasilla == n.posicion) {
                 System.out.println("se encontró");
-                if (P.Ruta != null) {
-                    Icon icono = new ImageIcon(getClass().getResource(P.Ruta));
-                    JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, icono);
+                if (P.Ruta != "nada") {
+                    Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
+                    JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
+                    return;
+                }else{
+                    Icon carta = new ImageIcon(getClass().getResource("/ImgPropiedades/8.png"));
+                    JOptionPane.showMessageDialog(null, "Nada", "CARTA", JOptionPane.PLAIN_MESSAGE);
+                    System.out.println("aa");
                 }
 
             }
