@@ -64,38 +64,41 @@ public class JugarMayor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Titulo.setText("Turno del jugador Rojo");
-        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 160, 30));
+        Titulo.setFont(new java.awt.Font("Sylfaen", 1, 20)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo.setText("TURNO DEL JUGADOR ROJO");
+        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 350, 30));
 
         dadosbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dadosbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(dadosbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 285, 102, 40));
+        getContentPane().add(dadosbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 140, 50));
 
+        LabelJ1.setBackground(new java.awt.Color(0, 0, 0));
         LabelJ1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
-        LabelJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/rojoo-removebg-preview.png"))); // NOI18N
+        LabelJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/Jrojo.png"))); // NOI18N
         LabelJ1.setText("0");
-        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 240, 20));
+        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 220, 30));
 
         LabelJ2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         LabelJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/amarillo-removebg-preview.png"))); // NOI18N
         LabelJ2.setText("0");
-        getContentPane().add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 240, 20));
+        getContentPane().add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 240, 20));
 
         jLabelJ3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
-        jLabelJ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/verde-removebg-preview.png"))); // NOI18N
+        jLabelJ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/Jverde.png"))); // NOI18N
         jLabelJ3.setText("0");
-        getContentPane().add(jLabelJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 240, -1));
+        getContentPane().add(jLabelJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 240, -1));
 
         jLabelJ4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
-        jLabelJ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/azul-removebg-preview.png"))); // NOI18N
+        jLabelJ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/Jazul.png"))); // NOI18N
         jLabelJ4.setText("0");
-        getContentPane().add(jLabelJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 240, 20));
+        getContentPane().add(jLabelJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 240, -1));
 
-        jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/interfaz jugador mayor.png"))); // NOI18N
-        getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 360));
+        jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/JugadorMayor.png"))); // NOI18N
+        getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
