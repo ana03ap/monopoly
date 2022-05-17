@@ -118,7 +118,7 @@ public class JugarMayor extends javax.swing.JFrame {
                 dados(dado1, dado2);
                 dadoJ1 = dado;
                 LabelJ1.setText(""+dado);
-                Titulo.setText("Turno del jugador Amarillo");
+                Titulo.setText("TURNO DEL JUGADOR AMARILLO");
                 break;
 
             case 2:
@@ -132,7 +132,10 @@ public class JugarMayor extends javax.swing.JFrame {
                 dados(dado1, dado2);
                 dadoJ2 = dado;
                 LabelJ2.setText("" + dado);
-                Titulo.setText("Turno del jugador Verde");
+                if (turno != Variables.njugadores){
+                    Titulo.setText("TURNO DEL JUGADOR VERDE");
+                }
+                
                 break;
             case 3:
 
@@ -145,7 +148,10 @@ public class JugarMayor extends javax.swing.JFrame {
                 dados(dado1, dado2);
                 dadoJ3 = dado;
                 jLabelJ3.setText("" + dado);
-                Titulo.setText("Turno del jugador Azul");
+                if (turno != Variables.njugadores){
+                    Titulo.setText("TURNO DEL JUGADOR AZUL");
+                }
+                
                 break;
             case 4:
 
