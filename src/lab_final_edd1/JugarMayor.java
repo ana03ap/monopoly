@@ -65,7 +65,6 @@ public class JugarMayor extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Titulo.setFont(new java.awt.Font("Sylfaen", 1, 20)); // NOI18N
-        Titulo.setForeground(new java.awt.Color(0, 0, 0));
         Titulo.setText("TURNO DEL JUGADOR ROJO");
         getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 350, 30));
 
@@ -80,10 +79,10 @@ public class JugarMayor extends javax.swing.JFrame {
         LabelJ1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         LabelJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/Jrojo.png"))); // NOI18N
         LabelJ1.setText("0");
-        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 220, 30));
+        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 220, 30));
 
         LabelJ2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
-        LabelJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/amarillo-removebg-preview.png"))); // NOI18N
+        LabelJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/Jamarillo.png"))); // NOI18N
         LabelJ2.setText("0");
         getContentPane().add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 240, 20));
 
