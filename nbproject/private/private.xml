@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/Darwin/Documents/GitHub/monopoly/src/lab_final_edd1/Interfaz.java</file>
             <file>file:/C:/Users/Darwin/Documents/GitHub/monopoly/src/lab_final_edd1/DosJugadores.java</file>
             <file>file:/C:/Users/Darwin/Documents/GitHub/monopoly/src/lab_final_edd1/Njugadores.java</file>
@@ -12,6 +13,13 @@
             <file>file:/C:/Users/Darwin/Documents/GitHub/monopoly/src/lab_final_edd1/JugarMayor.java</file>
             <file>file:/C:/Users/Darwin/Documents/GitHub/monopoly/src/lab_final_edd1/ListaCampo.java</file>
             <file>file:/C:/Users/Darwin/Documents/GitHub/monopoly/txtPropiedades.txt</file>
+=======
+            <file>file:/C:/Users/DELL/OneDrive/Documentos/GitHub/monopoly/src/lab_final_edd1/Lab_Final_EDD1.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Documentos/GitHub/monopoly/src/lab_final_edd1/Suerte.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Documentos/GitHub/monopoly/src/lab_final_edd1/Interfaz.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Documentos/GitHub/monopoly/src/lab_final_edd1/ListaCampo.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Documentos/GitHub/monopoly/src/lab_final_edd1/Cofre.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

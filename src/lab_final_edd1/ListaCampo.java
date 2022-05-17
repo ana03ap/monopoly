@@ -53,6 +53,7 @@ public class ListaCampo {
 
             current = current.next;
         } while (current != head);
+
         /*while (current != null) {
             if (current.next != null) {
                 System.out.print(current.numCasilla + "." + current.nombre + " <-> ");
@@ -71,14 +72,24 @@ public class ListaCampo {
         do {
             if (P.numCasilla == n.posicion) {
                 System.out.println("se encontró");
-                if (P.Ruta != "nada") {
+                if (!"nada".equals(P.Ruta)) {
                     Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
                     JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
                     return;
-                }else{
-                    Icon carta = new ImageIcon(getClass().getResource("/ImgPropiedades/8.png"));
-                    JOptionPane.showMessageDialog(null, "Nada", "CARTA", JOptionPane.PLAIN_MESSAGE);
-                    System.out.println("aa");
+                } else {// fortuna o arca comunal 
+                    if (P.numCasilla == 2 || P.numCasilla == 17 || P.numCasilla == 23) {// arca comunal 
+                        Cofre C = new Cofre();
+                        String  cartica = "/ImgArcaComunal/"+C.cartaRandom()+".png";
+                        Icon carta = new ImageIcon(getClass().getResource(cartica));
+                        JOptionPane.showMessageDialog(null,"", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
+                        System.out.println("aa");
+                    } else if (P.numCasilla == 7 || P.numCasilla == 22 || P.numCasilla == 36) {// fortuna
+                        Suerte S = new Suerte();
+                        String  cartica = "/ImgArcaComunal/"+S.cartaRandom()+".png";
+                        Icon carta = new ImageIcon(getClass().getResource(cartica));
+                        JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
+                    }
+
                 }
 
             }

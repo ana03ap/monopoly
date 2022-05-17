@@ -5,7 +5,6 @@ package lab_final_edd1;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -52,9 +51,10 @@ public class Suerte {
         }
     }
 
+    /*
     public void cartaRandom() {
         Random random = new Random();
-        int rnum = random.nextInt((15 + 1)) + 1;
+        int rnum = random.nextInt((14 + 1)) + 1;
         System.out.println("El random de la suerte es: " + rnum);
 
         if (rnum == 1) {
@@ -69,6 +69,21 @@ public class Suerte {
             System.out.println(recorrer.num + "." + recorrer.info);
         }
         //Acá va la ejecución del metodo jijiji
+    }*/
+
+    public int cartaRandom() {
+        Random random = new Random();
+        int rnum = random.nextInt((14 + 1)) + 1;
+        return rnum;
+        // System.out.println("El random del cofre es: " + rnum);
+        /**
+         * if (rnum == 1) { System.out.println(head.num + "." + head.info); }
+         * else { int cont = 1; Carta recorrer = head; do { recorrer =
+         * recorrer.next; cont++; } while (cont < rnum);
+         * System.out.println(recorrer.num + "." + recorrer.info); }
+         */
+        //Acá va la ejecución del metodo jijiji
+
     }
 
     // hay que instanciar Suerte pa pasarlo de parametro
