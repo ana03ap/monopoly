@@ -1,3 +1,5 @@
+package lab_final_edd1;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;
