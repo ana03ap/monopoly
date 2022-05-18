@@ -77,7 +77,7 @@ public class ListaCampo {
                     JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
                     return;
                 } else {// fortuna o arca comunal 
-                    if (P.numCasilla == 2 || P.numCasilla == 17 || P.numCasilla == 23) {// arca comunal 
+                    if (P.numCasilla == 2 || P.numCasilla == 17 || P.numCasilla == 33) {// arca comunal 
                         Cofre C = new Cofre();
                         String  cartica = "/ImgArcaComunal/"+C.cartaRandom()+".png";
                         Icon carta = new ImageIcon(getClass().getResource(cartica));
