@@ -85,7 +85,7 @@ public class ListaCampo {
                         System.out.println("aa");
                     } else if (P.numCasilla == 7 || P.numCasilla == 22 || P.numCasilla == 36) {// fortuna
                         Suerte S = new Suerte();
-                        String  cartica = "/ImgArcaComunal/"+S.cartaRandom()+".png";
+                        String  cartica = "/ImgSuerte/"+S.cartaRandom()+".png";
                         Icon carta = new ImageIcon(getClass().getResource(cartica));
                         JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
                     }
