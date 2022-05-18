@@ -8,7 +8,7 @@
 7,Fortuna,nadie,nadie,0,0,0,nada
 8,Las pacas de la 30,Celeste,nadie,100,8,16,/ImgPropiedades/8.png
 9,Cerro de Monserrate,Celeste,nadie,120,8,16,/ImgPropiedades/9.png
-10,Carcel,nadie,nadie,0,0,0,nada
+10,Carcel,nadie,nadie,0,0,0,/ImgPropiedades/10.png
 11,Plaza De Toros,Rosado,nadie,140,10,20,/ImgPropiedades/11.png
 12,Compañía de luz,nadie,nadie,150,0,0,/ImgPropiedades/12.png
 13,Estadio El Campin,Rosado,nadie,160,10,20,/ImgPropiedades/13.png
@@ -18,7 +18,7 @@
 17,Arca comunal,nadie,nadie,0,0,0,nada
 18,El Faraón,Naranja,nadie,180,14,28,/ImgPropiedades/18.png
 19,Carpe Diem,Naranja,nadie,200,16,32,/ImgPropiedades/19.png
-20,Pacto historico,nadie,nadie,0,0,0,nada
+20,Pacto historico,nadie,nadie,0,0,0,/ImgPropiedades/20.png
 21,Avenida Septima ,Rojo,nadie,220,18,36,/ImgPropiedades/21.png
 22,Fortuna,nadie,nadie,0,0,0,nada
 23,Parque el Virrey,Rojo,nadie,220,18,36,/ImgPropiedades/23.png
