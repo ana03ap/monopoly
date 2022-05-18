@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Documents/monopoly/src/lab_final_edd1/JugarMayor.java</file>
             <file>file:/D:/Documents/monopoly/src/ImgArcaComunal/4.png</file>
             <file>file:/D:/Documents/monopoly/src/lab_final_edd1/Jugadores.java</file>
@@ -31,6 +32,10 @@
             <file>file:/D:/Documents/monopoly/src/Data1/plata.png</file>
             <file>file:/D:/Documents/monopoly/src/Data1/monopolio.png</file>
             <file>file:/D:/Documents/monopoly/src/lab_final_edd1/CuatroJugadores.java</file>
+=======
+            <file>file:/C:/Users/Hp/Documents/GitHub/monopoly/src/lab_final_edd1/Interfaz.java</file>
+            <file>file:/C:/Users/Hp/Documents/GitHub/monopoly/src/lab_final_edd1/Indicaciones2.java</file>
+>>>>>>> 5fc4733ec77b2026c46008ffb3728e87c5f3ba15
         </group>
     </open-files>
 </project-private>

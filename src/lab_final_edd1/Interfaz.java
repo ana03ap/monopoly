@@ -38,7 +38,12 @@ public class Interfaz extends javax.swing.JFrame {
                 azul.setVisible(false);
                 break;
         }
+<<<<<<< HEAD
 
+=======
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+>>>>>>> 5fc4733ec77b2026c46008ffb3728e87c5f3ba15
         leertxt("txtPropiedades", tablero);
         setSize(1366, 720);
         ImageIcon wallpaper = new ImageIcon("src/Data1/monopolio.png");
