@@ -38,7 +38,7 @@ public class Interfaz extends javax.swing.JFrame {
                 azul.setVisible(false);
                 break;
         }
-        
+
         leertxt("txtPropiedades", tablero);
         setSize(1366, 720);
         ImageIcon wallpaper = new ImageIcon("src/Data1/monopolio.png");
