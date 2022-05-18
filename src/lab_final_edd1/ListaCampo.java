@@ -72,20 +72,33 @@ public class ListaCampo {
         do {
             if (P.numCasilla == n.posicion) {
                 System.out.println("se encontró");
+
                 if (!"nada".equals(P.Ruta)) {
-                    Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
-                    JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
-                    return;
+                    String[] botones = {"comprar", "no comprar"};
+
+                    if (P.valor != 0) {// arreglar lo de valor y renta aen los servicios
+                        // mostrarlo con los botones de comprar 
+                        Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
+                        //int ventana =  JOptionPane.showOptionDialog(null, "", "CARTA", carta);
+                        int ventana = JOptionPane.showOptionDialog(null, "",
+                                "Carta", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, carta, botones, botones[0]);
+                        return;
+                    } else {
+                        Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
+                        JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
+                        return;
+                    }
+
                 } else {// fortuna o arca comunal 
                     if (P.numCasilla == 2 || P.numCasilla == 17 || P.numCasilla == 33) {// arca comunal 
                         Cofre C = new Cofre();
-                        String  cartica = "/ImgArcaComunal/"+C.cartaRandom()+".png";
+                        String cartica = "/ImgArcaComunal/" + C.cartaRandom() + ".png";
                         Icon carta = new ImageIcon(getClass().getResource(cartica));
-                        JOptionPane.showMessageDialog(null,"", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
+                        JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
                         System.out.println("aa");
                     } else if (P.numCasilla == 7 || P.numCasilla == 22 || P.numCasilla == 36) {// fortuna
                         Suerte S = new Suerte();
-                        String  cartica = "/ImgSuerte/"+S.cartaRandom()+".png";
+                        String cartica = "/ImgSuerte/" + S.cartaRandom() + ".png";
                         Icon carta = new ImageIcon(getClass().getResource(cartica));
                         JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
                     }
@@ -98,4 +111,6 @@ public class ListaCampo {
         } while (P != head);
     }
 
+    // metodos para comprar las propiedades 
+ 
 }
