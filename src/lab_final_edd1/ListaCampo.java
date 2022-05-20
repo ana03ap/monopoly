@@ -70,19 +70,42 @@ public class ListaCampo {
     public void buscarn(Jugadores n) {
         Nodo P = head;
         do {
-            if (P.numCasilla == n.posicion) {
+            if (P.numCasilla == n.posicion) { //Casilla es igual a la posición. 
                 System.out.println("se encontró");
 
-                if (!"nada".equals(P.Ruta)) {
+                if (!"nada".equals(P.Ruta)) { //Para ver si es propiedad
                     String[] botones = {"comprar", "no comprar"};
 
-                    if (P.valor != 0) {// arreglar lo de valor y renta aen los servicios
-                        // mostrarlo con los botones de comprar 
-                        Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
-                        //int ventana =  JOptionPane.showOptionDialog(null, "", "CARTA", carta);
-                        int ventana = JOptionPane.showOptionDialog(null, "",
-                                "Carta", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, carta, botones, botones[0]);
-                        return;
+                    if (P.valor != 0) {// arreglar lo de valor y renta en los servicios
+                        if ("nadie".equals(P.Dueño)) {
+                            // mostrarlo con los botones de comprar  
+                            Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
+                            //int ventana =  JOptionPane.showOptionDialog(null, "", "CARTA", carta);
+                            int ventana = JOptionPane.showOptionDialog(null, "",
+                                    "Carta", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, carta, botones, botones[0]);
+                            //Lo que pasa si presiona cada botón
+                            switch(ventana){
+                                case 0: //Comprar, va un método :D
+                                    if(n.dinero >= P.valor){ //Validar que el valor de su dinero sea mayor 
+                                        n.dinero = n.dinero -P.valor;
+                                        P.Dueño = n.nombre; //Implementar si acaba de conseguir un monopoly
+                                    }else{ //Cuando no le alcanza
+                                        JOptionPane.showMessageDialog(null, "No tienes dinero cachón", "!!!", JOptionPane.PLAIN_MESSAGE);
+                                    }
+                                    break;
+                                case 1:
+                                    System.out.println("No se compró");
+                                    break;
+                            }
+                            return;
+                        } else{//Cobrar, es decir, renta :)
+                           //if(P.Dueño  ){
+                               
+                           //}
+                           if(n.dinero <= P.renta){
+                               
+                           }
+                        }
                     } else {
                         Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
                         JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
@@ -112,5 +135,4 @@ public class ListaCampo {
     }
 
     // metodos para comprar las propiedades 
- 
 }

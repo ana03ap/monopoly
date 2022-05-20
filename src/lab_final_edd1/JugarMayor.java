@@ -79,7 +79,7 @@ public class JugarMayor extends javax.swing.JFrame {
         LabelJ1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         LabelJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/Jrojo.png"))); // NOI18N
         LabelJ1.setText("0");
-        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 220, 30));
+        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 250, 30));
 
         LabelJ2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         LabelJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/Jamarillo.png"))); // NOI18N
