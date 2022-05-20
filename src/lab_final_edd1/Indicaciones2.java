@@ -64,16 +64,16 @@ public class Indicaciones2 extends javax.swing.JFrame {
                 propiedMouseClicked(evt);
             }
         });
-        jPanel1.add(propied, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, 50, 50));
+        jPanel1.add(propied, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 420, 40, 40));
 
         turno.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 turnoMouseClicked(evt);
             }
         });
-        jPanel1.add(turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, 40, 50));
+        jPanel1.add(turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, 40, 40));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/indicaciones2.jpg"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/indicaciones2.png"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 520));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -98,17 +98,17 @@ public class Indicaciones2 extends javax.swing.JFrame {
 
     private void ganrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ganrMouseClicked
         Icon icono = new ImageIcon(getClass().getResource("/Data1/ganar.png"));
-        JOptionPane.showMessageDialog(rootPane, "", "!!!", JOptionPane.PLAIN_MESSAGE, icono);
+        JOptionPane.showMessageDialog(rootPane, "", "", JOptionPane.PLAIN_MESSAGE, icono);
     }//GEN-LAST:event_ganrMouseClicked
 
     private void turnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_turnoMouseClicked
         Icon icono = new ImageIcon(getClass().getResource("/Data1/turno.png"));
-        JOptionPane.showMessageDialog(rootPane, "", "!!!", JOptionPane.PLAIN_MESSAGE, icono);
+        JOptionPane.showMessageDialog(rootPane, "", "", JOptionPane.PLAIN_MESSAGE, icono);
     }//GEN-LAST:event_turnoMouseClicked
 
     private void propiedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_propiedMouseClicked
        Icon icono = new ImageIcon(getClass().getResource("/Data1/prop.png"));
-        JOptionPane.showMessageDialog(rootPane, "", "!!!", JOptionPane.PLAIN_MESSAGE, icono);
+        JOptionPane.showMessageDialog(rootPane, "", "", JOptionPane.PLAIN_MESSAGE, icono);
     }//GEN-LAST:event_propiedMouseClicked
 
     /**
