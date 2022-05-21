@@ -44,7 +44,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         leertxt("txtPropiedades", tablero);
         setSize(1366, 720);
-        ImageIcon wallpaper = new ImageIcon("src/Data1/monopolio.png");
+        ImageIcon wallpaper = new ImageIcon("src/Data1/monopoly.png");
         Icon icono = new ImageIcon(wallpaper.getImage().getScaledInstance(jLabel_wallpaper.getWidth(), jLabel_wallpaper.getHeight(), Image.SCALE_DEFAULT));
         jLabel_wallpaper.setIcon(icono);
         this.repaint();
@@ -83,7 +83,7 @@ public class Interfaz extends javax.swing.JFrame {
                 dadoBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(dadoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 50, 310, 70));
+        getContentPane().add(dadoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, 250, 70));
 
         rojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/rojo.png"))); // NOI18N
         getContentPane().add(rojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 600, 40, 70));
@@ -97,7 +97,7 @@ public class Interfaz extends javax.swing.JFrame {
         verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/verde.png"))); // NOI18N
         getContentPane().add(verde, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 610, -1, -1));
 
-        jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopolio.png"))); // NOI18N
+        jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopoly.png"))); // NOI18N
         getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 690));
 
         pack();
