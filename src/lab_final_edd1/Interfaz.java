@@ -6,7 +6,7 @@
 package lab_final_edd1;
 
 import java.awt.Image;
-
+import java.applet.AudioClip;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -22,7 +22,7 @@ public class Interfaz extends javax.swing.JFrame {
     int cont = 0;
     int turno = 1;
     ListaCampo tablero = new ListaCampo();
-
+    AudioClip sonido1, sonido2;
     /**
      * Creates new form Interfaz
      */
@@ -49,7 +49,11 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel_wallpaper.setIcon(icono);
         this.repaint();
         transparenciaButton();
-
+        //sonido
+         sonido1 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz.wav"));
+         sonido1.play();
+         sonido2 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz2.wav"));
+         sonido2.loop();
     }
 
     @SuppressWarnings("unchecked")

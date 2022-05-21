@@ -11,7 +11,7 @@ import java.io.IOException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-
+import java.applet.AudioClip;
 /**
  *
  * @author DELL
@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class ListaCampo {
 
     protected Nodo head, tail;
-
+    AudioClip sonido;
     public ListaCampo() {
         Nodo head = null;
         Nodo tail = null;
@@ -92,6 +92,8 @@ public class ListaCampo {
                                     }else{ //Cuando no le alcanza
                                         JOptionPane.showMessageDialog(null, "No tienes dinero cachón", "!!!", JOptionPane.PLAIN_MESSAGE);
                                     }
+                                    sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audios/chicogel.wav"));
+                                    sonido.play();
                                     break;
                                 case 1:
                                     System.out.println("No se compró");
