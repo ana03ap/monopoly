@@ -107,7 +107,7 @@ public class ListaCampo {
 
                             } else { //cobrarle, no eres el dueño de esa propiedad
                                 if (n.dinero <= P.renta && P.renta != 9999) { //, ya sabemos q no tiene plata, no es servicio
-                                    // implementar la bancarrota
+                                    n.estado = 1;
                                     System.out.println("estas en 0");
                                 } else { //ya sabemos q tiene plata
                                     if (P.renta == 9999) { // ES UN SERVICIO !!!! RENTA CON SERVICIO!!
@@ -117,7 +117,8 @@ public class ListaCampo {
                                         dados(dado1, dado2);
                                         int resultado = dado * 4;
                                         if (resultado >= n.dinero) {
-                                            // estas en bancarrota 
+                                            // estas en bancarrota
+                                            n.estado=1;
                                             System.out.println("no tienes plata compa");
                                         } else {
                                             n.dinero = n.dinero - resultado; // se le descuenta la renta de su dinero

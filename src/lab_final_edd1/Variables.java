@@ -16,6 +16,8 @@ public class Variables {
     public static Jugadores jugador2 = new Jugadores(0,0,1500, 585, 603,"jugador2");
     public static Jugadores jugador3 = new Jugadores(0,0,1500, 585, 603,"jugador3");
     public static Jugadores jugador4 = new Jugadores(0,0,1500, 585, 603,"jugador4");
+    public static boolean condition =false;
+    public static int vecTurnos [];
     
    
    

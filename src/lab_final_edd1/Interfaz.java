@@ -23,6 +23,8 @@ public class Interfaz extends javax.swing.JFrame {
     int turno = 1;
     ListaCampo tablero = new ListaCampo();
     AudioClip sonido1, sonido2;
+    
+
     /**
      * Creates new form Interfaz
      */
@@ -50,10 +52,12 @@ public class Interfaz extends javax.swing.JFrame {
         this.repaint();
         transparenciaButton();
         //sonido
-         sonido1 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz.wav"));
-         sonido1.play();
-         sonido2 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz2.wav"));
-         sonido2.loop();
+        sonido1 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz.wav"));
+        sonido1.play();
+        sonido2 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz2.wav"));
+        sonido2.loop();
+      
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -111,6 +115,89 @@ public class Interfaz extends javax.swing.JFrame {
         int dado1;
         int dado2;//dado2
         int dado;
+        boolean key = false;
+        int caso =6;
+        //El vector representará [j1, j2, j3, j4], y las posiciones que tenga su turno ej: [3, 4, 1, 2]
+        //turno++;
+        //Buscar que posición del vector es (eliminar un jugador es hacer su atributo turno a 0; ej:
+        //Se elimina el jugador 3 [3, 4, 0, 2] entonces en la busqueda si no lo encuentra tuno++, si es 
+        //mayor a njugadores se reinicia, cuando busque arrojará la n posición que será para el swtich
+        //De turno
+        do{
+        for (int i = 0; i < Variables.njugadores; i++) { //buscar en que posición está el turno actual
+            if(Variables.vecTurnos[i]== turno){
+                caso = i+1;
+                key = true;//Si lo encuentra es true
+            }
+            
+        }if(key==false){//Si no lo encuentra avanza al siguiente turno 
+            turno++;
+        }if (turno == Variables.njugadores + 1) { //Si se pasa de la cantidad de jugadores lo reinicia
+            turno = 1;
+        }
+        }while(key ==false);//Lo hará hasta que encuentre una condición 
+        Variables.condition = condition(); //Verificar si algún jugador ganó o no
+        if(Variables.condition == false){ //Si nadie ha ganado que siga el juego
+            switch(caso){ //Corresponde a tu turno
+                case 1:
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, rojo, Variables.jugador1); //Moverse
+                    tablero.buscarn(Variables.jugador1); //Buscar en el tablero/Comprar/Pagar/Cambiar tu estado
+                    if(Variables.jugador1.estado ==1){ //Si caieste a bancarrota...
+                        rojo.setVisible(false); //Se desactiva tu fiha ... prox se desactiva tu label del dinero
+                        Variables.vecTurnos[0]=0; //Ya no estarás en los turnos pq nunca habrá un turno 0
+                    }
+                    break;
+                case 2:
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, amarilla, Variables.jugador2);
+                    tablero.buscarn(Variables.jugador2);
+                    if(Variables.jugador2.estado ==1){
+                        amarilla.setVisible(false);
+                        Variables.vecTurnos[1]=0;
+                    }
+                    break;
+                case 3:
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, verde, Variables.jugador3);
+                    tablero.buscarn(Variables.jugador3);
+                    if(Variables.jugador3.estado ==1){
+                        verde.setVisible(false);
+                        Variables.vecTurnos[2]=0;
+                    }
+                    break;
+                case 4:
+                    dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                    dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                    dado = dado1 + dado2;
+                    dados(dado1, dado2);
+                    mover(dado, azul, Variables.jugador4);
+                    tablero.buscarn(Variables.jugador4);
+                    if(Variables.jugador4.estado ==1){
+                        azul.setVisible(false);
+                        Variables.vecTurnos[3]=0;
+                    }
+                    break;
+            }
+        }else{
+            //alguien ganó
+            System.out.println("Alguien ganó");
+        }
+        turno++;
+        if (turno == Variables.njugadores + 1) {
+            turno = 1;
+        }
+        /*Variables.condition = condition();
+        if(Variables.condition == false){
         switch (turno) {
             case 1:
                 if (Variables.jugador1.turno == 1) {
@@ -120,7 +207,14 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, rojo, Variables.jugador1);
                     tablero.buscarn(Variables.jugador1);
-                    
+                    Variables.condition = condition();
+                    if(Variables.jugador1.estado == 1){
+                        rojo.setVisible(false);
+                        Variables.jugador1 = Variables.jugador2; 
+                        Variables.jugador2 = Variables.jugador3; 
+                        Variables.jugador3 = Variables.jugador4;
+                        Variables.jugador4.nombre = "jugador1";
+                    }
                 }
                 if (Variables.jugador2.turno == 1) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -129,6 +223,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, amarilla, Variables.jugador2);
                     tablero.buscarn(Variables.jugador2);
+                    Variables.condition = condition();
                 }
                 if (Variables.jugador3.turno == 1) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -137,6 +232,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, verde, Variables.jugador3);
                     tablero.buscarn(Variables.jugador3);
+                    Variables.condition = condition();
                 }
                 if (Variables.jugador4.turno == 1) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -145,6 +241,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, azul, Variables.jugador4);
                     tablero.buscarn(Variables.jugador4);
+                    Variables.condition = condition();
                 }
 
                 break;
@@ -156,6 +253,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, rojo, Variables.jugador1);
                     tablero.buscarn(Variables.jugador1);
+                    Variables.condition = condition();
                 }
                 if (Variables.jugador2.turno == 2) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -164,6 +262,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, amarilla, Variables.jugador2);
                     tablero.buscarn(Variables.jugador2);
+                    Variables.condition = condition();
                 }
                 if (Variables.jugador3.turno == 2) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -172,6 +271,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, verde, Variables.jugador3);
                     tablero.buscarn(Variables.jugador3);
+                    Variables.condition = condition();
                 }
                 if (Variables.jugador4.turno == 2) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -180,6 +280,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, azul, Variables.jugador4);
                     tablero.buscarn(Variables.jugador4);
+                    Variables.condition = condition();
                 }
                 break;
             case 3:
@@ -190,7 +291,8 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, rojo, Variables.jugador1);
                     tablero.buscarn(Variables.jugador1);
-                    
+                    Variables.condition = condition();
+
                 }
                 if (Variables.jugador2.turno == 3) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -199,6 +301,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, amarilla, Variables.jugador2);
                     tablero.buscarn(Variables.jugador2);
+                    Variables.condition = condition();
                 }
                 if (Variables.jugador3.turno == 3) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -207,6 +310,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, verde, Variables.jugador3);
                     tablero.buscarn(Variables.jugador3);
+                    Variables.condition = condition();
                 }
                 if (Variables.jugador4.turno == 3) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -215,6 +319,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, azul, Variables.jugador4);
                     tablero.buscarn(Variables.jugador4);
+                    Variables.condition = condition();
                 }
                 break;
             case 4:
@@ -225,6 +330,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, rojo, Variables.jugador1);
                     tablero.buscarn(Variables.jugador1);
+                    Variables.condition = condition();
                 }
                 if (Variables.jugador2.turno == 4) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -233,6 +339,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, amarilla, Variables.jugador2);
                     tablero.buscarn(Variables.jugador2);
+                    Variables.condition = condition();
                 }
                 if (Variables.jugador3.turno == 4) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -241,6 +348,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, verde, Variables.jugador3);
                     tablero.buscarn(Variables.jugador3);
+                    Variables.condition = condition();
                 }
                 if (Variables.jugador4.turno == 4) {
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
@@ -249,6 +357,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dados(dado1, dado2);
                     mover(dado, azul, Variables.jugador4);
                     tablero.buscarn(Variables.jugador4);
+                    Variables.condition = condition();
                 }
                 break;
         }
@@ -256,6 +365,10 @@ public class Interfaz extends javax.swing.JFrame {
         if (turno == Variables.njugadores + 1) {
             turno = 1;
         }
+        }else{
+            //Colocar info al respecto de quien ganó
+            System.out.println("hola");
+        }*/
     }//GEN-LAST:event_dadoBtnActionPerformed
 
     /**
@@ -547,5 +660,39 @@ public class Interfaz extends javax.swing.JFrame {
         }
 
     }
+    public static boolean condition (){
+        boolean condition= false;
+        switch (Variables.njugadores) {
+            case 2:
+                //Caso que solo sean dos jugadores
+                condition = (Variables.jugador1.estado == 0 && Variables.jugador2.estado == 1) || (Variables.jugador1.estado == 1 && Variables.jugador2.estado == 0);
+                return condition;
+                
+            case 3:
+                condition = (Variables.jugador1.estado == 0 && Variables.jugador2.estado == 1 && Variables.jugador3.estado == 1) || 
+                        (Variables.jugador1.estado == 1 && Variables.jugador2.estado == 0
+                        && Variables.jugador3.estado == 1) || (Variables.jugador1.estado == 1 && Variables.jugador2.estado == 1 && Variables.jugador3.estado == 0);
+                return condition;
+            case 4:
+                condition = (Variables.jugador1.estado == 0 && Variables.jugador2.estado == 1 && Variables.jugador3.estado == 1 && Variables.jugador4.estado == 1)
+                        || (Variables.jugador1.estado == 1 && Variables.jugador2.estado == 0 && Variables.jugador3.estado == 1 && Variables.jugador4.estado == 1)
+                        ||(Variables.jugador1.estado == 1 && Variables.jugador2.estado == 1 && Variables.jugador3.estado == 0 && Variables.jugador4.estado == 1)
+                        ||(Variables.jugador1.estado == 1 && Variables.jugador2.estado == 1 && Variables.jugador3.estado == 1 && Variables.jugador4.estado == 0);
+                return condition;
+                
+                
 
+        }
+        return condition;
+    }
+    //metodo eliminar un jugador
+    public void eliminiar (Jugadores J, JLabel ficha){
+        //dependiendo de n jugadores pasar por casa jugador y ver si su estado es uno, 
+        //cuando sea 1, hacer un set visible de su label, cambiar los jugadores despues de el en su turno (rodarlo)
+        //Quitarle todas sus propiedades, reducir en menos uno njugadores
+        if(J.estado == 1){
+            ficha.setVisible(false);
+            
+        }
+    }
 }
