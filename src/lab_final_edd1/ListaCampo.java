@@ -71,7 +71,6 @@ public class ListaCampo {
         Nodo P = head;
         do {
             if (P.numCasilla == n.posicion) { //Casilla es igual a la posición. 
-                System.out.println("se encontró");
 
                 if (!"nada".equals(P.Ruta)) { //Para ver si es propiedad
                     String[] botones = {"COMPRAR", "NO COMPRAR"};
@@ -108,6 +107,7 @@ public class ListaCampo {
                             } else { //cobrarle, no eres el dueño de esa propiedad
                                 if (n.dinero <= P.renta && P.renta != 9999) { //, ya sabemos q no tiene plata, no es servicio
                                     n.estado = 1;
+                                    n.dinero=0;
                                     System.out.println("estas en 0");
                                 } else { //ya sabemos q tiene plata
                                     if (P.renta == 9999) { // ES UN SERVICIO !!!! RENTA CON SERVICIO!!
@@ -119,6 +119,7 @@ public class ListaCampo {
                                         if (resultado >= n.dinero) {
                                             // estas en bancarrota
                                             n.estado=1;
+                                            n.dinero=0;
                                             System.out.println("no tienes plata compa");
                                         } else {
                                             n.dinero = n.dinero - resultado; // se le descuenta la renta de su dinero
