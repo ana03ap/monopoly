@@ -173,8 +173,8 @@ public class Interfaz extends javax.swing.JFrame {
         nturno.setBackground(new java.awt.Color(204, 204, 204));
         nturno.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         nturno.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 36)); // NOI18N
-        nturno.setText(" 1");
-        getContentPane().add(nturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 150, 40, 40));
+        nturno.setText("1");
+        getContentPane().add(nturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 150, 30, 40));
 
         jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopoly.png"))); // NOI18N
         getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 690));
