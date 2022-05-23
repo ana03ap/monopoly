@@ -12,6 +12,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import java.applet.AudioClip;
+
 /**
  *
  * @author DELL
@@ -20,6 +21,7 @@ public class ListaCampo {
 
     protected Nodo head, tail;
     AudioClip sonido;
+
     public ListaCampo() {
         Nodo head = null;
         Nodo tail = null;
@@ -67,13 +69,34 @@ public class ListaCampo {
         }*/
     }
 
-    public void buscarn(Jugadores n) {
+    public void buscarn(Jugadores n, Jugadores x, Jugadores y, Jugadores z) {
         Nodo P = head;
+        // n es la persona a la que se le va a quitar la plata
         do {
+            // aca esta en economia naranja y pa vivir sabroso 
+            if ((P.numCasilla == 4 && P.numCasilla == n.posicion) || (P.numCasilla == 38 && P.numCasilla == n.posicion)) {
+                Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
+                JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
+                switch (P.numCasilla) {
+                    case 4: // economia naranja le suma 200
+                        n.dinero = n.dinero + 200;
+                        break;
+                    case 38: // pa vivir sabroso le suma 100
+                        n.dinero = n.dinero + 100;
+                        break;
+                }
+                return;
+            }
+
+            if (P.numCasilla == 30 && P.numCasilla == n.posicion) {
+                Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
+                JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
+                // IMPLEMENTAR CARCEL
+            }
             if (P.numCasilla == n.posicion) { //Casilla es igual a la posición. 
 
                 if (!"nada".equals(P.Ruta)) { //Para ver si es propiedad
-                    String[] botones = {"COMPRAR", "NO COMPRAR"};
+                    String[] botones = {" COMPRAR ", " NO COMPRAR "};
 
                     if (P.valor != 0) {// CUANDO NO HAY DUEÑO
                         if ("nadie".equals(P.Dueño)) {
@@ -90,6 +113,8 @@ public class ListaCampo {
                                         P.Dueño = n.nombre; //Implementar si acaba de conseguir un monopoly
                                     } else { //Cuando no le alcanza
                                         JOptionPane.showMessageDialog(null, "No tienes dinero", "WARNING!", JOptionPane.PLAIN_MESSAGE);
+                                        n.dinero = 0;
+                                        n.estado = 1;
                                     }
                                     sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audios/chicogel.wav"));
                                     sonido.play();
@@ -107,7 +132,19 @@ public class ListaCampo {
                             } else { //cobrarle, no eres el dueño de esa propiedad
                                 if (n.dinero <= P.renta && P.renta != 9999) { //, ya sabemos q no tiene plata, no es servicio
                                     n.estado = 1;
-                                    n.dinero=0;
+                                    // estamos sumando la renta al dueño de la propiedad
+                                    // puede que la renta sea 30 y el jugador tenga 15, se le suma los 15 al dueño
+                                    if (P.Dueño.equals(x.nombre)) {
+                                        x.dinero = x.dinero + n.dinero;
+                                    }
+                                    if (P.Dueño.equals(y.nombre)) {
+                                        y.dinero = y.dinero + n.dinero;
+                                    }
+                                    if (P.Dueño.equals(z.nombre)) {
+                                        z.dinero = z.dinero + n.dinero;
+                                    }
+                                    n.dinero = 0;
+
                                     System.out.println("estas en 0");
                                 } else { //ya sabemos q tiene plata
                                     if (P.renta == 9999) { // ES UN SERVICIO !!!! RENTA CON SERVICIO!!
@@ -118,16 +155,37 @@ public class ListaCampo {
                                         int resultado = dado * 4;
                                         if (resultado >= n.dinero) {
                                             // estas en bancarrota
-                                            n.estado=1;
-                                            n.dinero=0;
+                                            n.estado = 1;
+                                            n.dinero = 0;
                                             System.out.println("no tienes plata compa");
                                         } else {
                                             n.dinero = n.dinero - resultado; // se le descuenta la renta de su dinero
                                             System.out.println(n.dinero);
+                                            // estamos sumando la renta al dueño de la propiedad 
+                                            if (P.Dueño.equals(x.nombre)) {
+                                                x.dinero = x.dinero + P.renta;
+                                            }
+                                            if (P.Dueño.equals(y.nombre)) {
+                                                y.dinero = y.dinero + P.renta;
+                                            }
+                                            if (P.Dueño.equals(z.nombre)) {
+                                                z.dinero = z.dinero + P.renta;
+                                            }
                                         }
                                     } else {
                                         n.dinero = n.dinero - P.renta; // se le descuenta la renta de su dinero
                                         System.out.println(n.dinero);
+
+                                        // estamos sumando la renta al dueño de la propiedad 
+                                        if (P.Dueño.equals(x.nombre)) {
+                                            x.dinero = x.dinero + P.renta;
+                                        }
+                                        if (P.Dueño.equals(y.nombre)) {
+                                            y.dinero = y.dinero + P.renta;
+                                        }
+                                        if (P.Dueño.equals(z.nombre)) {
+                                            z.dinero = z.dinero + P.renta;
+                                        }
                                     }
                                 }
                             }
