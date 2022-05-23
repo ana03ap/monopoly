@@ -3,7 +3,7 @@
 2,Arca comunal,nadie,nadie,0,0,0,nada
 3,San Victorino,Magenta,nadie,60,4,8,/ImgPropiedades/3.png
 4,Economia Naranja,nadie,nadie,0,0,0,/ImgPropiedades/4.png
-5,Sobusa,nadie,nadie,200,0,0,/ImgPropiedades/5.png
+5,Sobusa,nadie,nadie,200,9999,0,/ImgPropiedades/5.png
 6,El mercado de Bazurto,Celeste,nadie,100,8,12,/ImgPropiedades/6.png
 7,Fortuna,nadie,nadie,0,0,0,nada
 8,Las pacas de la 30,Celeste,nadie,100,8,16,/ImgPropiedades/8.png
@@ -13,7 +13,7 @@
 12,Compañía de luz,nadie,nadie,150,9999,0,/ImgPropiedades/12.png
 13,Estadio El Campin,Rosado,nadie,160,10,20,/ImgPropiedades/13.png
 14,Estadio Metropolitano,Rosado,nadie,160,12,24,/ImgPropiedades/14.png
-15,Bus de puerto,nadie,nadie,200,0,0,/ImgPropiedades/15.png
+15,Bus de puerto,nadie,nadie,200,9999,0,/ImgPropiedades/15.png
 16,Siglo XXI,Naranja,nadie,180,14,28,/ImgPropiedades/16.png
 17,Arca comunal,nadie,nadie,0,0,0,nada
 18,El Faraón,Naranja,nadie,180,14,28,/ImgPropiedades/18.png
@@ -23,7 +23,7 @@
 22,Fortuna,nadie,nadie,0,0,0,nada
 23,Parque el Virrey,Rojo,nadie,220,18,36,/ImgPropiedades/23.png
 24,Hidroituango,Rojo,nadie,240,20,40,/ImgPropiedades/24.png
-25,Transmetro,nadie,nadie,200,0,0,/ImgPropiedades/25.png
+25,Transmetro,nadie,nadie,200,9999,0,/ImgPropiedades/25.png
 26,Paramo de Santurban,Amarillo,nadie,260,22,44,/ImgPropiedades/26.png
 27,Cholon,Amarillo,nadie,260,22,44,/ImgPropiedades/27.png
 28,Bonos de Agua,nadie,nadie,160,9999,0,/ImgPropiedades/28.png
@@ -33,7 +33,7 @@
 32,Ara,Verde,nadie,300,26,52,/ImgPropiedades/32.png
 33,Arca comunal,nadie,nadie,0,0,0,nada
 34,D1,Verde,nadie,320,28,56,/ImgPropiedades/34.png
-35,Toyota,nadie,nadie,200,0,0,/ImgPropiedades/35.png
+35,Toyota,nadie,nadie,200,9999,0,/ImgPropiedades/35.png
 36,Fortuna,nadie,nadie,0,0,0,nada
 37,El Poblado,Azul,nadie,350,35,70,/ImgPropiedades/37.png
 38,Pa vivir sabroso,nadie,nadie,0,0,0,/ImgPropiedades/38.png
