@@ -132,7 +132,8 @@ public class Indicaciones1 extends javax.swing.JFrame {
     }//GEN-LAST:event_comunitarioMouseClicked
 
     private void dadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dadosMouseClicked
-        // TODO add your handling code here:
+        Icon icono = new ImageIcon(getClass().getResource("/Data1/dados.png"));
+        JOptionPane.showMessageDialog(rootPane, "", "!!!", JOptionPane.PLAIN_MESSAGE, icono);
     }//GEN-LAST:event_dadosMouseClicked
 
     /**

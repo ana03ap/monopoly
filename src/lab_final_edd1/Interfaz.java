@@ -101,6 +101,7 @@ public class Interfaz extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         nturno = new java.awt.Label();
+        home = new javax.swing.JLabel();
         jLabel_wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -175,6 +176,13 @@ public class Interfaz extends javax.swing.JFrame {
         nturno.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 36)); // NOI18N
         nturno.setText("1");
         getContentPane().add(nturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 150, 30, 40));
+
+        home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeMouseClicked(evt);
+            }
+        });
+        getContentPane().add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 30, 60, 70));
 
         jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopoly.png"))); // NOI18N
         getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 690));
@@ -292,9 +300,15 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        JOptionPane.showMessageDialog(null, "El dinero del jugaor azul es: " + "\n"
+        JOptionPane.showMessageDialog(null, "El dinero del jugador azul es: " + "\n"
                 + "$" + Variables.jugador4.dinero, "DINERO", JOptionPane.PLAIN_MESSAGE);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked
+        Njugadores c = new Njugadores();
+        c.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_homeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -347,6 +361,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel amarilla;
     private javax.swing.JLabel azul;
     private javax.swing.JButton dadoBtn;
+    private javax.swing.JLabel home;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

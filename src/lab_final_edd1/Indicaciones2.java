@@ -57,6 +57,12 @@ public class Indicaciones2 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ganr, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, 40, 50));
+
+        primero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                primeroMouseClicked(evt);
+            }
+        });
         jPanel1.add(primero, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 240, 40, 50));
 
         propied.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,18 +104,23 @@ public class Indicaciones2 extends javax.swing.JFrame {
 
     private void ganrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ganrMouseClicked
         Icon icono = new ImageIcon(getClass().getResource("/Data1/ganar.png"));
-        JOptionPane.showMessageDialog(rootPane, "", "", JOptionPane.PLAIN_MESSAGE, icono);
+        JOptionPane.showMessageDialog(rootPane, "", "!!!", JOptionPane.PLAIN_MESSAGE, icono);
     }//GEN-LAST:event_ganrMouseClicked
 
     private void turnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_turnoMouseClicked
         Icon icono = new ImageIcon(getClass().getResource("/Data1/turno.png"));
-        JOptionPane.showMessageDialog(rootPane, "", "", JOptionPane.PLAIN_MESSAGE, icono);
+        JOptionPane.showMessageDialog(rootPane, "", "!!!", JOptionPane.PLAIN_MESSAGE, icono);
     }//GEN-LAST:event_turnoMouseClicked
 
     private void propiedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_propiedMouseClicked
-       Icon icono = new ImageIcon(getClass().getResource("/Data1/prop.png"));
-        JOptionPane.showMessageDialog(rootPane, "", "", JOptionPane.PLAIN_MESSAGE, icono);
+        Icon icono = new ImageIcon(getClass().getResource("/Data1/prop.png"));
+        JOptionPane.showMessageDialog(rootPane, "", "!!!", JOptionPane.PLAIN_MESSAGE, icono);
     }//GEN-LAST:event_propiedMouseClicked
+
+    private void primeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_primeroMouseClicked
+        Icon icono = new ImageIcon(getClass().getResource("/Data1/jugadorM.png"));
+        JOptionPane.showMessageDialog(rootPane, "", "!!!", JOptionPane.PLAIN_MESSAGE, icono);
+    }//GEN-LAST:event_primeroMouseClicked
 
     /**
      * @param args the command line arguments
