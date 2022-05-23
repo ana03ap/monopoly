@@ -91,7 +91,7 @@ public class Indicaciones2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_atrasMouseClicked
-        Indicaciones1 f = new Indicaciones1();
+        Njugadores f = new Njugadores();
         f.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_atrasMouseClicked

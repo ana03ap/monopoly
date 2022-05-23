@@ -66,7 +66,7 @@ public class Lab_Final_EDD1 {
                 ca.addNode(numCasilla, nombre, color, Dueño, valor, renta, rentaMonopoly, Ruta);
                 //Añadimos las listas al array  
             }
-            ca.display();
+
             br.close();
 
         } catch (IOException ex) {

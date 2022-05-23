@@ -19,7 +19,7 @@ public class Pp extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audios/fondo.wav"));
-        sonido.play();
+        //sonido.play();
     }
 
     /**

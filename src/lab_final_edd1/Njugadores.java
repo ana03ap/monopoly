@@ -120,6 +120,7 @@ public class Njugadores extends javax.swing.JFrame {
 
     private void dosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dosActionPerformed
         Variables.njugadores = 2;
+        Variables.vecTurnos = new int [2];
         DosJugadores d = new DosJugadores();
         d.setVisible(true);
         this.setVisible(false);
@@ -132,6 +133,7 @@ public class Njugadores extends javax.swing.JFrame {
 
     private void tresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tresActionPerformed
         Variables.njugadores = 3;
+        Variables.vecTurnos = new int [3];
         TresJugadores m = new TresJugadores();
         m.setVisible(true);
         this.setVisible(false);
@@ -139,6 +141,7 @@ public class Njugadores extends javax.swing.JFrame {
 
     private void cuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuatroActionPerformed
         Variables.njugadores = 4;
+        Variables.vecTurnos = new int [4];
         CuatroJugadores m = new CuatroJugadores();
         m.setVisible(true);
         this.setVisible(false);
