@@ -64,9 +64,9 @@ public class Interfaz extends javax.swing.JFrame {
         transparenciaButton();
         //sonido
         sonido1 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz.wav"));
-        //sonido1.play();
+        sonido1.play();
         sonido2 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz2.wav"));
-        //sonido2.loop();
+        sonido2.loop();
 
     }
 
@@ -75,6 +75,7 @@ public class Interfaz extends javax.swing.JFrame {
         dadoBtn.setOpaque(false);
         dadoBtn.setContentAreaFilled(false);
         dadoBtn.setBorderPainted(false);
+       
     }
 
     /**
@@ -99,6 +100,7 @@ public class Interfaz extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        nturno = new java.awt.Label();
         jLabel_wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -167,6 +169,12 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 450, -1, -1));
+
+        nturno.setBackground(new java.awt.Color(204, 204, 204));
+        nturno.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        nturno.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 36)); // NOI18N
+        nturno.setText(" 1");
+        getContentPane().add(nturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 150, 40, 40));
 
         jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopoly.png"))); // NOI18N
         getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 690));
@@ -264,6 +272,7 @@ public class Interfaz extends javax.swing.JFrame {
         if (turno == Variables.njugadores + 1) {
             turno = 1;
         }
+        nturno.setText(turno+"");
     }//GEN-LAST:event_dadoBtnActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -343,6 +352,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel_wallpaper;
+    private java.awt.Label nturno;
     private javax.swing.JLabel rojo;
     private javax.swing.JLabel verde;
     // End of variables declaration//GEN-END:variables

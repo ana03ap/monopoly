@@ -322,14 +322,13 @@ public class ListaCampo {
                     } else if (P.numCasilla == 7 || P.numCasilla == 22 || P.numCasilla == 36) {// fortuna
                         Suerte S = new Suerte();
                         int escogido = S.cartaRandom();
-
                         String cartica = "/ImgSuerte/" + escogido + ".png";
                         Icon carta = new ImageIcon(getClass().getResource(cartica));
                         JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
                         int dado = 0;
                         switch (escogido) {
                             case 1:
-
+                                System.out.println("hola");
                                 while (n.posicion + dado != 39) {
                                     dado++;
                                 }
