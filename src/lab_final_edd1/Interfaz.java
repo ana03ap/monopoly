@@ -64,9 +64,9 @@ public class Interfaz extends javax.swing.JFrame {
         transparenciaButton();
         //sonido
         sonido1 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz.wav"));
-        sonido1.play();
+        //sonido1.play();
         sonido2 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz2.wav"));
-        sonido2.loop();
+        //sonido2.loop();
 
     }
 
@@ -210,7 +210,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, rojo, Variables.jugador1); //Moverse
-                    tablero.buscarn(Variables.jugador1, Variables.jugador2, Variables.jugador3, Variables.jugador4); //Buscar en el tablero/Comprar/Pagar/Cambiar tu estado
+                    tablero.buscarn(Variables.jugador1, Variables.jugador2, Variables.jugador3, Variables.jugador4, rojo); //Buscar en el tablero/Comprar/Pagar/Cambiar tu estado
                     if (Variables.jugador1.dinero == 0) { //Si caieste a bancarrota...
                         rojo.setVisible(false); //Se desactiva tu fiha ... prox se desactiva tu label del dinero
                         Variables.vecTurnos[0] = 0; //Ya no estarás en los turnos pq nunca habrá un turno 0
@@ -222,7 +222,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, amarilla, Variables.jugador2);
-                    tablero.buscarn(Variables.jugador2, Variables.jugador1, Variables.jugador3, Variables.jugador4);
+                    tablero.buscarn(Variables.jugador2, Variables.jugador1, Variables.jugador3, Variables.jugador4,amarilla);
 
                     if (Variables.jugador2.dinero == 0) {
                         amarilla.setVisible(false);
@@ -235,7 +235,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, verde, Variables.jugador3);
-                    tablero.buscarn(Variables.jugador3, Variables.jugador1, Variables.jugador2, Variables.jugador4);
+                    tablero.buscarn(Variables.jugador3, Variables.jugador1, Variables.jugador2, Variables.jugador4, verde);
                     if (Variables.jugador3.dinero == 0) {
                         verde.setVisible(false);
                         Variables.vecTurnos[2] = 0;
@@ -247,7 +247,7 @@ public class Interfaz extends javax.swing.JFrame {
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, azul, Variables.jugador4);
-                    tablero.buscarn(Variables.jugador4, Variables.jugador1, Variables.jugador2, Variables.jugador3);
+                    tablero.buscarn(Variables.jugador4, Variables.jugador1, Variables.jugador2, Variables.jugador3, azul);
                     if (Variables.jugador4.dinero == 0) {
                         azul.setVisible(false);
                         Variables.vecTurnos[3] = 0;

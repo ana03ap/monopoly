@@ -12,6 +12,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import java.applet.AudioClip;
+import javax.swing.JLabel;
 
 /**
  *
@@ -69,7 +70,7 @@ public class ListaCampo {
         }*/
     }
 
-    public void buscarn(Jugadores n, Jugadores x, Jugadores y, Jugadores z) {
+    public void buscarn(Jugadores n, Jugadores x, Jugadores y, Jugadores z, JLabel ficha) {
         Nodo P = head;
         // n es la persona a la que se le va a quitar la plata
         do {
@@ -117,7 +118,7 @@ public class ListaCampo {
                                         n.estado = 1;
                                     }
                                     sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audios/chicogel.wav"));
-                                    sonido.play();
+                                    //sonido.play();
                                     break;
                                 case 1: //no compro la propiedad
                                     System.out.println("No se compró");
@@ -200,15 +201,283 @@ public class ListaCampo {
                 } else {// fortuna o arca comunal 
                     if (P.numCasilla == 2 || P.numCasilla == 17 || P.numCasilla == 33) {// arca comunal 
                         Cofre C = new Cofre();
-                        String cartica = "/ImgArcaComunal/" + C.cartaRandom() + ".png";
+                        int escogido = C.cartaRandom();
+                        String cartica = "/ImgArcaComunal/" + escogido + ".png";
                         Icon carta = new ImageIcon(getClass().getResource(cartica));
                         JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
-                        System.out.println("aa");
+                        int dado = 0;
+                        switch (escogido) {
+                            case 1:
+                                //Salga de la carcel
+                                break;
+                            case 2:
+                                //Vaya para la carcel
+                                break;
+                            case 3:
+                                while (n.posicion + dado != 40) {
+                                    dado++;
+                                }
+                                mover(dado, ficha, n);
+                                break;
+                            case 4:
+                                n.dinero = n.dinero + 200;
+                                break;
+                            case 5:
+                                if (n.dinero <= 50) {
+                                    n.dinero = 0;
+                                    n.estado = 1;
+                                } else {
+                                    n.dinero = n.dinero - 50;
+                                }
+                                break;
+                            case 6:
+                                n.dinero = n.dinero + 100;
+                                break;
+                            case 7:
+                                n.dinero = n.dinero + 100;
+                                break;
+                            case 8:
+                                if (n.dinero <= 50) {
+                                    n.dinero = 0;
+                                    n.estado = 1;
+                                } else {
+                                    n.dinero = n.dinero - 50;
+                                }
+                                break;
+                            case 9:
+                                n.dinero = n.dinero + 20;
+                                break;
+                            case 10:
+                                n.dinero = n.dinero + 25;
+                                break;
+                            case 11:
+                                if (n.dinero <= 100) {
+                                    n.dinero = 0;
+                                    n.estado = 1;
+                                } else {
+                                    n.dinero = n.dinero - 100;
+                                }
+                                break;
+                            case 12:
+                                //Terminar
+                                switch (Variables.njugadores) {
+                                    case 2:
+                                        if (x.dinero <= 10) {
+                                            n.dinero = n.dinero + x.dinero;
+                                            x.dinero = 0;
+                                            x.estado = 1;
+                                        } else {
+                                            x.dinero = x.dinero - 10;
+                                            n.dinero = n.dinero + 10;
+                                        }
+                                        break;
+                                    case 3:
+                                        int one = 10,
+                                         two = 10;
+                                        if (x.dinero <= 10) {
+                                            one = x.dinero;
+                                            x.dinero = 0;
+                                            x.estado = 1;
+                                        }
+                                        if (y.dinero <= 10) {
+                                            two = y.dinero;
+                                            y.dinero = 0;
+                                            y.estado = 1;
+                                        }
+                                        n.dinero = n.dinero + one + two;
+                                        break;
+                                    case 4:
+                                        int one1 = 10,
+                                         two1 = 10,
+                                         three1 = 10;
+                                        if (x.dinero <= 10) {
+                                            one1 = x.dinero;
+                                            x.dinero = 0;
+                                            x.estado = 1;
+                                        }
+                                        if (y.dinero <= 10) {
+                                            two1 = y.dinero;
+                                            y.dinero = 0;
+                                            y.estado = 1;
+                                        }
+                                        if (z.dinero <= 10) {
+                                            three1 = z.dinero;
+                                            z.estado = 1;
+                                            z.dinero = 0;
+                                        }
+                                        n.dinero = n.dinero + one1 + two1 + three1;
+                                        break;
+                                }
+                                break;
+                            case 13:
+                                n.dinero = n.dinero + 100;
+                                break;
+                            case 14:
+                                n.dinero = n.dinero + 100;
+                                break;
+                            case 15:
+                                n.dinero = n.dinero + 10;
+                                break;
+                        }
                     } else if (P.numCasilla == 7 || P.numCasilla == 22 || P.numCasilla == 36) {// fortuna
                         Suerte S = new Suerte();
-                        String cartica = "/ImgSuerte/" + S.cartaRandom() + ".png";
+                        int escogido = S.cartaRandom();
+
+                        String cartica = "/ImgSuerte/" + escogido + ".png";
                         Icon carta = new ImageIcon(getClass().getResource(cartica));
                         JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
+                        int dado = 0;
+                        switch (escogido) {
+                            case 1:
+
+                                while (n.posicion + dado != 39) {
+                                    dado++;
+                                }
+                                mover(dado, ficha, n);
+                                break;
+                            case 2:
+
+                                while (n.posicion + dado != 40) {
+                                    dado++;
+                                }
+                                mover(dado, ficha, n);
+                                break;
+                            case 3:
+                                while (n.posicion + dado != 24) {
+                                    dado++;
+                                    if (dado + n.posicion == 40) {
+                                        mover(dado, ficha, n);
+                                        dado = 0;
+                                    }
+                                }
+                                mover(dado, ficha, n);
+                                break;
+                            case 4:
+                                while (n.posicion + dado != 11) {
+                                    dado++;
+                                    if (dado + n.posicion == 40) {
+                                        mover(dado, ficha, n);
+                                        dado = 0;
+                                    }
+                                }
+                                mover(dado, ficha, n);
+                                break;
+                            case 5:
+                                while (n.posicion + dado != 25) {
+                                    dado++;
+                                    if (dado + n.posicion == 40) {
+                                        mover(dado, ficha, n);
+                                        dado = 0;
+                                    }
+                                }
+                                mover(dado, ficha, n);
+
+                                break;
+                            case 6:
+                                while (n.posicion + dado != 5) {
+                                    dado++;
+                                    if (dado + n.posicion == 40) {
+                                        mover(dado, ficha, n);
+                                        dado = 0;
+                                    }
+                                }
+                                mover(dado, ficha, n);
+                                break;
+                            case 7:
+                                while (n.posicion + dado != 35) {
+                                    dado++;
+                                    if (dado + n.posicion == 40) {
+                                        mover(dado, ficha, n);
+                                        dado = 0;
+                                    }
+                                }
+                                mover(dado, ficha, n);
+                                break;
+                            case 8:
+                                n.dinero = n.dinero - 150;
+                                break;
+                            case 9:
+                                switch (Variables.njugadores) {
+                                    case 2:
+                                        if (n.dinero <= 50) {
+                                            x.dinero = x.dinero + n.dinero;
+                                            n.dinero = 0;
+                                            n.estado = 1;
+                                        } else {
+                                            n.dinero = n.dinero - 50;
+                                            x.dinero = x.dinero + 50;
+                                        }
+
+                                        break;
+                                    case 3:
+                                        if (n.dinero <= 100) {
+                                            x.dinero = x.dinero + (n.dinero / 2);
+                                            y.dinero = y.dinero + (n.dinero / 2);
+                                            n.dinero = 0;
+                                            n.estado = 1;
+                                        } else {
+                                            n.dinero = n.dinero - 100;
+                                            x.dinero = x.dinero + 50;
+                                            y.dinero = y.dinero + 50;
+                                        }
+                                        break;
+                                    case 4:
+                                        if (n.dinero <= 150) {
+                                            x.dinero = x.dinero + (n.dinero / 3);
+                                            y.dinero = y.dinero + (n.dinero / 3);
+                                            z.dinero = z.dinero + (n.dinero / 3);
+                                            n.dinero = 0;
+                                            n.estado = 1;
+                                        } else {
+                                            n.dinero = n.dinero - 150;
+                                            x.dinero = x.dinero + 50;
+                                            y.dinero = y.dinero + 50;
+                                            z.dinero = z.dinero + 50;
+                                        }
+                                }
+                                break;
+                            case 10:
+                                n.dinero = n.dinero + 50;
+                                break;
+                            case 11:
+                                //Salir de la carcel gratis
+                                break;
+                            case 12:
+                                //Esto toca arreglarlo pq retroceder tres casillas no está bién implementado, por ahora da la vuelta completa
+                                while (n.posicion + dado != n.posicion - 3) {
+                                    dado++;
+                                    if (dado + n.posicion == 40) {
+                                        mover(dado, ficha, n);
+                                        dado = 0;
+                                    }
+                                }
+                                mover(dado, ficha, n);
+                                n.dinero = n.dinero - 200;
+                                break;
+                            case 13:
+                                if (n.dinero <= 15) {
+                                    n.dinero = 0;
+                                    n.estado = 1;
+                                } else {
+                                    n.dinero = n.dinero - 15;
+                                }
+                                break;
+                            case 14:
+                                while (n.posicion + dado != 28) {
+                                    dado++;
+                                    if (dado + n.posicion == 40) {
+                                        mover(dado, ficha, n);
+                                        dado = 0;
+                                    }
+                                }
+                                mover(dado, ficha, n);
+                                break;
+                            case 15:
+                                //Vaya pa la carcel implementar esa porqueria
+                                break;
+
+                        }
+
                     }
 
                 }
@@ -358,5 +627,102 @@ public class ListaCampo {
                 break;
         }
         JOptionPane.showMessageDialog(null, "", "DADOS", JOptionPane.PLAIN_MESSAGE, icono);
+    }
+
+    public void mover(int dado, JLabel rojo, Jugadores a) {
+        //MOVIMIENTO DE UNA FICHA
+        if ((a.posicion + dado >= 11 && a.posicion < 19) && a.posicion <= 10) { //para cuando dé la primera vuelta
+            if (a.posicion + dado != 11) {
+                do {
+                    a.posicion++;
+                    dado--;
+                } while (a.posicion != 11);
+            }
+            //Si casualmente cae en 11 ya se situe acá
+            a.x = 35;
+            a.y = 540;
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if ((a.posicion + dado >= 21 && a.posicion < 29) && (a.posicion <= 19 && a.posicion > 10)) { //Para cuando de la primer vuelta
+            if (a.posicion + dado != 21) {
+                do {
+                    a.posicion++;
+                    dado--;
+
+                } while (a.posicion != 21);
+            }
+            //Si casualmente cae en 21 ya se situe acá
+            a.x = 90;
+            a.y = 40;
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if ((a.posicion + dado >= 31 && a.posicion < 39) && (a.posicion <= 29 && a.posicion > 20)) {
+            if (a.posicion + dado != 31) {
+                do {
+                    a.posicion++;
+                    dado--;
+                } while (a.posicion != 31);
+            }
+            a.x = 585;
+            a.y = 95;
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if ((a.posicion + dado >= 41) && (a.posicion <= 39 && a.posicion > 30)) {
+            if (a.posicion + dado != 41) {
+                do {
+                    a.posicion++;
+                    dado--;
+                } while (a.posicion != 41);
+
+            }
+            a.posicion = 1;
+            a.x = 585 - 55;
+            a.y = 603;
+            rojo.setBounds(a.x, a.y, 35, 57);
+            JOptionPane.showMessageDialog(null, "Gana 200");
+            a.dinero = a.dinero + 200; // se le añade a la plata, los 200 de la salida 
+        }
+
+        a.posicion = a.posicion + dado; //Ya suma la pos del jugador con el dado
+        if (a.posicion >= 0 && a.posicion <= 9) { //Si cae entre la a la 9
+            a.x = a.x - (55 * dado);//mover x 55 pixeles
+            rojo.setBounds(a.x, a.y, 35, 57);
+
+        }
+        if (a.posicion == 10) { // Si cae en la 10
+            a.x = 35;
+            rojo.setBounds(a.x, a.y, 35, 57);
+
+        }
+        if (a.posicion >= 12 && a.posicion <= 19) { //Si cae en la 12 a 19
+            a.y = a.y - (55 * dado);
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if (a.posicion == 20) { //Si cae en la 20
+            a.x = 35;
+            a.y = 40;
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if (a.posicion >= 22 && a.posicion <= 29) { //Si cae de la 22 a la 29
+            a.x = a.x + (55 * dado);
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if (a.posicion == 30) {
+            a.x = 585;
+            a.y = 40;
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if (a.posicion >= 32 && a.posicion <= 39) { //Si cae de la 32 a la 39
+            a.y = a.y + (55 * dado);
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if (a.posicion == 40) {
+            a.posicion = 0;
+            a.x = 585;
+            a.y = 603;
+            rojo.setBounds(a.x, a.y, 35, 57);
+            JOptionPane.showMessageDialog(null, "Gana 200");
+        }
+
     }
 }
