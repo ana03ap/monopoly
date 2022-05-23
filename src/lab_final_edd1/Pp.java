@@ -4,19 +4,22 @@
  * and open the template in the editor.
  */
 package lab_final_edd1;
+import java.applet.AudioClip;
 
 /**
  *
  * @author Hp
  */
 public class Pp extends javax.swing.JFrame {
-
+    AudioClip sonido;
     /**
      * Creates new form Pp
      */
     public Pp() {
         initComponents();
         this.setLocationRelativeTo(null);
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audios/fondo.wav"));
+        sonido.play();
     }
 
     /**
@@ -64,6 +67,7 @@ public class Pp extends javax.swing.JFrame {
         Njugadores n = new Njugadores();
         n.setVisible(true);
         this.setVisible(false);
+        sonido.stop();
     }//GEN-LAST:event_playMouseClicked
 
     /**

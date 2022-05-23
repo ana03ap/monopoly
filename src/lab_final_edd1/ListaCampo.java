@@ -11,7 +11,7 @@ import java.io.IOException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-
+import java.applet.AudioClip;
 /**
  *
  * @author DELL
@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class ListaCampo {
 
     protected Nodo head, tail;
-
+    AudioClip sonido;
     public ListaCampo() {
         Nodo head = null;
         Nodo tail = null;
@@ -71,7 +71,6 @@ public class ListaCampo {
         Nodo P = head;
         do {
             if (P.numCasilla == n.posicion) { //Casilla es igual a la posición. 
-                System.out.println("se encontró");
 
                 if (!"nada".equals(P.Ruta)) { //Para ver si es propiedad
                     String[] botones = {"COMPRAR", "NO COMPRAR"};
@@ -92,6 +91,8 @@ public class ListaCampo {
                                     } else { //Cuando no le alcanza
                                         JOptionPane.showMessageDialog(null, "No tienes dinero", "WARNING!", JOptionPane.PLAIN_MESSAGE);
                                     }
+                                    sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audios/chicogel.wav"));
+                                    sonido.play();
                                     break;
                                 case 1: //no compro la propiedad
                                     System.out.println("No se compró");
@@ -105,7 +106,8 @@ public class ListaCampo {
 
                             } else { //cobrarle, no eres el dueño de esa propiedad
                                 if (n.dinero <= P.renta && P.renta != 9999) { //, ya sabemos q no tiene plata, no es servicio
-                                    // implementar la bancarrota
+                                    n.estado = 1;
+                                    n.dinero=0;
                                     System.out.println("estas en 0");
                                 } else { //ya sabemos q tiene plata
                                     if (P.renta == 9999) { // ES UN SERVICIO !!!! RENTA CON SERVICIO!!
@@ -115,7 +117,9 @@ public class ListaCampo {
                                         dados(dado1, dado2);
                                         int resultado = dado * 4;
                                         if (resultado >= n.dinero) {
-                                            // estas en bancarrota 
+                                            // estas en bancarrota
+                                            n.estado=1;
+                                            n.dinero=0;
                                             System.out.println("no tienes plata compa");
                                         } else {
                                             n.dinero = n.dinero - resultado; // se le descuenta la renta de su dinero

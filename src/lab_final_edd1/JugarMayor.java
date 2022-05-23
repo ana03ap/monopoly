@@ -179,6 +179,8 @@ public class JugarMayor extends javax.swing.JFrame {
                         Variables.jugador1.turno = 2;
                         Variables.jugador2.turno = 1;
                     }
+                    Variables.vecTurnos[0] = Variables.jugador1.turno;
+                    Variables.vecTurnos[1] = Variables.jugador2.turno;
                     JOptionPane.showMessageDialog(null, "Jugador Rojo empieza de: " + Variables.jugador1.turno + "\n"
                             + "Jugador Amarillo empieza de: " + Variables.jugador2.turno,
                             "Resultados", JOptionPane.PLAIN_MESSAGE);
@@ -217,6 +219,9 @@ public class JugarMayor extends javax.swing.JFrame {
                             Variables.jugador2.turno = 2;
                         }
                     }
+                    Variables.vecTurnos[0] = Variables.jugador1.turno;
+                    Variables.vecTurnos[1] = Variables.jugador2.turno;
+                    Variables.vecTurnos[2] = Variables.jugador3.turno;
                     JOptionPane.showMessageDialog(null, "Jugador Rojo empieza de: " + Variables.jugador1.turno + "\n"
                             + "Jugador Amarillo empieza de: " + Variables.jugador2.turno + "\n"
                             + "Jugador Verde empieza de: " + Variables.jugador3.turno,
@@ -358,6 +363,10 @@ public class JugarMayor extends javax.swing.JFrame {
                             }
                         }
                     }
+                    Variables.vecTurnos[0] = Variables.jugador1.turno;
+                    Variables.vecTurnos[1] = Variables.jugador2.turno;
+                    Variables.vecTurnos[2] = Variables.jugador3.turno;
+                    Variables.vecTurnos[3] = Variables.jugador4.turno;
                     JOptionPane.showMessageDialog(null, "Jugador Rojo empieza de: " + Variables.jugador1.turno + "\n"
                             + "Jugador Amarillo empieza de: " + Variables.jugador2.turno + "\n"
                             + "Jugador Verde empieza de: " + Variables.jugador3.turno + "\n"
