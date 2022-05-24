@@ -173,7 +173,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         nturno.setBackground(new java.awt.Color(30, 102, 67));
         nturno.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        nturno.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 36)); // NOI18N
+        nturno.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 36)); // NOI18N
         nturno.setText("1");
         getContentPane().add(nturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 150, 30, 40));
 
