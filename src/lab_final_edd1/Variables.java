@@ -12,10 +12,10 @@ package lab_final_edd1;
 public class Variables {
     public static int njugadores;//Cantidad de jugadores
     //Hacer a los 4 jugadores
-    public static Jugadores jugador1 = new Jugadores(0,0,1500, 585, 603,"jugador1"); //posicion, estado, dinero, x, y
-    public static Jugadores jugador2 = new Jugadores(0,0,1500, 585, 603,"jugador2");
-    public static Jugadores jugador3 = new Jugadores(0,0,1500, 585, 603,"jugador3");
-    public static Jugadores jugador4 = new Jugadores(0,0,1500, 585, 603,"jugador4");
+    public static Jugadores jugador1 = new Jugadores(0,0,1500, 585, 603,"jugador1",0); //posicion, estado, dinero, x, y
+    public static Jugadores jugador2 = new Jugadores(0,0,1500, 585, 603,"jugador2",0);
+    public static Jugadores jugador3 = new Jugadores(0,0,1500, 585, 603,"jugador3",0);
+    public static Jugadores jugador4 = new Jugadores(0,0,1500, 585, 603,"jugador4",0);
     public static boolean condition =false;
     public static int vecTurnos [];
     

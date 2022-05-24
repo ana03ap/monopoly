@@ -38,17 +38,19 @@ public class Interfaz extends javax.swing.JFrame {
             case 2:
                 azul.setVisible(false);
                 TAzul.setVisible(false);
-                jButton4.setVisible(false);
                 verde.setVisible(false);
                 TVerde.setVisible(false);
-                jButton3.setVisible(false);
-                rojo.setBounds(Variables.jugador1.x, Variables.jugador1.y, 35, 57);
-                amarilla.setBounds(Variables.jugador2.x, Variables.jugador2.y, 35, 57);
+                DinAz.setVisible(false);
+                DinV.setVisible(false);
+                ProVerde.setVisible(false);
+                ProAzul.setVisible(false);
+                
                 break;
             case 3:
                 azul.setVisible(false);
-                TAzul.setVisible(false);
-                jButton4.setVisible(false);
+                TAzul.setVisible(false);            
+                DinAz.setVisible(false);
+                ProAzul.setVisible(false);
                 break;
         }
 
@@ -64,9 +66,10 @@ public class Interfaz extends javax.swing.JFrame {
         transparenciaButton();
         //sonido
         sonido1 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz.wav"));
-        sonido1.play();
+        //sonido1.play();
         sonido2 = java.applet.Applet.newAudioClip(getClass().getResource("/audios/interfaz2.wav"));
-        sonido2.loop();
+        //sonido2.loop();
+        
 
     }
 
@@ -75,7 +78,19 @@ public class Interfaz extends javax.swing.JFrame {
         dadoBtn.setOpaque(false);
         dadoBtn.setContentAreaFilled(false);
         dadoBtn.setBorderPainted(false);
-       
+        ProRojo.setOpaque(false);
+        ProRojo.setContentAreaFilled(false);
+        ProRojo.setBorderPainted(false);
+        ProAmarillo.setOpaque(false);
+        ProAmarillo.setContentAreaFilled(false);
+        ProAmarillo.setBorderPainted(false);  
+        ProVerde.setOpaque(false);
+        ProVerde.setContentAreaFilled(false);
+        ProVerde.setBorderPainted(false);  
+        ProAzul.setOpaque(false);
+        ProAzul.setContentAreaFilled(false);
+        ProAzul.setBorderPainted(false);  
+
     }
 
     /**
@@ -87,6 +102,7 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label2 = new java.awt.Label();
         dadoBtn = new javax.swing.JButton();
         rojo = new javax.swing.JLabel();
         amarilla = new javax.swing.JLabel();
@@ -96,13 +112,19 @@ public class Interfaz extends javax.swing.JFrame {
         TAmarillo = new javax.swing.JLabel();
         TVerde = new javax.swing.JLabel();
         TAzul = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         nturno = new java.awt.Label();
         home = new javax.swing.JLabel();
+        DinR = new java.awt.Label();
+        DinA = new java.awt.Label();
+        DinV = new java.awt.Label();
+        DinAz = new java.awt.Label();
+        ProRojo = new javax.swing.JButton();
+        ProAmarillo = new javax.swing.JButton();
+        ProVerde = new javax.swing.JButton();
+        ProAzul = new javax.swing.JButton();
         jLabel_wallpaper = new javax.swing.JLabel();
+
+        label2.setText("label2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -139,43 +161,16 @@ public class Interfaz extends javax.swing.JFrame {
         TAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/jAzulD.png"))); // NOI18N
         getContentPane().add(TAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, -1, -1));
 
-        jButton1.setText("CONSULTAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 320, -1, -1));
-
-        jButton2.setText("CONSULTAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 360, -1, -1));
-
-        jButton3.setText("CONSULTAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 400, -1, -1));
-
-        jButton4.setText("CONSULTAR");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 450, -1, -1));
-
         nturno.setBackground(new java.awt.Color(30, 102, 67));
         nturno.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+<<<<<<< HEAD
         nturno.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 36)); // NOI18N
         nturno.setText("1");
         getContentPane().add(nturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 150, 30, 40));
+=======
+        nturno.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 24)); // NOI18N
+        getContentPane().add(nturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 150, 120, 40));
+>>>>>>> d2b8be15a4276389ac91b9d6cd4d5f2aa05a5a9e
 
         home.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -183,6 +178,55 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 30, 60, 70));
+
+        DinR.setBackground(new java.awt.Color(30, 102, 67));
+        DinR.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
+        DinR.setText("$1500");
+        getContentPane().add(DinR, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 300, -1, -1));
+
+        DinA.setBackground(new java.awt.Color(30, 102, 67));
+        DinA.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        DinA.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
+        DinA.setText("$1500");
+        getContentPane().add(DinA, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 340, -1, -1));
+
+        DinV.setBackground(new java.awt.Color(30, 102, 67));
+        DinV.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
+        DinV.setText("$1500");
+        getContentPane().add(DinV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 390, -1, -1));
+
+        DinAz.setBackground(new java.awt.Color(30, 102, 67));
+        DinAz.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
+        DinAz.setText("$1500");
+        getContentPane().add(DinAz, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 440, -1, -1));
+
+        ProRojo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProRojoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ProRojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 593, 70, 70));
+
+        ProAmarillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProAmarilloActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ProAmarillo, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 590, 70, 70));
+
+        ProVerde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProVerdeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ProVerde, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 590, 70, 70));
+
+        ProAzul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProAzulActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ProAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 593, 80, 70));
 
         jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data1/monopoly.png"))); // NOI18N
         getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 690));
@@ -217,10 +261,38 @@ public class Interfaz extends javax.swing.JFrame {
                 turno = 1;
             }
         } while (key == false);//Lo hará hasta que encuentre una condición 
+        switch (caso) {
+            case 1:
+                nturno.setText("Rojo");
+                break;
+            case 2:
+                nturno.setText("Amarillo");
+                break;
+            case 3:
+                nturno.setText("Verde");
+                break;
+            case 4:
+                nturno.setText("Azul");
+                break;
+        }
         Variables.condition = condition(); //Verificar si algún jugador ganó o no
         if (Variables.condition == false) { //Si nadie ha ganado que siga el juego
             switch (caso) { //Corresponde a tu turno
                 case 1:
+                    if(Variables.jugador1.estado == 2){
+                        String[] opciones  = {"PAGAR", "CANCELAR"};
+                        int ventana = JOptionPane.showOptionDialog(null, "¿Quieres pagar $200 para salir de la carcel?",
+                                    "Salir de la carcel", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, opciones[0]);
+                        switch(ventana){
+                            case 0:
+                                if(Variables.jugador1.dinero<=200){
+                                    JOptionPane.showMessageDialog(null, "Dinero insuficiente");
+                                }else{
+                                    JOptionPane.showMessageDialog(null, "Evadiste a la fiscalía con exito");
+                                    Variables.jugador1.dinero = Variables.jugador1.dinero -200;
+                                }
+                        }
+                    }else{
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
                     dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
                     dado = dado1 + dado2;
@@ -229,23 +301,62 @@ public class Interfaz extends javax.swing.JFrame {
                     tablero.buscarn(Variables.jugador1, Variables.jugador2, Variables.jugador3, Variables.jugador4, rojo); //Buscar en el tablero/Comprar/Pagar/Cambiar tu estado
                     if (Variables.jugador1.dinero == 0) { //Si caieste a bancarrota...
                         rojo.setVisible(false); //Se desactiva tu fiha ... prox se desactiva tu label del dinero
+                        DinR.setVisible(false);
                         Variables.vecTurnos[0] = 0; //Ya no estarás en los turnos pq nunca habrá un turno 0
+                    }
+                    DinR.setText("$" + Variables.jugador1.dinero);
+                    DinA.setText("$" + Variables.jugador2.dinero);
+                    DinV.setText("$" + Variables.jugador3.dinero);
+                    DinAz.setText("$" + Variables.jugador4.dinero);
                     }
                     break;
                 case 2:
+                    if(Variables.jugador2.estado == 2){
+                        String[] opciones  = {"PAGAR", "CANCELAR"};
+                        int ventana = JOptionPane.showOptionDialog(null, "¿Quieres pagar $200 para salir de la carcel?",
+                                    "Salir de la carcel", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, opciones[0]);
+                        switch(ventana){
+                            case 0:
+                                if(Variables.jugador2.dinero<=200){
+                                    JOptionPane.showMessageDialog(null, "Dinero insuficiente");
+                                }else{
+                                    JOptionPane.showMessageDialog(null, "Evadiste a la fiscalía con exito");
+                                    Variables.jugador2.dinero = Variables.jugador2.dinero -200;
+                                }
+                        }
+                    }else{
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
                     dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
                     dado = dado1 + dado2;
                     dados(dado1, dado2);
                     mover(dado, amarilla, Variables.jugador2);
-                    tablero.buscarn(Variables.jugador2, Variables.jugador1, Variables.jugador3, Variables.jugador4,amarilla);
-
+                    tablero.buscarn(Variables.jugador2, Variables.jugador1, Variables.jugador3, Variables.jugador4, amarilla);
                     if (Variables.jugador2.dinero == 0) {
                         amarilla.setVisible(false);
+                        DinA.setVisible(false);
                         Variables.vecTurnos[1] = 0;
                     }
+                    DinR.setText("$" + Variables.jugador1.dinero);
+                    DinA.setText("$" + Variables.jugador2.dinero);
+                    DinV.setText("$" + Variables.jugador3.dinero);
+                    DinAz.setText("$" + Variables.jugador4.dinero);
+            }
                     break;
                 case 3:
+                    if(Variables.jugador3.estado == 2){
+                        String[] opciones  = {"PAGAR", "CANCELAR"};
+                        int ventana = JOptionPane.showOptionDialog(null, "¿Quieres pagar $200 para salir de la carcel?",
+                                    "Salir de la carcel", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, opciones[0]);
+                        switch(ventana){
+                            case 0:
+                                if(Variables.jugador3.dinero<=200){
+                                    JOptionPane.showMessageDialog(null, "Dinero insuficiente");
+                                }else{
+                                    JOptionPane.showMessageDialog(null, "Evadiste a la fiscalía con exito");
+                                    Variables.jugador3.dinero = Variables.jugador3.dinero -200;
+                                }
+                        }
+                    }else{
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
                     dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
                     dado = dado1 + dado2;
@@ -254,10 +365,30 @@ public class Interfaz extends javax.swing.JFrame {
                     tablero.buscarn(Variables.jugador3, Variables.jugador1, Variables.jugador2, Variables.jugador4, verde);
                     if (Variables.jugador3.dinero == 0) {
                         verde.setVisible(false);
+                        DinV.setVisible(false);
                         Variables.vecTurnos[2] = 0;
+                    }
+                    DinR.setText("$" + Variables.jugador1.dinero);
+                    DinA.setText("$" + Variables.jugador2.dinero);
+                    DinV.setText("$" + Variables.jugador3.dinero);
+                    DinAz.setText("$" + Variables.jugador4.dinero);
                     }
                     break;
                 case 4:
+                    if(Variables.jugador4.estado == 2){
+                        String[] opciones  = {"PAGAR", "CANCELAR"};
+                        int ventana = JOptionPane.showOptionDialog(null, "¿Quieres pagar $200 para salir de la carcel?",
+                                    "Salir de la carcel", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, opciones[0]);
+                        switch(ventana){
+                            case 0:
+                                if(Variables.jugador4.dinero<=200){
+                                    JOptionPane.showMessageDialog(null, "Dinero insuficiente");
+                                }else{
+                                    JOptionPane.showMessageDialog(null, "Evadiste a la fiscalía con exito");
+                                    Variables.jugador4.dinero = Variables.jugador4.dinero -200;
+                                }
+                        }
+                    }else{
                     dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
                     dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
                     dado = dado1 + dado2;
@@ -266,49 +397,83 @@ public class Interfaz extends javax.swing.JFrame {
                     tablero.buscarn(Variables.jugador4, Variables.jugador1, Variables.jugador2, Variables.jugador3, azul);
                     if (Variables.jugador4.dinero == 0) {
                         azul.setVisible(false);
+                        DinAz.setVisible(false);
                         Variables.vecTurnos[3] = 0;
+                    }
+                    DinR.setText("$" + Variables.jugador1.dinero);
+                    DinA.setText("$" + Variables.jugador2.dinero);
+                    DinV.setText("$" + Variables.jugador3.dinero);
+                    DinAz.setText("$" + Variables.jugador4.dinero);
                     }
                     break;
             }
         } else {
             //alguien ganó
             System.out.println("Alguien ganó");
-            JOptionPane.showMessageDialog(null, "Alguien ganó"
-                    + "$" + Variables.jugador4.dinero, "CONGRATULATIONS!", JOptionPane.PLAIN_MESSAGE);        // TODO add your handling code here:        
+            JOptionPane.showMessageDialog(null, "Alguien ganó", "CONGRATULATIONS!", JOptionPane.PLAIN_MESSAGE);        // TODO add your handling code here:        
         }
         turno++;
+        
         if (turno == Variables.njugadores + 1) {
             turno = 1;
         }
-        nturno.setText(turno+"");
+        if(Variables.jugador1.estado == 2){
+            Variables.jugador1.contador++;
+            if(Variables.jugador1.contador ==4){
+                Variables.jugador1.contador = 0;
+                Variables.jugador1.estado = 0;
+            }
+        }
+        if(Variables.jugador2.estado == 2){
+            Variables.jugador2.contador++;
+            if(Variables.jugador2.contador ==4){
+                Variables.jugador2.contador = 0;
+                Variables.jugador2.estado = 0;
+            }
+        }
+        if(Variables.jugador3.estado == 2){
+            Variables.jugador3.contador++;
+            if(Variables.jugador3.contador ==4){
+                Variables.jugador3.contador = 0;
+                Variables.jugador3.estado = 0;
+            }
+        }
+        if(Variables.jugador4.estado == 2){
+            Variables.jugador4.contador++;
+            if(Variables.jugador4.contador ==4){
+                Variables.jugador4.contador = 0;
+                Variables.jugador4.estado = 0;
+            }
+        }
+
+
     }//GEN-LAST:event_dadoBtnActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        JOptionPane.showMessageDialog(null, "El dinero del jugador amarillo es: " + "\n"
-                + "$" + Variables.jugador2.dinero, "DINERO", JOptionPane.PLAIN_MESSAGE);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(null, "El dinero del jugador rojo es: " + "\n"
-                + "$" + Variables.jugador1.dinero, "DINERO", JOptionPane.PLAIN_MESSAGE);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        JOptionPane.showMessageDialog(null, "El dinero del jugador verde es: " + "\n"
-                + "$" + Variables.jugador3.dinero, "DINERO", JOptionPane.PLAIN_MESSAGE);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        JOptionPane.showMessageDialog(null, "El dinero del jugador azul es: " + "\n"
-                + "$" + Variables.jugador4.dinero, "DINERO", JOptionPane.PLAIN_MESSAGE);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked
         Njugadores c = new Njugadores();
         c.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_homeMouseClicked
+
+    private void ProRojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProRojoActionPerformed
+        // TODO add your handling code here:
+        tablero.mostrarP(Variables.jugador1);
+    }//GEN-LAST:event_ProRojoActionPerformed
+
+    private void ProAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProAmarilloActionPerformed
+        // TODO add your handling code here:
+        tablero.mostrarP(Variables.jugador2);
+    }//GEN-LAST:event_ProAmarilloActionPerformed
+
+    private void ProVerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProVerdeActionPerformed
+        // TODO add your handling code here:
+        tablero.mostrarP(Variables.jugador3);
+    }//GEN-LAST:event_ProVerdeActionPerformed
+
+    private void ProAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProAzulActionPerformed
+        // TODO add your handling code here:
+        tablero.mostrarP(Variables.jugador4);
+    }//GEN-LAST:event_ProAzulActionPerformed
 
     /**
      * @param args the command line arguments
@@ -354,6 +519,14 @@ public class Interfaz extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Label DinA;
+    private java.awt.Label DinAz;
+    private java.awt.Label DinR;
+    private java.awt.Label DinV;
+    private javax.swing.JButton ProAmarillo;
+    private javax.swing.JButton ProAzul;
+    private javax.swing.JButton ProRojo;
+    private javax.swing.JButton ProVerde;
     private javax.swing.JLabel TAmarillo;
     private javax.swing.JLabel TAzul;
     private javax.swing.JLabel TRojo;
@@ -362,11 +535,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel azul;
     private javax.swing.JButton dadoBtn;
     private javax.swing.JLabel home;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel_wallpaper;
+    private java.awt.Label label2;
     private java.awt.Label nturno;
     private javax.swing.JLabel rojo;
     private javax.swing.JLabel verde;
@@ -607,6 +777,7 @@ public class Interfaz extends javax.swing.JFrame {
             a.y = 603;
             rojo.setBounds(a.x, a.y, 35, 57);
             JOptionPane.showMessageDialog(null, "Gana 200");
+            a.dinero = a.dinero + 200;
         }
 
     }
