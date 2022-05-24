@@ -19,12 +19,14 @@ public class Jugadores {
     String propiedades; // esto es una lista de propiedades 
     String monopolios; // esto es una lista dependiendo de propiedades BONOOOOO
     int dinero;//empieza en 1500
-    public Jugadores(int posicion, int estado, int dinero, int x, int y, String nombre) {
+    int contador;
+    public Jugadores(int posicion, int estado, int dinero, int x, int y, String nombre, int contador) {
         this.posicion = posicion;
         this.estado = estado;
         this.dinero = dinero;
         this.x = x;
         this.y = y;
         this.nombre = nombre;
+        this.contador = contador;
     }
 }

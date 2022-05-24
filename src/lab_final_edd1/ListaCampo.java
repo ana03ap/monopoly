@@ -74,6 +74,21 @@ public class ListaCampo {
         Nodo P = head;
         // n es la persona a la que se le va a quitar la plata
         do {
+            if (P.numCasilla == 30 && P.numCasilla == n.posicion) {//Vaya para la carcel
+                Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
+                JOptionPane.showMessageDialog(null, "", "CARTA", JOptionPane.PLAIN_MESSAGE, carta);
+                int dado = 0;
+                while (n.posicion + dado != 10) {
+                    dado++;
+                    if (dado + n.posicion == 40) {
+                        moversin(dado, ficha, n);
+                        dado = 0;
+                    }
+                }
+                moversin(dado, ficha, n);
+                n.estado = 2;
+                return;
+            }
             // aca esta en economia naranja y pa vivir sabroso 
             if ((P.numCasilla == 4 && P.numCasilla == n.posicion) || (P.numCasilla == 38 && P.numCasilla == n.posicion)) {
                 Icon carta = new ImageIcon(getClass().getResource(P.Ruta));
@@ -136,9 +151,9 @@ public class ListaCampo {
                                             Q = Q.next;
                                         } while (Q != head);
                                         if (cont == 2) {//Se recorrió la lista y se determinó que los de 3 tienen el mismo dueño
-                                            P.key=1;
+                                            P.key = 1;
                                             A.key = 1;
-                                            B.key =1;
+                                            B.key = 1;
                                         }
                                     } else { //Cuando no le alcanza
                                         JOptionPane.showMessageDialog(null, "No tienes dinero", "WARNING!", JOptionPane.PLAIN_MESSAGE);
@@ -160,7 +175,7 @@ public class ListaCampo {
 
                             } else { //cobrarle, no eres el dueño de esa propiedad
                                 if (P.key == 1) {//Es una con monopoly
-                                    if(n.dinero<= P.rentaMonopoly){//La plata no le alcanza
+                                    if (n.dinero <= P.rentaMonopoly) {//La plata no le alcanza
                                         n.estado = 1;
                                         if (P.Dueño.equals(x.nombre)) {
                                             x.dinero = x.dinero + n.dinero;
@@ -172,8 +187,8 @@ public class ListaCampo {
                                             z.dinero = z.dinero + n.dinero;
                                         }
                                         n.dinero = 0;
-                                    }else{//La plata le alcanza
-                                        n.dinero = n.dinero -P.rentaMonopoly;
+                                    } else {//La plata le alcanza
+                                        n.dinero = n.dinero - P.rentaMonopoly;
                                         if (P.Dueño.equals(x.nombre)) {
                                             x.dinero = x.dinero + P.rentaMonopoly;
                                         }
@@ -185,7 +200,6 @@ public class ListaCampo {
                                         }
                                     }
                                 } else {//La propiedad no es parte de un monopoly
-                                    //P.monopoly = 1;....
                                     if (n.dinero <= P.renta && P.renta != 9999) { //, ya sabemos q no tiene plata, no es servicio
                                         n.estado = 1;
                                         // estamos sumando la renta al dueño de la propiedad
@@ -268,6 +282,15 @@ public class ListaCampo {
                                 break;
                             case 2:
                                 //Vaya para la carcel
+                                while (n.posicion + dado != 10) {
+                                    dado++;
+                                    if (dado + n.posicion == 40) {
+                                        moversin(dado, ficha, n);
+                                        dado = 0;
+                                    }
+                                }
+                                moversin(dado, ficha, n);
+                                n.estado = 2;
                                 break;
                             case 3:
                                 while (n.posicion + dado != 40) {
@@ -290,7 +313,12 @@ public class ListaCampo {
                                 n.dinero = n.dinero + 100;
                                 break;
                             case 7:
-                                n.dinero = n.dinero + 100;
+                                if (n.dinero <= 100) {
+                                    n.dinero = 0;
+                                    n.estado = 1;
+                                } else {
+                                    n.dinero = n.dinero - 100;
+                                }
                                 break;
                             case 8:
                                 if (n.dinero <= 50) {
@@ -315,7 +343,6 @@ public class ListaCampo {
                                 }
                                 break;
                             case 12:
-                                //Terminar
                                 switch (Variables.njugadores) {
                                     case 2:
                                         if (x.dinero <= 10) {
@@ -369,7 +396,7 @@ public class ListaCampo {
                                 n.dinero = n.dinero + 100;
                                 break;
                             case 14:
-                                n.dinero = n.dinero + 100;
+                                n.dinero = n.dinero + 50;
                                 break;
                             case 15:
                                 n.dinero = n.dinero + 10;
@@ -529,6 +556,15 @@ public class ListaCampo {
                                 break;
                             case 15:
                                 //Vaya pa la carcel implementar esa porqueria
+                                while (n.posicion + dado != 10) {
+                                    dado++;
+                                    if (dado + n.posicion == 40) {
+                                        moversin(dado, ficha, n);
+                                        dado = 0;
+                                    }
+                                }
+                                moversin(dado, ficha, n);
+                                n.estado = 2;
                                 break;
 
                         }
@@ -541,7 +577,7 @@ public class ListaCampo {
             P = P.next;
 
         } while (P != head);
-        
+
     }
 
     // metodos para comprar las propiedades 
@@ -778,7 +814,134 @@ public class ListaCampo {
             a.y = 603;
             rojo.setBounds(a.x, a.y, 35, 57);
             JOptionPane.showMessageDialog(null, "Gana 200");
+            a.dinero = a.dinero + 200; // se le añade a la plata, los 200 de la salida 
         }
 
+    }
+
+    public void moversin(int dado, JLabel rojo, Jugadores a) {
+        //MOVIMIENTO DE UNA FICHA
+        if ((a.posicion + dado >= 11 && a.posicion < 19) && a.posicion <= 10) { //para cuando dé la primera vuelta
+            if (a.posicion + dado != 11) {
+                do {
+                    a.posicion++;
+                    dado--;
+                } while (a.posicion != 11);
+            }
+            //Si casualmente cae en 11 ya se situe acá
+            a.x = 35;
+            a.y = 540;
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if ((a.posicion + dado >= 21 && a.posicion < 29) && (a.posicion <= 19 && a.posicion > 10)) { //Para cuando de la primer vuelta
+            if (a.posicion + dado != 21) {
+                do {
+                    a.posicion++;
+                    dado--;
+
+                } while (a.posicion != 21);
+            }
+            //Si casualmente cae en 21 ya se situe acá
+            a.x = 90;
+            a.y = 40;
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if ((a.posicion + dado >= 31 && a.posicion < 39) && (a.posicion <= 29 && a.posicion > 20)) {
+            if (a.posicion + dado != 31) {
+                do {
+                    a.posicion++;
+                    dado--;
+                } while (a.posicion != 31);
+            }
+            a.x = 585;
+            a.y = 95;
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if ((a.posicion + dado >= 41) && (a.posicion <= 39 && a.posicion > 30)) {
+            if (a.posicion + dado != 41) {
+                do {
+                    a.posicion++;
+                    dado--;
+                } while (a.posicion != 41);
+
+            }
+            a.posicion = 1;
+            a.x = 585 - 55;
+            a.y = 603;
+            rojo.setBounds(a.x, a.y, 35, 57);
+
+        }
+
+        a.posicion = a.posicion + dado; //Ya suma la pos del jugador con el dado
+        if (a.posicion >= 0 && a.posicion <= 9) { //Si cae entre la a la 9
+            a.x = a.x - (55 * dado);//mover x 55 pixeles
+            rojo.setBounds(a.x, a.y, 35, 57);
+
+        }
+        if (a.posicion == 10) { // Si cae en la 10
+            a.x = 35;
+            rojo.setBounds(a.x, a.y, 35, 57);
+
+        }
+        if (a.posicion >= 12 && a.posicion <= 19) { //Si cae en la 12 a 19
+            a.y = a.y - (55 * dado);
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if (a.posicion == 20) { //Si cae en la 20
+            a.x = 35;
+            a.y = 40;
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if (a.posicion >= 22 && a.posicion <= 29) { //Si cae de la 22 a la 29
+            a.x = a.x + (55 * dado);
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if (a.posicion == 30) {
+            a.x = 585;
+            a.y = 40;
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if (a.posicion >= 32 && a.posicion <= 39) { //Si cae de la 32 a la 39
+            a.y = a.y + (55 * dado);
+            rojo.setBounds(a.x, a.y, 35, 57);
+        }
+        if (a.posicion == 40) {
+            a.posicion = 0;
+            a.x = 585;
+            a.y = 603;
+            rojo.setBounds(a.x, a.y, 35, 57);
+
+        }
+
+    }
+
+    public void mostrarP(Jugadores ficha) {
+        Nodo P = head;
+        String res = "";
+        do{
+            if(P.Dueño.equals(ficha.nombre)){
+                if(P.renta == 9999){
+                    res = res+"Propiedad: "+P.nombre+"/ "
+                        + "Renta: "+"Cuatro veces los dados"+"\n"
+                        + "\n"
+                        + "";
+                }else{
+                  res = res+"Propiedad: "+P.nombre+"/ "
+                        + "Color: "+P.color+"/ "
+                        + "Renta Común: "+P.renta+"/ "
+                        + "Renta Monopol: "+P.rentaMonopoly+"\n"
+                        + "\n"
+                        + "";  
+                }
+                
+            }
+            P =P.next;
+        }while (P != head);
+        if(res ==""){
+            JOptionPane.showMessageDialog(null, "No tienes ninguna propiedad");
+        }else{
+            JOptionPane.showMessageDialog(null, res);
+        }
+        
     }
 }
