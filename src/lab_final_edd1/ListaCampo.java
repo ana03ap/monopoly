@@ -28,8 +28,8 @@ public class ListaCampo {
         Nodo tail = null;
     }
 
-    public void addNode(int data, String name, String Color, String D, int val, int rent, int rentM, String Ruta) {
-        Nodo P = new Nodo(data, name, Color, D, val, rent, rentM, Ruta);
+    public void addNode(int data, String name, String Color, String D, int val, int rent, int rentM, String Ruta, int key) {
+        Nodo P = new Nodo(data, name, Color, D, val, rent, rentM, Ruta, key);
         if (head == null) {
             head = P;
             tail = P;
@@ -52,7 +52,7 @@ public class ListaCampo {
         System.out.println("The nodes of the singly linked list are: ");
 
         do {
-            System.out.println(current.Ruta + "-->");
+            System.out.println(current.key + "-->");
 
             current = current.next;
         } while (current != head);
@@ -112,6 +112,34 @@ public class ListaCampo {
                                     if (n.dinero >= P.valor) { //Validar que el valor de su dinero sea mayor 
                                         n.dinero = n.dinero - P.valor;
                                         P.Dueño = n.nombre; //Implementar si acaba de conseguir un monopoly
+                                        Nodo Q = head;
+                                        int cont = 0;
+                                        Nodo A = null, B = null;
+                                        do {
+                                            if (P.color.equals("Magenta") || P.color.equals("Azul")) { //Estas son las propiedades que tienen solo dos
+                                                if (P.Dueño.equals(Q.Dueño) && P != Q) {//Si la otra propiedad es tamb su dueño y obvio no es la misma propiedad
+                                                    //Hacer P.monopoly y Q.monopoly 1
+                                                    P.key = 1;
+                                                    Q.key = 1;
+                                                }
+                                            } else { //Si son los otros colores que tienen 3 propiedades
+                                                if (P.Dueño.equals(Q.Dueño) && P != Q) {
+                                                    cont++;
+                                                    if (cont == 1) {
+                                                        A = Q;
+                                                    }
+                                                    if (cont == 2) {
+                                                        B = Q;
+                                                    }
+                                                }
+                                            }
+                                            Q = Q.next;
+                                        } while (Q != head);
+                                        if (cont == 2) {//Se recorrió la lista y se determinó que los de 3 tienen el mismo dueño
+                                            P.key=1;
+                                            A.key = 1;
+                                            B.key =1;
+                                        }
                                     } else { //Cuando no le alcanza
                                         JOptionPane.showMessageDialog(null, "No tienes dinero", "WARNING!", JOptionPane.PLAIN_MESSAGE);
                                         n.dinero = 0;
@@ -131,37 +159,79 @@ public class ListaCampo {
                             if (P.Dueño.equals(n.nombre)) { //lapersona q esta ahi parada es el dueño
 
                             } else { //cobrarle, no eres el dueño de esa propiedad
-                                if (n.dinero <= P.renta && P.renta != 9999) { //, ya sabemos q no tiene plata, no es servicio
-                                    n.estado = 1;
-                                    // estamos sumando la renta al dueño de la propiedad
-                                    // puede que la renta sea 30 y el jugador tenga 15, se le suma los 15 al dueño
-                                    if (P.Dueño.equals(x.nombre)) {
-                                        x.dinero = x.dinero + n.dinero;
+                                if (P.key == 1) {//Es una con monopoly
+                                    if(n.dinero<= P.rentaMonopoly){//La plata no le alcanza
+                                        n.estado = 1;
+                                        if (P.Dueño.equals(x.nombre)) {
+                                            x.dinero = x.dinero + n.dinero;
+                                        }
+                                        if (P.Dueño.equals(y.nombre)) {
+                                            y.dinero = y.dinero + n.dinero;
+                                        }
+                                        if (P.Dueño.equals(z.nombre)) {
+                                            z.dinero = z.dinero + n.dinero;
+                                        }
+                                        n.dinero = 0;
+                                    }else{//La plata le alcanza
+                                        n.dinero = n.dinero -P.rentaMonopoly;
+                                        if (P.Dueño.equals(x.nombre)) {
+                                            x.dinero = x.dinero + P.rentaMonopoly;
+                                        }
+                                        if (P.Dueño.equals(y.nombre)) {
+                                            y.dinero = y.dinero + P.rentaMonopoly;
+                                        }
+                                        if (P.Dueño.equals(z.nombre)) {
+                                            z.dinero = z.dinero + P.rentaMonopoly;
+                                        }
                                     }
-                                    if (P.Dueño.equals(y.nombre)) {
-                                        y.dinero = y.dinero + n.dinero;
-                                    }
-                                    if (P.Dueño.equals(z.nombre)) {
-                                        z.dinero = z.dinero + n.dinero;
-                                    }
-                                    n.dinero = 0;
+                                } else {//La propiedad no es parte de un monopoly
+                                    //P.monopoly = 1;....
+                                    if (n.dinero <= P.renta && P.renta != 9999) { //, ya sabemos q no tiene plata, no es servicio
+                                        n.estado = 1;
+                                        // estamos sumando la renta al dueño de la propiedad
+                                        // puede que la renta sea 30 y el jugador tenga 15, se le suma los 15 al dueño
+                                        if (P.Dueño.equals(x.nombre)) {
+                                            x.dinero = x.dinero + n.dinero;
+                                        }
+                                        if (P.Dueño.equals(y.nombre)) {
+                                            y.dinero = y.dinero + n.dinero;
+                                        }
+                                        if (P.Dueño.equals(z.nombre)) {
+                                            z.dinero = z.dinero + n.dinero;
+                                        }
+                                        n.dinero = 0;
 
-                                    System.out.println("estas en 0");
-                                } else { //ya sabemos q tiene plata
-                                    if (P.renta == 9999) { // ES UN SERVICIO !!!! RENTA CON SERVICIO!!
-                                        int dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
-                                        int dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
-                                        int dado = dado1 + dado2;
-                                        dados(dado1, dado2);
-                                        int resultado = dado * 4;
-                                        if (resultado >= n.dinero) {
-                                            // estas en bancarrota
-                                            n.estado = 1;
-                                            n.dinero = 0;
-                                            System.out.println("no tienes plata compa");
+                                        System.out.println("estas en 0");
+                                    } else { //ya sabemos q tiene plata
+                                        if (P.renta == 9999) { // ES UN SERVICIO !!!! RENTA CON SERVICIO!!
+                                            int dado1 = (int) ((Math.random()) * 60 / 10) + 1;//dado 1
+                                            int dado2 = (int) ((Math.random()) * 60 / 10) + 1;//dado2
+                                            int dado = dado1 + dado2;
+                                            dados(dado1, dado2);
+                                            int resultado = dado * 4;
+                                            if (resultado >= n.dinero) {
+                                                // estas en bancarrota
+                                                n.estado = 1;
+                                                n.dinero = 0;
+                                                System.out.println("no tienes plata compa");
+                                            } else {
+                                                n.dinero = n.dinero - resultado; // se le descuenta la renta de su dinero
+                                                System.out.println(n.dinero);
+                                                // estamos sumando la renta al dueño de la propiedad 
+                                                if (P.Dueño.equals(x.nombre)) {
+                                                    x.dinero = x.dinero + P.renta;
+                                                }
+                                                if (P.Dueño.equals(y.nombre)) {
+                                                    y.dinero = y.dinero + P.renta;
+                                                }
+                                                if (P.Dueño.equals(z.nombre)) {
+                                                    z.dinero = z.dinero + P.renta;
+                                                }
+                                            }
                                         } else {
-                                            n.dinero = n.dinero - resultado; // se le descuenta la renta de su dinero
+                                            n.dinero = n.dinero - P.renta; // se le descuenta la renta de su dinero
                                             System.out.println(n.dinero);
+
                                             // estamos sumando la renta al dueño de la propiedad 
                                             if (P.Dueño.equals(x.nombre)) {
                                                 x.dinero = x.dinero + P.renta;
@@ -172,20 +242,6 @@ public class ListaCampo {
                                             if (P.Dueño.equals(z.nombre)) {
                                                 z.dinero = z.dinero + P.renta;
                                             }
-                                        }
-                                    } else {
-                                        n.dinero = n.dinero - P.renta; // se le descuenta la renta de su dinero
-                                        System.out.println(n.dinero);
-
-                                        // estamos sumando la renta al dueño de la propiedad 
-                                        if (P.Dueño.equals(x.nombre)) {
-                                            x.dinero = x.dinero + P.renta;
-                                        }
-                                        if (P.Dueño.equals(y.nombre)) {
-                                            y.dinero = y.dinero + P.renta;
-                                        }
-                                        if (P.Dueño.equals(z.nombre)) {
-                                            z.dinero = z.dinero + P.renta;
                                         }
                                     }
                                 }
@@ -443,7 +499,7 @@ public class ListaCampo {
                                 break;
                             case 12:
                                 //Esto toca arreglarlo pq retroceder tres casillas no está bién implementado, por ahora da la vuelta completa
-                                while (n.posicion + dado != n.posicion - 3) {
+                                /*while (n.posicion + dado != n.posicion - 3) {
                                     dado++;
                                     if (dado + n.posicion == 40) {
                                         mover(dado, ficha, n);
@@ -451,7 +507,7 @@ public class ListaCampo {
                                     }
                                 }
                                 mover(dado, ficha, n);
-                                n.dinero = n.dinero - 200;
+                                n.dinero = n.dinero - 200;*/
                                 break;
                             case 13:
                                 if (n.dinero <= 15) {
@@ -485,6 +541,7 @@ public class ListaCampo {
             P = P.next;
 
         } while (P != head);
+        
     }
 
     // metodos para comprar las propiedades 

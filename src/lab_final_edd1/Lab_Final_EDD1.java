@@ -46,6 +46,7 @@ public class Lab_Final_EDD1 {
         int valor;//en servicios // cuando una persona la va a comprar y esta en el tablero
         int renta;//tambien en servicios// en la carta 
         int rentaMonopoly;
+        int key;
 
         // meter los registros en una lista y las listas en un arraylist 
         try {
@@ -62,8 +63,9 @@ public class Lab_Final_EDD1 {
                 renta = Integer.parseInt(temp[5]);
                 rentaMonopoly = Integer.parseInt(temp[6]);
                 Ruta = temp[7];
+                key= Integer.parseInt(temp[8]);
 
-                ca.addNode(numCasilla, nombre, color, Dueño, valor, renta, rentaMonopoly, Ruta);
+                ca.addNode(numCasilla, nombre, color, Dueño, valor, renta, rentaMonopoly, Ruta,key);
                 //Añadimos las listas al array  
             }
 
